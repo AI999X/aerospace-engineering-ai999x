@@ -1,0 +1,23 @@
+"""aerospace_engineering checks run by tools/clean_install.py inside a fresh environment (written by tools/new_domain.py from the certified procedures' documented questions)."""
+
+SAMPLE = ('Ideal propeller: T = 25.132741228718345 N, V = 3 m/s, D = 2 m, rho = 1 kg/m^3', 0.75)
+LATENCY = ["Ideal propeller: T = 25.132741228718345 N, V = 3 m/s, D = 2 m, rho = 1 kg/m^3", "Hover power: T = 6.283185307179586 N, D = 2 m, rho = 1 kg/m^3", "Altitude for period: T = 40554.74657601441 s"]
+QUESTIONS = [['Ideal propeller: T = 25.132741228718345 N, V = 3 m/s, D = 2 m, rho = 1 kg/m^3', {'eta_ideal': 0.75}], ['Hover power: T = 6.283185307179586 N, D = 2 m, rho = 1 kg/m^3', {'v_i': 1.0}], ['Altitude for period: T = 40554.74657601441 s', {'h': 19134409.799999997}], ['Ballistic coefficient: m = 1000 kg, CD = 1.2, A = 1.5 m^2', {'beta': 555.5555555555555}], ['Peak deceleration: m = 1000 kg, CD = 1, A = 1 m^2, VE = 7 km/s, gamma_e = 90 deg', {'a_max': 1251.8119873194914}], ['Jet endurance: c = 1 1/h, LD = 15, W0 = 271.8281828459045 kN, W1 = 100 kN', {'E_h': 15.0}], ['Breguet range: V = 200 m/s, c = 1 1/h, LD = 15, W0 = 271.8281828459045 kN, W1 = 100 kN', {'t_h': 15.0}], ['Propeller range: eta = 0.8, c = 0.0000001 kg/J, LD = 15, W0 = 27.18281828459045 kN, W1 = 10 kN', {'R': 12236594.555735141}], ['Calibrated airspeed: V = 150 kt, hp = 0 ft', {'CAS_kt': 150.0}], ['Characteristic velocity: Tc = 3000 K, Mw = 20 g/mol, gamma = 1.2', {'c_star': 1721.9949258687907}], ['Choked mass flow: p0 = 100 kPa, T0 = 300 K, A = 10 cm^2', {'T_star': 250.0}], ['Circular orbit: h = 19134.409799999998 km', {'v': 3952.6829834519262}], ['Critical Mach: Cp0 = -0.43, rule = prandtl-glauert', {'M_cr': 0.737105914227}], ['Gravity loss: Isp = 300 s, m0 = 4 t, mf = 1 t, tb = 100 s', {'loss': 980.665}], ['Density altitude: hp = 0 ft, T = 15 °C', {'h_rho': 0.0}], ['Drag polar: CD0 = 0.02, AR = 10, e = 0.8', {'LD_max': 17.724538509055158}], ['Elliptic wing: AR = 2, alpha = 0.1 rad', {'CL': 0.3141592653589793}], ['Escape speed: h = 0 km', {'v_esc': 11179.875765918125}], ['Expansion fan: M1 = 1, theta = 26.379760813416457 deg', {'M2': 2.0}], ['Fanno flow: M = 2', {'T_Tstar': 0.6666666666666666}], ['Flight condition: V = 100 m/s, h = 0 m', {'M': 0.2938634484456367, 'EAS': 100.0}], ['Geopotential height: h = 0 km', {'H': 0.0}], ['Glide range: h = 2000 m, LD = 15', {'range': 30000.0}], ['Exhaust velocity: Tc = 3000 K, Mw = 20 g/mol, gamma = 1.4, pc = 1 MPa, pe = 127.80452546295093 kPa', {'Me': 2.0}], ['Identical stages: n = 1, dv = 4078.4710789429123 m/s, Isp = 300 s, eps = 0.1', {'lam': 0.2}], ['Induced drag: W = 10 kN, S = 16 m^2, V = 50 m/s, h = 0 m, AR = 8, e = 0.8', {'Di': 203.00389382789197}], ['ISA properties: h = 0 m', {'T': 288.15, 'p': 101325.0}], ['Isentropic flow: M = 2', {'A_Astar': 1.6875, 'T0_T': 1.8}], ['Nodal regression: hp = 19134.409799999998 km, i = 60 deg', {'raan_rate': -7.86247929122071e-09}], ['Fuel for range: R = 10800 km, V = 200 m/s, c = 1 1/h, LD = 15, W0 = 271.8281828459045 kN', {'W1': 100000.0}], ['Jet range at constant altitude: W0 = 400 kN, W1 = 100 kN, S = 100 m^2, h = 0 m, CL = 0.5, CD = 0.05, c = 0.00001 kg/(N*s)', {'t': 141362.68359938313}], ['Lambert problem: r1 = [7000, 0, 0], r2 = [0, 7000, 0], tof = 1457.1291594215038 s', {'v2': [-7.546053290107541, 0.0, 0.0]}], ['Landing roll: W = 10 kN, S = 10 m^2, h = 0 m, VTD = 30 m/s, mu = 0.4, CL = 0.25, CD = 0.1', {'s': 114.71807396001692}], ['Lift coefficient in level flight: W = 10 kN, S = 16 m^2, V = 50 m/s, h = 0 m', {'CL': 0.40816354655988973}], ['Level turn at bank angle: V = 100 m/s, phi = 45 deg', {'R': 1019.7162129779283}], ['Level turn at load factor: V = 100 m/s, n = 2', {'phi_deg': 60.0}], ['Mach from area ratio: ar = 1.6875, regime = supersonic', {'M': 2.0}], ['Mach from pitot: p = 10 kPa, pt = 18.92929158737854 kPa', {'M': 1.0}], ['Mach from Prandtl-Meyer angle: nu = 26.379760813416457 deg', {'M': 2.0}], ['Mach from pressure ratio: p0/p = 7.824449066867265', {'M': 2.0}]]
+
+
+def _close(a, b):
+    if isinstance(b, list):
+        return isinstance(a, (list, tuple)) and len(a) == len(b) and all(_close(x, y) for x, y in zip(a, b))
+    try:
+        return abs(complex(a) - complex(b)) <= 1e-6 * max(1.0, abs(complex(b)))
+    except (TypeError, ValueError):
+        return a == b
+
+
+def checks(P) -> dict:
+    out = {"certified_procedures": len(P.pack().procedures) == 80,
+           "refuses_nonsense": not P.ask("What is it?").solved}
+    for i, (q, want) in enumerate(QUESTIONS):
+        a = P.ask(q)
+        out[f"question_{i}"] = a.solved and all(_close(a.values.get(k), v) for k, v in want.items())
+    return out
