@@ -219,6 +219,10 @@ $$
 - **Assumes:** -1000 $m  \leq  h  \leq  47000$ m
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Temperature of the International Standard Atmosphere from 0 to 47 km, 95 altitudes computed by the package (it covers the atmosphere to 47 km): 288](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-isa-properties-profile.svg)
+
+*Temperature of the International Standard Atmosphere from 0 to 47 km, 95 altitudes computed by the package (it covers the atmosphere to 47 km): 288.15 K at sea level, the tropospheric lapse to 216.774 K at 11 km (marked), the isothermal layer (coldest computed point 216.65 K at 11.5 km) and the warming stratosphere, 269.684 K at 47 km.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_isa_properties', h=0.0)
 # -> T = 288.15 K, p = 101325 Pa, rho = 1.225 kg/m^3, a = 340.294 m/s, mu = 1.78938e-05 Pa*s, sigma = 1, delta = 1, theta = 1, H = 0 m   (SOLVED)
@@ -689,6 +693,10 @@ $$
 - **Method:** $p_{2}/p_{1} = 1 + 2g/(g+1)$$(M_{1}^{2} - 1)$; rho2/rho1 = (g+1)$M_{1}^{2}$/((g-1)M1^2 + 2); M2^2 = (1 + (g-1)/2 $M_{1}^{2})/(g$ M1^2 - (g-1)/2)
 - **Assumes:** $1 < M_{1}  \leq  20$; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![The normal-shock table for air (γ = 1](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-normal-shock-heatmap.svg)
+
+*The normal-shock table for air (γ = 1.4): for upstream Mach numbers M₁ = 1.5, 2, 3, 4, 5 (rows, top to bottom) the downstream Mach number and the pressure, density, temperature and stagnation-pressure ratios, every cell computed by the package and each column shaded by its own largest value; at M₁ = 2: M₂ = 0.57735, p₂/p₁ = 4.5, ρ₂/ρ₁ = 2.66667, T₂/T₁ = 1.6875, p₀₂/p₀₁ = 0.720874.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_normal_shock', M1=2.0)
@@ -1885,6 +1893,10 @@ $$
 - **Assumes:** 100 $km  \leq  h_{1} < h_{2}  \leq  hb$; coplanar circular orbits, impulsive burns, two-body Earth
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![The three burns of bi-elliptic transfers from a circular orbit of r₁ = 12756](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-bielliptic-transfer-bars.svg)
+
+*The three burns of bi-elliptic transfers from a circular orbit of r₁ = 12756.3 km to 15 r₁ around the Earth, stacked, for five intermediate apoapses, against the Hohmann transfer's 2.99743 km/s, all from the package; totals r_b = 17 r₁: 2.99791 km/s; r_b = 25 r₁: 2.9904 km/s; r_b = 35 r₁: 2.97848 km/s; r_b = 45 r₁: 2.96888 km/s; r_b = 60 r₁: 2.95846 km/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_bielliptic_transfer', h1=6378136.6, h2=19134409.799999997, hb=19134409.799999997)
 # -> dv1 = 864.766 m/s, dv2 = 725.331 m/s, dv3 = 0 m/s, dv = 1590.1 m/s, t = 33447.9 s, t_days = 0.387129, dv_hohmann = 1590.1 m/s   (SOLVED)
@@ -2128,6 +2140,10 @@ $$
 - **Assumes:** 2 deg <= gamma_e <= 90 deg; $0  \leq  h  \leq  40$ H; straight-line path, gravity and lift neglected, exponential atmosphere
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Speed against altitude of a ballistic entry (m = 1000 kg, C_D = 1, A = 1 m², entry speed 7 km/s, vertical), 91 altitudes computed by the package; marked: peak deceleration 127](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-ballistic-entry-velocity-profile.svg)
+
+*Speed against altitude of a ballistic entry (m = 1000 kg, C_D = 1, A = 1 m², entry speed 7 km/s, vertical), 91 altitudes computed by the package; marked: peak deceleration 127.649 g at h = 15.6746 km, V = 4.24571 km/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_ballistic_entry_velocity', m=1000.0, CD=1.0, A=1.0, VE=7000.0, gamma_e=1.5707963267948966, h=15674.557464134641)
 # -> V = 4245.71 m/s, n = 127.649, a = 1251.81 m/s^2   (SOLVED)
@@ -2168,6 +2184,10 @@ $$
 - **Method:** K = 1/(pi e AR); $CL_{md} = \sqrt{\frac{CD_{0}}{K}}$, (L/D)max = 1/(2 sqrt(CD0 K)); $CL_mp = sqrt$(3 CD0/K), $CD = 4$ CD0; $CL_mr = sqrt$($CD0/(3K)$), $CD = 4/3$ CD0
 - **Assumes:** $0.002  \leq  CD0  \leq  0.2$; $1  \leq  AR  \leq  50$; $0.3  \leq  e  \leq  1$; parabolic drag polar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Drag polar C_D = C_D0 + C_Di for C_D0 = 0](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-drag-polar-optimum-scatter.svg)
+
+*Drag polar C_D = C_D0 + C_Di for C_D0 = 0.02, aspect ratio 10 and Oswald factor 0.8: the induced drag at 41 speeds from the package (W = 10000 N, S = 16 m², sea level); the tangent from the origin touches at the best lift-to-drag point it computes — marked: C_D = 0.04, C_L = 0.708982, L/D = 17.7245.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_drag_polar_optimum', CD0=0.02, AR=10.0, e=0.8)
@@ -3131,6 +3151,10 @@ $$
 - **Method:** WCA = asin(Vw sin(W - C)/TAS); heading = C + WCA; GS = TAS cos(WCA) - Vw cos(W - C)
 - **Assumes:** crosswind component below 0.99 TAS; positive ground speed; angles in [0, 360] degrees
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Ground speed for every course (5° steps) of an aircraft flying 100 m/s through a 20 m/s wind from 300°, each solved by the package's wind triangle: slowest 80 m/s heading into the wind (course 300°), fastest 120 m/s with it (course 120°, marked); largest wind correction 11](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-wind-triangle-polar.svg)
+
+*Ground speed for every course (5° steps) of an aircraft flying 100 m/s through a 20 m/s wind from 300°, each solved by the package's wind triangle: slowest 80 m/s heading into the wind (course 300°), fastest 120 m/s with it (course 120°, marked); largest wind correction 11.537°.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_wind_triangle', TAS=100.0, course=1.5707963267948966, wind_from=1.5707963267948966, wind_speed=20.0)

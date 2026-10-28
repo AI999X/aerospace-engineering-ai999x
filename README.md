@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/aerospace-engineering-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.1
 
 Field: **Engineering** · Tasks: Question Answering, Token Classification, Text Classification, Sentence Similarity, Feature Extraction
 
@@ -27,7 +27,7 @@ aerospace-engineering-ai999x is an offline, deterministic Python solver that ans
 
 | Property | Value |
 |---|---|
-| Package | `aerospace-engineering-ai999x` 1.0.0 (import `aerospace_engineering_ai999x`) |
+| Package | `aerospace-engineering-ai999x` 1.0.1 (import `aerospace_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic aerospace engineering engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 80 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -61,7 +61,18 @@ aerospace_engineering.ask("Who created you?").message
 # -> aerospace-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `aerospace-engineering-ai999x "<question>"`, `aerospace-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on aerospace-engineering-ai999x 1.0.0.
+Command line: `aerospace-engineering-ai999x "<question>"`, `aerospace-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on aerospace-engineering-ai999x 1.0.1.
+
+## Find the right capability, and draw it
+
+`aerospace_engineering.search()` finds which certified capability a question is about — across **every** AI999X model, so a question for another model points you to it. It runs **[ai999x-encoder](https://huggingface.co/AI999X/ai999x-encoder)**, AI999X's own capability encoder (4.7M parameters, a 4.9 MB ONNX model, offline; the root `model.safetensors` of this repository): `pip install "aerospace-engineering-ai999x[search]"`. `ask(question, suggest=True)` adds the same pointers to a question it does not answer; an answer itself never changes.
+
+```python
+import aerospace_engineering_ai999x as aerospace_engineering
+
+aerospace_engineering.search("Solve x^2 - 5x + 6 = 0", k=2)
+# -> Roots of a quadratic equation (math-foundations-ai999x, 0.63); Roots of a cubic equation (math-foundations-ai999x, 0.59)
+```
 
 ## How every answer is verified
 
@@ -71,6 +82,122 @@ Command line: `aerospace-engineering-ai999x "<question>"`, `aerospace-engineerin
 4. **Checking** — dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
+
+## Worked examples
+
+Each question was put to `aerospace-engineering-ai999x`; the answer is the one it returned, with the steps it took.
+
+**Standard atmosphere at an altitude** · _Standard atmosphere_
+
+> ISA properties: h = 35000 ft
+
+→ **T = 218.9241756 K, p = 23908.90662 Pa, rho = 0.380455436 kg/m^3, a = 296.6142276 m/s, mu = 1.434083685e-05 Pa*s, sigma = 0.3105760801, delta = 0.2359625622, theta = 0.7597576804, H = 10650.12683 m**
+
+<details><summary>Steps</summary>
+
+- Standard atmosphere at an altitude: h = 35000 ft → T = 218.9241756 K, p = 23908.90662 Pa, rho = 0.380455436 kg/m^3, a = 296.6142276 m/s, mu = 1.434083685e-05 Pa*s, sigma = 0.3105760801 kg/m^3, delta = 0.2359625622 kg/m^3, theta = 0.7597576804 kg/m^3, H = 10650.12683 m
+
+</details>
+
+**Normal shock relations** · _Compressible flow_
+
+> Normal shock: M1 = 2
+
+→ **M2 = 0.5773502692, p2_p1 = 4.5, T2_T1 = 1.6875, rho2_rho1 = 2.666666667, p02_p01 = 0.7208738615, p02_p1 = 5.640440813**
+
+<details><summary>Steps</summary>
+
+- Normal shock relations: M1 = 2 → M2 = 0.5773502692, p2_p1 = 4.5, T2_T1 = 1.6875, rho2_rho1 = 2.666666667, p02_p01 = 0.7208738615, p02_p1 = 5.640440813
+
+</details>
+
+**True airspeed from calibrated airspeed** · _Airspeeds_
+
+> True airspeed: CAS = 250 kt, hp = 30000 ft
+
+→ **TAS = 202.4112964 m/s, TAS_kt = 393.4560838, qc = 10498.2154 Pa, M = 0.6675168197**
+
+<details><summary>Steps</summary>
+
+- True airspeed from calibrated airspeed: CAS = 128.6111111 m/s, hp = 30000 ft → TAS = 202.4112964 m/s, TAS_kt = 393.4560838 m/s, qc = 10498.2154 Pa, M = 0.6675168197 m/s
+
+</details>
+
+**Breguet range of a jet aircraft** · _Aircraft performance_
+
+> Breguet range: V = 230 m/s, c = 0.6 1/h, LD = 17, W0 = 2000 kN, W1 = 1500 kN
+
+→ **R = 6749021.42 m, R_km = 6749.02142, t = 29343.57139 s, t_h = 8.150992053**
+
+<details><summary>Steps</summary>
+
+- Breguet range of a jet aircraft: V = 230 m/s, c = 1.699527022e-05 kg/(N*s), LD = 17, W0 = 2000 kN, W1 = 1500 kN → R = 6749021.42 m, R_km = 6749.02142 m, t = 29343.57139 s, t_h = 8.150992053 m
+
+</details>
+
+**Oblique shock from the deflection angle** · _Compressible flow_
+
+`m.solve("aero_oblique_shock", M1=2, theta="10 deg")`
+
+→ **beta_deg = 39.31393184, M2 = 1.640522229, p2_p1 = 1.706578604, T2_T1 = 1.170151284, rho2_rho1 = 1.458425613, p02_p01 = 0.9846440225, Mn1 = 1.267138036**
+
+<details><summary>Steps</summary>
+
+- Oblique shock from the deflection angle: M1 = 2, theta = 10 deg → beta_deg = 39.31393184, M2 = 1.640522229, p2_p1 = 1.706578604, T2_T1 = 1.170151284, rho2_rho1 = 1.458425613, p02_p01 = 0.9846440225, Mn1 = 1.267138036
+
+</details>
+
+**Critical Mach number of an airfoil** · _Aerodynamics_
+
+> Critical Mach: Cp0 = -0.43, rule = prandtl-glauert
+
+→ **M_cr = 0.7371059142, Cp_cr = -0.6363043586**
+
+<details><summary>Steps</summary>
+
+- Critical Mach number of an airfoil: Cp0 = -0.43, rule = prandtl-glauert → M_cr = 0.7371059142, Cp_cr = -0.6363043586
+
+</details>
+
+## Figures
+
+Every point was computed by `aerospace-engineering-ai999x`.
+
+**The standard atmosphere: temperature with altitude**
+
+![The standard atmosphere: temperature with altitude — computed by aerospace-engineering-ai999x](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-isa-properties-profile.svg)
+
+_Temperature of the International Standard Atmosphere from 0 to 47 km, 95 altitudes computed by the package (it covers the atmosphere to 47 km): 288.15 K at sea level, the tropospheric lapse to 216.774 K at 11 km (marked), the isothermal layer (coldest computed point 216.65 K at 11.5 km) and the warming stratosphere, 269.684 K at 47 km._
+
+**Ground speed around the compass in a wind**
+
+![Ground speed around the compass in a wind — computed by aerospace-engineering-ai999x](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-wind-triangle-polar.svg)
+
+_Ground speed for every course (5° steps) of an aircraft flying 100 m/s through a 20 m/s wind from 300°, each solved by the package's wind triangle: slowest 80 m/s heading into the wind (course 300°), fastest 120 m/s with it (course 120°, marked); largest wind correction 11.537°._
+
+**Drag polar and the best lift-to-drag ratio**
+
+![Drag polar and the best lift-to-drag ratio — computed by aerospace-engineering-ai999x](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-drag-polar-optimum-scatter.svg)
+
+_Drag polar C_D = C_D0 + C_Di for C_D0 = 0.02, aspect ratio 10 and Oswald factor 0.8: the induced drag at 41 speeds from the package (W = 10000 N, S = 16 m², sea level); the tangent from the origin touches at the best lift-to-drag point it computes — marked: C_D = 0.04, C_L = 0.708982, L/D = 17.7245._
+
+**The normal-shock table**
+
+![The normal-shock table — computed by aerospace-engineering-ai999x](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-normal-shock-heatmap.svg)
+
+_The normal-shock table for air (γ = 1.4): for upstream Mach numbers M₁ = 1.5, 2, 3, 4, 5 (rows, top to bottom) the downstream Mach number and the pressure, density, temperature and stagnation-pressure ratios, every cell computed by the package and each column shaded by its own largest value; at M₁ = 2: M₂ = 0.57735, p₂/p₁ = 4.5, ρ₂/ρ₁ = 2.66667, T₂/T₁ = 1.6875, p₀₂/p₀₁ = 0.720874._
+
+**Bi-elliptic burns against a Hohmann transfer**
+
+![Bi-elliptic burns against a Hohmann transfer — computed by aerospace-engineering-ai999x](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-bielliptic-transfer-bars.svg)
+
+_The three burns of bi-elliptic transfers from a circular orbit of r₁ = 12756.3 km to 15 r₁ around the Earth, stacked, for five intermediate apoapses, against the Hohmann transfer's 2.99743 km/s, all from the package; totals r_b = 17 r₁: 2.99791 km/s; r_b = 25 r₁: 2.9904 km/s; r_b = 35 r₁: 2.97848 km/s; r_b = 45 r₁: 2.96888 km/s; r_b = 60 r₁: 2.95846 km/s._
+
+**Ballistic entry: speed with altitude**
+
+![Ballistic entry: speed with altitude — computed by aerospace-engineering-ai999x](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-ballistic-entry-velocity-profile.svg)
+
+_Speed against altitude of a ballistic entry (m = 1000 kg, C_D = 1, A = 1 m², entry speed 7 km/s, vertical), 91 altitudes computed by the package; marked: peak deceleration 127.649 g at h = 15.6746 km, V = 4.24571 km/s._
 
 ## Capabilities
 
@@ -95,10 +222,10 @@ Capabilities are certified before they ship: each must reproduce hand-worked ref
 ## Citation
 
 ```bibtex
-@software{aerospace_engineering_ai999x_1_0_0,
+@software{aerospace_engineering_ai999x_1_0_1,
   title  = {aerospace-engineering-ai999x: an offline, verified aerospace engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.0},
+  year   = {2026}, version = {1.0.1},
   url    = {https://huggingface.co/AI999X/aerospace-engineering-ai999x}
 }
 ```
