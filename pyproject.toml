@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aerospace-engineering-ai999x"
-version = "1.0.2"
+version = "1.0.3"
 description = "Offline aerospace engineering solver: the standard atmosphere, airspeeds, compressible flow and shocks, nozzles and rocket engines, rocket performance and staging, aircraft performance, stability, propellers, wings, orbits and re-entry, with steps, LaTeX and honest refusals"
 readme = "README.md"
 requires-python = ">=3.10"
