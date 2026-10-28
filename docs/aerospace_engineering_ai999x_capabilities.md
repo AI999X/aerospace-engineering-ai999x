@@ -223,6 +223,14 @@ $$
 
 *Temperature of the International Standard Atmosphere from 0 to 47 km, 95 altitudes computed by the package (it covers the atmosphere to 47 km): 288.15 K at sea level, the tropospheric lapse to 216.774 K at 11 km (marked), the isothermal layer (coldest computed point 216.65 K at 11.5 km) and the warming stratosphere, 269.684 K at 47 km.*
 
+![The International Standard Atmosphere to 47 km from the package at 48 altitudes: temperature (top) and the pressure and density ratios on a logarithmic axis (bottom)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-isa-properties-profile-2)
+
+*The International Standard Atmosphere to 47 km from the package at 48 altitudes: temperature (top) and the pressure and density ratios on a logarithmic axis (bottom). Marked: the worked example at h = 0 m: T = 288.15 K, p = 101325 Pa, ρ = 1.225 kg/m³, speed of sound 340.294 m/s, σ = 1, δ = 1.*
+
+![rho (density) against h (geometric altitude above mean sea level (m, km, ft), -1 km to 47 km) from -1 m to 1 m](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-isa-properties-curve)
+
+*rho (density) against h (geometric altitude above mean sea level (m, km, ft), -1 km to 47 km) from -1 m to 1 m. 41 points computed by aerospace-engineering-ai999x; marked: the worked example, h = 0 m, rho = 1.225 kg/m^3.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_isa_properties', h=0.0)
 # -> T = 288.15 K, p = 101325 Pa, rho = 1.225 kg/m^3, a = 340.294 m/s, mu = 1.78938e-05 Pa*s, sigma = 1, delta = 1, theta = 1, H = 0 m   (SOLVED)
@@ -272,6 +280,14 @@ $$
 - **Method:** invert p(H) layer by layer: $H = Hb + (T - Tb)/L$ with $T = Tb$ (p/pb)^(-R L/g0), or H = Hb + (R Tb/g0) ln(pb/p) in an isothermal layer; $h = r_{0}$ $H/(r_{0} - H)$
 - **Assumes:** p within the standard atmosphere between -1 km and 47 km
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Pressure altitude read off the standard atmosphere: the package's ISA pressure at 41 altitudes to 40 km (logarithmic pressure axis)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-pressure-altitude-profile)
+
+*Pressure altitude read off the standard atmosphere: the package's ISA pressure at 41 altitudes to 40 km (logarithmic pressure axis). Marked: the worked example's pressure 101325 Pa gives the package's pressure altitude h = 0 m (0 ft), standard temperature 288.15 K.*
+
+![h (pressure altitude (geometric)) against p (static pressure (Pa, hPa, inHg, psi)) from 50662](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-pressure-altitude-curve)
+
+*h (pressure altitude (geometric)) against p (static pressure (Pa, hPa, inHg, psi)) from 50662.5 Pa to 151988 Pa. Outputs with the same unit drawn together: H (geopotential pressure altitude). 19 points computed by aerospace-engineering-ai999x; marked: the worked example, p = 101325 Pa, h = 0 m.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_pressure_altitude', p=101325.0)
@@ -325,6 +341,14 @@ $$
 - **Assumes:** 150 $K  \leq  T  \leq  350$ K; -1 $km  \leq  hp  \leq  47$ km; the density within the standard atmosphere
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Density altitude: the standard altitude with the same air density](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-density-altitude-profile)
+
+*Density altitude: the standard altitude with the same air density. The curve is the package's ISA density ratio at 41 altitudes to 20 km. Marked: the worked example (pressure altitude 0.0 m, temperature 288.15 K) has ρ = 1.225 kg/m³, σ = 1 and the package's density altitude 0 m (0 ft).*
+
+![h_rho (density altitude (geometric)) against T (outside air temperature (K, °C, °F)) from 259](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-density-altitude-curve)
+
+*h_rho (density altitude (geometric)) against T (outside air temperature (K, °C, °F)) from 259.335 K to 316.965 K. Other inputs as in the worked example: hp = 0.0 m. 29 points computed by aerospace-engineering-ai999x; marked: the worked example, T = 288.15 K, h_rho = 0 m.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_density_altitude', hp=0.0, T=288.15)
 # -> rho = 1.225 kg/m^3, sigma = 1, h_rho = 0 m, h_rho_ft = 0, p = 101325 Pa   (SOLVED)
@@ -373,6 +397,10 @@ $$
 - **Assumes:** $0  \leq  h  \leq  1000$ km; inverse-square gravity with $r_{0} = 6356766$ m
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![H (geopotential height) against h (geometric altitude (m, km, ft), 0 to 1000 km) from -1 m to 1 m](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-geopotential-altitude-curve)
+
+*H (geopotential height) against h (geometric altitude (m, km, ft), 0 to 1000 km) from -1 m to 1 m. Outputs with the same unit drawn together: dH (geometric minus geopotential height). 16 points computed by aerospace-engineering-ai999x; marked: the worked example, h = 0 m, H = 0 m.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_geopotential_altitude', h=0.0)
 # -> H = 0 m, g = 9.80665 m/s^2, dH = 0 m   (SOLVED)
@@ -418,6 +446,14 @@ $$
 - **Method:** $M = V/sqrt$(gamma R T); $qc = p$[(1 + 0.2 M^2)^3.5 - 1]; CAS = a0 sqrt(5[$(qc/p_{0} + 1)^{2/7} - 1$])
 - **Assumes:** $V > 0$; flight Mach number below 1; -1 $km  \leq  hp  \leq  47$ km; 150 $K  \leq  T  \leq  350$ K
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![CAS (calibrated airspeed) against V (true airspeed (m/s, km/h, kt)) from 50 m/s to 150 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-calibrated-airspeed-curve)
+
+*CAS (calibrated airspeed) against V (true airspeed (m/s, km/h, kt)) from 50 m/s to 150 m/s. Other inputs as in the worked example: hp = 0.0 m. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, V = 100 m/s, CAS = 100 m/s.*
+
+![CAS (calibrated airspeed) over V (true airspeed (m/s, km/h, kt)) from 50 m/s to 150 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 49](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-calibrated-airspeed-field)
+
+*CAS (calibrated airspeed) over V (true airspeed (m/s, km/h, kt)) from 50 m/s to 150 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 49.9976 m/s to dark 150.007 m/s); iso-lines at CAS = 60, 80, 100, 120, 140 m/s. Marked: the worked example, V = 100 m/s, hp = 0 m, CAS = 100 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_calibrated_airspeed', V=100.0, hp=0.0)
@@ -465,6 +501,14 @@ $$
 - **Assumes:** 0 < CAS < a0; subsonic flight; -1 $km  \leq  hp  \leq  47$ km; 150 $K  \leq  T  \leq  350$ K
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![TAS (true airspeed) against CAS (calibrated airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-true-airspeed-from-calibrated-curve)
+
+*TAS (true airspeed) against CAS (calibrated airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s. Other inputs as in the worked example: hp = 0.0 m. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, CAS = 100 m/s, TAS = 100 m/s.*
+
+![TAS (true airspeed) over CAS (calibrated airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 49](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-true-airspeed-from-calibrated-field)
+
+*TAS (true airspeed) over CAS (calibrated airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 49.9976 m/s to dark 150.007 m/s); iso-lines at TAS = 60, 80, 100, 120, 140 m/s. Marked: the worked example, CAS = 100 m/s, hp = 0 m, TAS = 100 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_true_airspeed_from_calibrated', CAS=100.0, hp=0.0)
 # -> TAS = 100 m/s, TAS_kt = 194.384, qc = 6258.37 Pa, M = 0.293863   (SOLVED)
@@ -507,6 +551,14 @@ $$
 - **Method:** subsonic: pt/p = (1 + (g-1)/2 $M^{2})^(g/(g-1)$); supersonic: Rayleigh pitot formula $pt2/p_{1}$ = [$(g+1)^{2}$ M^2/(4 g $M^{2} - 2$(g-1))]^(g/(g-1)) (1 - g + 2 g M^2)/(g+1), solved by bisection
 - **Assumes:** $pt > p > 0$; $M  \leq  20$; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![M (flight Mach number) against pt (pitot (total) pressure measured by the probe) from 9464](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-mach-from-pitot-curve)
+
+*M (flight Mach number) against pt (pitot (total) pressure measured by the probe) from 9464.65 Pa to 28393.9 Pa. One curve for each value of p (static pressure): 10000 Pa, 5000 Pa, 20000 Pa. 30 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, pt = 18929.3 Pa, M = 1.*
+
+![M (flight Mach number) over p (static pressure) from 5000 Pa to 15000 Pa and pt (pitot (total) pressure measured by the probe) from 9464](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-mach-from-pitot-field)
+
+*M (flight Mach number) over p (static pressure) from 5000 Pa to 15000 Pa and pt (pitot (total) pressure measured by the probe) from 9464.65 Pa to 28393.9 Pa: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 0.0470404 to dark 2.00748); iso-lines at M = 0.5, 1, 1.5; blank cells: inputs the capability refuses. Marked: the worked example, p = 10000 Pa, pt = 18929.3 Pa, M = 1.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_mach_from_pitot', p=10000.0, pt=18929.29158737854)
@@ -558,6 +610,14 @@ $$
 - **Assumes:** $0.01  \leq  M  \leq  10$; $1.05  \leq  \gamma  \leq  1.7$; isentropic flow of a calorically perfect gas
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Isentropic flow of air (γ = 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-isentropic-flow-chart)
+
+*Isentropic flow of air (γ = 1.4): area, pressure, density and temperature ratios against Mach number, 61 runs of the package from M = 0.1 to 4, logarithmic axis; A/A* has its minimum, 1, at M = 1. Marked: the worked example M = 2: A/A* = 1.6875, p0/p = 7.82445, ρ0/ρ = 4.34692, T0/T = 1.8.*
+
+![p0_p (stagnation-to-static pressure ratio p0/p) against M (Mach number (0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-isentropic-flow-curve)
+
+*p0_p (stagnation-to-static pressure ratio p0/p) against M (Mach number (0.01 to 10)) from 0.2 to 20 on a logarithmic axis, logarithmic output axis. 34 points computed by aerospace-engineering-ai999x; marked: the worked example, M = 2, p0_p = 7.82445.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_isentropic_flow', M=2.0)
 # -> T0_T = 1.8, p0_p = 7.82445, rho0_rho = 4.34692, A_Astar = 1.6875   (SOLVED)
@@ -603,6 +663,14 @@ $$
 - **Assumes:** $1  \leq  A/A$* <= 10000; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![A converging–diverging nozzle (drawn 12 throat radii long, with a stated inlet area ratio of 3) and the worked example's exit area ratio A/A* = 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-mach-from-area-ratio-nozzle)
+
+*A converging–diverging nozzle (drawn 12 throat radii long, with a stated inlet area ratio of 3) and the worked example's exit area ratio A/A* = 1.6875, drawn with radius ∝ √(A/A*), over the Mach number along it: at 41 stations the package's Mach number for the local area ratio (subsonic before the throat, supersonic after). Marked: exit M = 2, where it returns p/p0 = 0.127805 and T/T0 = 0.555556.*
+
+![M (Mach number) against ar (area ratio A/A* (>= 1)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-mach-from-area-ratio-curve)
+
+*M (Mach number) against ar (area ratio A/A* (>= 1)) from 0.84375 to 2.53125. One curve for each value of regime (which branch: subsonic or supersonic): supersonic, subsonic. 28 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, ar = 1.6875, M = 2.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_mach_from_area_ratio', ar=1.6875, regime='supersonic')
 # -> M = 2, p_p0 = 0.127805, T_T0 = 0.555556   (SOLVED)
@@ -646,6 +714,10 @@ $$
 - **Method:** $M = sqrt$($2/(g-1)$ [$(p_{0}/p)$^((g-1)/g) - 1])
 - **Assumes:** $1 < p_{0}/p  \leq  1e6$; $M  \leq  20$; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![M (Mach number) against pr (stagnation-to-static pressure ratio p0/p (> 1)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-mach-from-pressure-ratio-curve)
+
+*M (Mach number) against pr (stagnation-to-static pressure ratio p0/p (> 1)) from 0.782445 to 78.2445 on a logarithmic axis. 38 points computed by aerospace-engineering-ai999x; marked: the worked example, pr = 7.82445, M = 2.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_mach_from_pressure_ratio', pr=7.824449066867265)
@@ -698,6 +770,14 @@ $$
 
 *The normal-shock table for air (γ = 1.4): for upstream Mach numbers M₁ = 1.5, 2, 3, 4, 5 (rows, top to bottom) the downstream Mach number and the pressure, density, temperature and stagnation-pressure ratios, every cell computed by the package and each column shaded by its own largest value; at M₁ = 2: M₂ = 0.57735, p₂/p₁ = 4.5, ρ₂/ρ₁ = 2.66667, T₂/T₁ = 1.6875, p₀₂/p₀₁ = 0.720874.*
 
+![A normal shock in air (γ = 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-normal-shock-shock)
+
+*A normal shock in air (γ = 1.4) at M1 = 2.0 (the worked example), the package's downstream state. Arrow lengths follow the speed ratio, ρ1/ρ2 by continuity (derived). Marked: M2 = 0.57735, p2/p1 = 4.5, T2/T1 = 1.6875, ρ2/ρ1 = 2.66667, stagnation-pressure ratio 0.720874.*
+
+![p2_p1 (static pressure ratio p2/p1) against M1 (upstream Mach number (> 1)) from 1 to 3](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-normal-shock-curve)
+
+*p2_p1 (static pressure ratio p2/p1) against M1 (upstream Mach number (> 1)) from 1 to 3. 30 points computed by aerospace-engineering-ai999x; marked: the worked example, M1 = 2, p2_p1 = 4.5.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_normal_shock', M1=2.0)
 # -> M2 = 0.57735, p2_p1 = 4.5, T2_T1 = 1.6875, rho2_rho1 = 2.66667, p02_p01 = 0.720874, p02_p1 = 5.64044   (SOLVED)
@@ -748,6 +828,14 @@ $$
 - **Assumes:** $1 < M_{1}  \leq  20$; 0 < theta < theta_max(M1) (attached shock); $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Supersonic flow at M1 = 2](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-oblique-shock-shock)
+
+*Supersonic flow at M1 = 2.0 over a wedge of θ = 10.6229° (the worked example, weak branch, γ = 1.4). The shock leaves the wedge tip at β = 40° and turns the flow by θ = 10.6229° parallel to the wedge. Marked: M2 = 1.61732, p2/p1 = 1.76149, T2/T1 = 1.18177 (also ρ2/ρ1 = 1.49056, p02/p01 = 0.981791, normal Mach 1.28558).*
+
+![beta_deg (shock wave angle in degrees) against M1 (upstream Mach number (> 1)) from 1 to 3](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-oblique-shock-curve)
+
+*beta_deg (shock wave angle in degrees) against M1 (upstream Mach number (> 1)) from 1 to 3. One curve for each value of theta (flow deflection (wedge half-) angle (deg, rad)): 0.185405 rad, 0.392699 rad. 24 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, M1 = 2, beta_deg = 40.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_oblique_shock', M1=2.0, theta=0.18540474909716562)
 # -> beta_deg = 40, M2 = 1.61732, p2_p1 = 1.76149, T2_T1 = 1.18177, rho2_rho1 = 1.49056, p02_p01 = 0.981791, Mn1 = 1.28558   (SOLVED)
@@ -789,6 +877,10 @@ $$
 - **Method:** $\nu = sqrt$($(g+1)/(g-1)$) atan(sqrt($(g-1)/(g+1)$$(M^{2} - 1)$)) - atan(sqrt(M^2 - 1))
 - **Assumes:** $1  \leq  M  \leq  50$; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![nu_deg (Prandtl-Meyer angle in degrees) against M (Mach number (>= 1)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-prandtl-meyer-curve)
+
+*nu_deg (Prandtl-Meyer angle in degrees) against M (Mach number (>= 1)) from 0.5 to 1.5. 16 points computed by aerospace-engineering-ai999x; marked: the worked example, M = 1, nu_deg = 0.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_prandtl_meyer', M=1.0)
@@ -832,6 +924,10 @@ $$
 - **Method:** invert nu(M) by bisection; nu_max = (sqrt($(g+1)/(g-1)$) - 1) $pi/2$
 - **Assumes:** $0  \leq  \nu < \nu$(M = 50); $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![M (Mach number) against nu (Prandtl-Meyer angle (deg, rad)) from 0 rad to 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-mach-from-prandtl-meyer-curve)
+
+*M (Mach number) against nu (Prandtl-Meyer angle (deg, rad)) from 0 rad to 1.5708 rad. 41 points computed by aerospace-engineering-ai999x; marked: the worked example, nu = 0.460414 rad, M = 2.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_mach_from_prandtl_meyer', nu=0.46041368208269473)
@@ -881,6 +977,14 @@ $$
 - **Assumes:** $1  \leq  M_{1}  \leq  20$; $0 < \theta < 90$ deg; downstream Mach below 50; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![A Prandtl–Meyer expansion around a corner turning the flow by θ = 26](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-expansion-fan-shock)
+
+*A Prandtl–Meyer expansion around a corner turning the flow by θ = 26.3798° from M1 = 1 (the worked example, γ = 1.4). The fan spreads from the leading Mach wave at μ1 = 90° to the upstream flow to the trailing wave at μ2 = 30° to the turned flow (Mach angles asin(1/M), derived). Marked: the package's M2 = 2, ν1 = 0°, ν2 = 26.3798°, p2/p1 = 0.241925, T2/T1 = 0.666667, ρ2/ρ1 = 0.362887.*
+
+![p2_p1 (pressure ratio p2/p1) against M1 (upstream Mach number (>= 1)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-expansion-fan-curve)
+
+*p2_p1 (pressure ratio p2/p1) against M1 (upstream Mach number (>= 1)) from 0.5 to 1.5. One curve for each value of theta (turning angle of the flow (deg, rad)): 0.460414 rad, 0.392699 rad, 1.1781 rad. 16 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, M1 = 1, p2_p1 = 0.241925.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_expansion_fan', M1=1.0, theta=0.46041368208269473)
 # -> M2 = 2, nu1_deg = 0, nu2_deg = 26.3798, p2_p1 = 0.241925, T2_T1 = 0.666667, rho2_rho1 = 0.362887   (SOLVED)
@@ -920,6 +1024,14 @@ $$
 - **Method:** $M_{1} = sqrt$($(g+1)/(2g)$ (p2/p1 - 1) + 1), then the normal-shock relations
 - **Assumes:** $1 < p_{2}/p_{1}  \leq  500$; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![A normal shock with the worked example's pressure ratio p2/p1 = 4](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-normal-shock-from-pressure-ratio-shock)
+
+*A normal shock with the worked example's pressure ratio p2/p1 = 4.5 (γ = 1.4): the package returns the upstream Mach number M1 = 2 and the downstream state. Arrow lengths follow the speed ratio, ρ1/ρ2 by continuity (derived). Marked: M2 = 0.57735, p2/p1 = 4.5, T2/T1 = 1.6875, ρ2/ρ1 = 2.66667, stagnation-pressure ratio 0.720874.*
+
+![M1 (upstream Mach number) against p21 (static pressure ratio across the shock p2/p1 (> 1)) from 2](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-normal-shock-from-pressure-ratio-curve)
+
+*M1 (upstream Mach number) against p21 (static pressure ratio across the shock p2/p1 (> 1)) from 2.25 to 6.75. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, p21 = 4.5, M1 = 2.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_normal_shock_from_pressure_ratio', p21=4.5)
@@ -969,6 +1081,14 @@ $$
 - **Assumes:** $1 < M_{1}  \leq  20$; asin(1/M1) < beta <= 90 deg; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![An oblique shock at M1 = 2](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-oblique-shock-from-wave-angle-shock)
+
+*An oblique shock at M1 = 2.0 with wave angle β = 90° (the worked example, γ = 1.4); the package returns the deflection θ = 0°. With a wave angle of 90° the oblique shock is a normal shock. Arrow lengths follow the speed ratio, ρ1/ρ2 by continuity (derived). Marked: M2 = 0.57735, p2/p1 = 4.5, T2/T1 = 1.6875, ρ2/ρ1 = 2.66667, stagnation-pressure ratio 0.720874.*
+
+![theta_deg (flow deflection angle in degrees) against beta (shock wave angle (deg, rad)) from 0 rad to 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-oblique-shock-from-wave-angle-curve)
+
+*theta_deg (flow deflection angle in degrees) against beta (shock wave angle (deg, rad)) from 0 rad to 1.5708 rad. Other inputs as in the worked example: M1 = 2.0. 27 points computed by aerospace-engineering-ai999x; marked: the worked example, beta = 1.5708 rad, theta_deg = 0.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_oblique_shock_from_wave_angle', M1=2.0, beta=1.5707963267948966)
 # -> theta_deg = 0, M2 = 0.57735, p2_p1 = 4.5, T2_T1 = 1.6875, rho2_rho1 = 2.66667, p02_p01 = 0.720874, Mn1 = 2   (SOLVED)
@@ -1012,6 +1132,14 @@ $$
 - **Method:** $sin^{2}$ beta* = [(g+1)$M^{2}/4 - 1 + sqrt$($(g+1)$(1 + (g-1)M^2/2 + (g+1)M^4/16))]/(g M^2); theta_max = theta(beta*)
 - **Assumes:** $1.01  \leq  M_{1}  \leq  20$; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![The θ–β–M chart: flow deflection against shock wave angle for upstream Mach numbers 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-max-deflection-angle-chart)
+
+*The θ–β–M chart: flow deflection against shock wave angle for upstream Mach numbers 1.5, 2, 3 and 5, each from the package's oblique-shock relation at 60 wave angles from the Mach angle to 90° (γ = 1.4). Marked: the package's maximum deflection for M1 = 2, θmax = 22.9735° at β = 64.669° (there M2 = 0.924256, p2/p1 = 3.64575); a larger wedge detaches the shock.*
+
+![theta_max_deg (maximum deflection angle in degrees) against M1 (upstream Mach number (>= 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-max-deflection-angle-curve)
+
+*theta_max_deg (maximum deflection angle in degrees) against M1 (upstream Mach number (>= 1.01)) from 1 to 3. 30 points computed by aerospace-engineering-ai999x; marked: the worked example, M1 = 2, theta_max_deg = 22.9735.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_max_deflection_angle', M1=2.0)
@@ -1058,6 +1186,10 @@ $$
 - **Assumes:** $0.05  \leq  M  \leq  10$; adiabatic, constant area, constant friction factor; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![fLD (f L*/D with the Darcy friction factor f (= 4 times the Fanning factor)) against M (Mach number at the duct station (0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-fanno-flow-curve)
+
+*fLD (f L*/D with the Darcy friction factor f (= 4 times the Fanning factor)) against M (Mach number at the duct station (0.05 to 10, not 1)) from 0.2 to 20 on a logarithmic axis. 34 points computed by aerospace-engineering-ai999x; marked: the worked example, M = 2, fLD = 0.304997.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_fanno_flow', M=2.0)
 # -> fLD = 0.304997, p_pstar = 0.408248, T_Tstar = 0.666667, rho_rhostar = 0.612372, p0_p0star = 1.6875   (SOLVED)
@@ -1102,6 +1234,10 @@ $$
 - **Method:** p/p* = (1+g)/(1 + g M^2); T/T* = $M^{2}$ (p/p*)^2; $T_{0}/T_{0}$* = (g+1)$M^{2}$(2 + (g-1)$M^{2})/(1 + g$ M^2)^2; $p_{0}/p_{0}$* = (p/p*)[(2 + (g-1)M^2)/(g+1)]^(g/(g-1))
 - **Assumes:** $0.05  \leq  M  \leq  10$; frictionless, constant area; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![T0_T0star (T0/T0*) against M (Mach number (0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rayleigh-flow-curve)
+
+*T0_T0star (T0/T0*) against M (Mach number (0.05 to 10)) from 0.1 to 10 on a logarithmic axis. 41 points computed by aerospace-engineering-ai999x; marked: the worked example, M = 1, T0_T0star = 1.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_rayleigh_flow', M=1.0)
@@ -1150,6 +1286,10 @@ $$
 - **Assumes:** p0, T0, A, $R > 0$; isentropic flow to a sonic throat; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![mdot (choked mass flow rate) against T0 (stagnation temperature) from 150 K to 450 K](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-choked-mass-flow-curve)
+
+*mdot (choked mass flow rate) against T0 (stagnation temperature) from 150 K to 450 K. One curve for each value of p0 (stagnation (reservoir) pressure): 100000 Pa, 50000 Pa, 200000 Pa. Other inputs as in the worked example: A = 0.001 m^2. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, T0 = 300 K, mdot = 0.233334 kg/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_choked_mass_flow', p0=100000.0, T0=300.0, A=0.001)
 # -> mdot = 0.233334 kg/s, p_star = 52828.2 Pa, T_star = 250 K, V_star = 316.968 m/s   (SOLVED)
@@ -1193,6 +1333,10 @@ $$
 - **Assumes:** $Tc > 0$; $1  \leq  Mw  \leq  300$ g/mol; $1.05  \leq  \gamma  \leq  1.7$; ideal, frozen, isentropic flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![c_star (characteristic velocity c*) against Mw (molar mass of the combustion products (g/mol, kg/kmol)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-characteristic-velocity-curve)
+
+*c_star (characteristic velocity c*) against Mw (molar mass of the combustion products (g/mol, kg/kmol)) from 0.01 kg/mol to 0.03 kg/mol. One curve for each value of Tc (chamber (combustion) temperature): 3000 K, 1500 K, 6000 K. Other inputs as in the worked example: gamma = 1.2. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, Mw = 0.02 kg/mol, c_star = 1721.99 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_characteristic_velocity', Tc=3000.0, Mw=0.02, gamma=1.2)
 # -> c_star = 1721.99 m/s, Gamma = 0.648531   (SOLVED)
@@ -1233,6 +1377,10 @@ $$
 - **Method:** Me from the area ratio (supersonic); pe/pc isentropic; $CF = Gamma$ sqrt($2g/(g-1)$(1 - (pe/pc)^((g-1)/g))) + (pe - pa)/pc eps
 - **Assumes:** 1 < eps <= 500; $0  \leq  pa < pc$; $pe  \geq  0.4$ pa (no flow separation); $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![CF (thrust coefficient) against eps (nozzle expansion area ratio Ae/At (> 1)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-thrust-coefficient-curve)
+
+*CF (thrust coefficient) against eps (nozzle expansion area ratio Ae/At (> 1)) from 0.84375 to 2.53125. Other inputs as in the worked example: gamma = 1.4, pc = 1000000.0 Pa, pa = 0.0 Pa. 28 points computed by aerospace-engineering-ai999x; marked: the worked example, eps = 1.6875, CF = 1.42342.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_thrust_coefficient', gamma=1.4, eps=1.6875, pc=1000000.0, pa=0.0)
@@ -1275,6 +1423,10 @@ $$
 - **Assumes:** $0 < pe < pc$; $1  \leq  Mw  \leq  300$ g/mol; $1.05  \leq  \gamma  \leq  1.7$; ideal, frozen, isentropic expansion
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![ve (exhaust velocity) against Mw (molar mass of the products (g/mol)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-ideal-exhaust-velocity-curve)
+
+*ve (exhaust velocity) against Mw (molar mass of the products (g/mol)) from 0.01 kg/mol to 0.03 kg/mol. One curve for each value of Tc (chamber temperature): 3000 K, 1500 K, 6000 K. Other inputs as in the worked example: gamma = 1.4, pc = 1000000.0 Pa, pe = 127804.52546295093 Pa. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, Mw = 0.02 kg/mol, ve = 1969.79 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_ideal_exhaust_velocity', Tc=3000.0, Mw=0.02, gamma=1.4, pc=1000000.0, pe=127804.52546295093)
 # -> ve = 1969.79 m/s, Isp = 200.863 s, Me = 2   (SOLVED)
@@ -1313,6 +1465,10 @@ $$
 - **Method:** $pe = pa$: $Me = sqrt$($2/(g-1)$[(pc/pa)^((g-1)/g) - 1]); eps = A/A*(Me); $CF = Gamma$ sqrt($2g/(g-1)$(1 - (pa/pc)^((g-1)/g)))
 - **Assumes:** $2  \leq  pc/pa  \leq  1e6$; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![eps (optimum area ratio Ae/At) against pc (chamber pressure) from 78244](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-optimum-area-ratio-curve)
+
+*eps (optimum area ratio Ae/At) against pc (chamber pressure) from 78244.5 Pa to 7.82445e+06 Pa on a logarithmic axis. One curve for each value of pa (ambient pressure): 100000 Pa, 50000 Pa, 200000 Pa. Other inputs as in the worked example: gamma = 1.4. 32 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, pc = 782445 Pa, eps = 1.6875.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_optimum_area_ratio', gamma=1.4, pc=782444.9066867265, pa=100000.0)
@@ -1362,6 +1518,14 @@ $$
 - **Assumes:** 1 < eps <= 500; $0  \leq  pa < pc$; $pe  \geq  0.4$ pa (no flow separation); $1  \leq  Mw  \leq  300$ g/mol; $1.05  \leq  \gamma  \leq  1.7$; ideal, frozen, isentropic, one-dimensional nozzle flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![A rocket engine (the worked example: chamber 1e+06 Pa and 3000 K, molar mass 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-engine-performance-nozzle)
+
+*A rocket engine (the worked example: chamber 1e+06 Pa and 3000 K, molar mass 0.02 kg/mol, γ = 1.4, throat 0.01 m², expansion ratio 1.6875, ambient 127805 Pa) with a stated inlet area ratio of 4 for the drawing. Marked, from the package: thrust F = 12077.5 N, mass flow 6.13137 kg/s, Isp = 200.863 s, CF = 1.20775, c* = 1630.96 m/s, exit pressure 127805 Pa, exit speed 1969.79 m/s, Me = 2; the Mach number along the nozzle from its area–Mach capability (γ = 1.4).*
+
+![F (thrust) against eps (expansion area ratio Ae/At) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-engine-performance-curve)
+
+*F (thrust) against eps (expansion area ratio Ae/At) from 0.84375 to 2.53125. One curve for each value of pc (chamber pressure): 1e+06 Pa, 500000 Pa, 2e+06 Pa. Other inputs as in the worked example: Tc = 3000.0 K, Mw = 0.02 kg/mol, gamma = 1.4, At = 0.01 m^2, pa = 127804.52546295093 Pa. 28 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, eps = 1.6875, F = 12077.5 N.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_rocket_engine_performance', pc=1000000.0, Tc=3000.0, Mw=0.02, gamma=1.4, At=0.01, eps=1.6875, pa=127804.52546295093)
 # -> F = 12077.5 N, mdot = 6.13137 kg/s, Isp = 200.863 s, CF = 1.20775, c_star = 1630.96 m/s, pe = 127805 Pa, ve = 1969.79 m/s, Me = 2   (SOLVED)
@@ -1406,6 +1570,10 @@ $$
 - **Assumes:** $F > 0$; 1 < eps <= 500; $0  \leq  pa < pc$; $pe  \geq  0.4$ pa; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![At (throat area) against eps (expansion area ratio Ae/At) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-throat-area-for-thrust-curve)
+
+*At (throat area) against eps (expansion area ratio Ae/At) from 0.84375 to 2.53125. One curve for each value of F (required thrust (N, kN, lbf)): 1000 N, 500 N, 2000 N. Other inputs as in the worked example: pc = 1000000.0 Pa, Tc = 3000.0 K, Mw = 0.02 kg/mol, gamma = 1.4, pa = 127804.52546295093 Pa. 28 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, eps = 1.6875, At = 0.000827984 m^2.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_throat_area_for_thrust', F=1000.0, pc=1000000.0, Tc=3000.0, Mw=0.02, gamma=1.4, eps=1.6875, pa=127804.52546295093)
 # -> At = 0.000827984 m^2, Ae = 0.00139722 m^2, mdot = 0.507668 kg/s, Isp = 200.863 s   (SOLVED)
@@ -1447,6 +1615,14 @@ $$
 - **Method:** mass flow: pe Ae/(p01 At) = (p/p0)(A/A*) at Me (subsonic) gives Me; p02/p01 = pe/(p01 $(p/p_{0})$(Me)); M1 from the normal-shock $p02/p01$; $As/At = A/A (M_{1})$
 - **Assumes:** 1.05 <= eps <= 100; back pressure between the exit-shock and the critical subsonic exit pressures; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![A normal shock standing in a nozzle of expansion ratio 3 with chamber pressure 1e+06 Pa and back pressure 682559 Pa (the worked example; stated inlet ratio 3 for the drawing)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-nozzle-normal-shock-nozzle)
+
+*A normal shock standing in a nozzle of expansion ratio 3 with chamber pressure 1e+06 Pa and back pressure 682559 Pa (the worked example; stated inlet ratio 3 for the drawing). The package places the shock at A/At = 1.6875 with M1 = 2, M2 = 0.57735 and exit Mach 0.280418. The Mach number along the nozzle is its area–Mach relation: supersonic to the shock, then subsonic with the sonic area grown by the stagnation-pressure loss (A*₂ = A*/(p02/p01), p02/p01 = 0.720874, derived).*
+
+![As_At (area ratio at the shock As/At) against eps (exit-to-throat area ratio Ae/At) from 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-nozzle-normal-shock-curve)
+
+*As_At (area ratio at the shock As/At) against eps (exit-to-throat area ratio Ae/At) from 1.5 to 4.5. One curve for each value of pc (reservoir (stagnation) pressure): 1e+06 Pa, 2e+06 Pa. Other inputs as in the worked example: pb = 682558.5882398435 Pa. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, eps = 3, As_At = 1.6875.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_nozzle_normal_shock', pc=1000000.0, pb=682558.5882398435, eps=3.0)
@@ -1490,6 +1666,10 @@ $$
 - **Assumes:** $-3  \leq  Cp0 < -0.01$; subsonic, small-perturbation compressibility rules; air, $\gamma = 1.4$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![M_cr (critical Mach number) against Cp0 (incompressible minimum pressure coefficient (negative)) from -0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-critical-mach-curve)
+
+*M_cr (critical Mach number) against Cp0 (incompressible minimum pressure coefficient (negative)) from -0.645 to -0.215. One curve for each value of rule (compressibility correction: prandtl-glauert or karman-tsien): prandtl-glauert, karman-tsien. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, Cp0 = -0.43, M_cr = 0.737106.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_critical_mach', Cp0=-0.43, rule='prandtl-glauert')
 # -> M_cr = 0.737106, Cp_cr = -0.636304   (SOLVED)
@@ -1526,6 +1706,14 @@ $$
 - **Method:** dv = Isp g0 ln(m0/mf)
 - **Assumes:** 1 s <= Isp <= 10000 s; $0 < mf < m_{0}$; no gravity, no drag
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![A single stage with specific impulse 300](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-delta-v-staging)
+
+*A single stage with specific impulse 300.0 s (the worked example): mass at ignition and at burnout, the propellant burned stacked on the final mass. Inputs: Isp = 300.0, m0 = 2718.2818284590453, mf = 1000.0. Marked: the package's Δv = 2941.99 m/s.*
+
+![dv (ideal velocity change delta-v) against m0 (initial (lift-off or ignition) mass) from 1359](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-delta-v-curve)
+
+*dv (ideal velocity change delta-v) against m0 (initial (lift-off or ignition) mass) from 1359.14 kg to 4077.42 kg. One curve for each value of Isp (specific impulse (s)): 300 s, 150 s, 600 s. Other inputs as in the worked example: mf = 1000.0 kg. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, m0 = 2718.28 kg, dv = 2941.99 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_rocket_delta_v', Isp=300.0, m0=2718.2818284590453, mf=1000.0)
@@ -1571,6 +1759,14 @@ $$
 - **Assumes:** $dv > 0$; 1 s <= Isp <= 10000 s; $mf > 0$; mass ratio <= 10000
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![A single stage with specific impulse 300](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-propellant-for-delta-v-staging)
+
+*A single stage with specific impulse 300.0 s (the worked example): mass at ignition and at burnout, the propellant burned stacked on the final mass. Inputs: dv = 2941.995, Isp = 300.0, mf = 1000.0. Marked: the package's initial mass m0 = 2718.28 kg, propellant 1718.28 kg, mass ratio 2.71828.*
+
+![mp (propellant mass) against dv (required velocity change (m/s, km/s)) from 294](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-propellant-for-delta-v-curve)
+
+*mp (propellant mass) against dv (required velocity change (m/s, km/s)) from 294.2 m/s to 29420 m/s on a logarithmic axis, logarithmic output axis. One curve for each value of Isp (specific impulse (s)): 300 s, 150 s, 600 s. Other inputs as in the worked example: mf = 1000.0 kg. 40 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, dv = 2941.99 m/s, mp = 1718.28 kg.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_propellant_for_delta_v', dv=2941.995, Isp=300.0, mf=1000.0)
 # -> m0 = 2718.28 kg, mp = 1718.28 kg, R = 2.71828   (SOLVED)
@@ -1611,6 +1807,10 @@ $$
 - **Method:** v_b = Isp g0 ln(m0/mf) - g tb
 - **Assumes:** $0 < mf < m_{0}$; thrust-to-weight above 1 at lift-off; constant thrust and mass flow, constant g, no drag, vertical flight
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![v_b (vertical speed at burnout) against mf (burnout mass) from 500 kg to 1500 kg](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-delta-v-gravity-loss-curve)
+
+*v_b (vertical speed at burnout) against mf (burnout mass) from 500 kg to 1500 kg. One curve for each value of Isp (specific impulse): 300 s, 150 s, 600 s. Other inputs as in the worked example: m0 = 2718.2818284590453 kg, tb = 100.0 s. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, mf = 1000 kg, v_b = 1961.33 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_delta_v_gravity_loss', Isp=300.0, m0=2718.2818284590453, mf=1000.0, tb=100.0)
@@ -1654,6 +1854,10 @@ $$
 - **Assumes:** $0 < mf < m_{0}$; thrust-to-weight above 1; constant thrust, constant g, no drag; vertical flight
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![h_max (apogee height) against mf (burnout mass) from 500 kg to 1500 kg](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-vertical-rocket-trajectory-curve)
+
+*h_max (apogee height) against mf (burnout mass) from 500 kg to 1500 kg. One curve for each value of Isp (specific impulse): 300 s, 150 s, 600 s. Other inputs as in the worked example: m0 = 2718.2818284590453 kg, tb = 100.0 s. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, mf = 1000 kg, h_max = 270082 m.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_vertical_rocket_trajectory', Isp=300.0, m0=2718.2818284590453, mf=1000.0, tb=100.0)
 # -> v_b = 1961.33 m/s, h_b = 73949 m, h_max = 270082 m, t_apex = 300 s   (SOLVED)
@@ -1691,6 +1895,10 @@ $$
 - **Method:** dv = sum of Isp_i g0 ln(m0_i/mf_i)
 - **Assumes:** equal numbers of stages; $0 < mf < m_{0}$ for each stage; each ignition mass below the previous burnout mass; no gravity or drag
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Stages of a multistage rocket (the worked example: specific impulses 300, 300 s, ignition masses [2718](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-multistage-delta-v-staging)
+
+*Stages of a multistage rocket (the worked example: specific impulses 300, 300 s, ignition masses [2718.2818284590453, 500.0] kg, burnout masses [1000.0, 183.93972058572118] kg), each column the mass a stage starts with, split into burnout mass and propellant. Marked: the package's stage Δv 2941.99, 2941.99 m/s, total 5883.99 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_multistage_delta_v', Isp='300, 300', m0=[2718.2818284590453, 500.0], mf=[1000.0, 183.93972058572118])
@@ -1733,6 +1941,10 @@ $$
 - **Assumes:** $1  \leq  n  \leq  6$; 0.01 <= eps <= 0.5; eps $R < 1$; identical stages, equal delta-v split
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![payload_fraction (overall payload fraction m_payload/m0) against n (number of stages (1 to 6)) from 1 to 9](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-identical-stages-payload-curve)
+
+*payload_fraction (overall payload fraction m_payload/m0) against n (number of stages (1 to 6)) from 1 to 9. Other inputs as in the worked example: dv = 4078.4710789429123 m/s, Isp = 300.0 s, eps = 0.1. 6 points computed by aerospace-engineering-ai999x; marked: the worked example, n = 1, payload_fraction = 0.166667.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_identical_stages_payload', n=1, dv=4078.4710789429123, Isp=300.0, eps=0.1)
 # -> lam = 0.2, payload_fraction = 0.166667, R = 4, gross_per_payload = 6   (SOLVED)
@@ -1771,6 +1983,14 @@ $$
 - **Assumes:** 100 $km  \leq  h  \leq  1e6$ km; two-body Earth, $mu = 3.986004418e14$ $m^{3}/s^{2}$, $R = 6378.1366$ km
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![A circular orbit drawn to scale around the Earth (radius 6378](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-circular-orbit-orbit)
+
+*A circular orbit drawn to scale around the Earth (radius 6378.14 km, stated) at the worked example's altitude h = 19134.4 km. Marked: the package's orbital speed v = 3952.68 m/s and period T = 40554.7 s (675.912 min, 2.13045 revolutions a day).*
+
+![v (circular orbital speed) against h (orbit altitude above the Earth (km)) from 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-circular-orbit-curve)
+
+*v (circular orbital speed) against h (orbit altitude above the Earth (km)) from 1.91344e+06 m to 1.9134e+08 m on a logarithmic axis. 41 points computed by aerospace-engineering-ai999x; marked: the worked example, h = 1.9134e+07 m, v = 3952.68 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_circular_orbit', h=19134409.799999997)
 # -> v = 3952.68 m/s, T = 40554.7 s, T_min = 675.912, revs_per_day = 2.13045   (SOLVED)
@@ -1807,6 +2027,10 @@ $$
 - **Method:** v_esc = sqrt(2 mu/(R + h)); $v_{circ} = \sqrt{\frac{\mu}{R + h}}$
 - **Assumes:** $0  \leq  h  \leq  1e6$ km; two-body Earth, no atmosphere
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Escape speed and circular-orbit speed against altitude above the Earth, each from the package at 61 altitudes up to 40 000 km; the band between them is the Δv it returns for leaving a circular orbit](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-escape-speed-curve)
+
+*Escape speed and circular-orbit speed against altitude above the Earth, each from the package at 61 altitudes up to 40 000 km; the band between them is the Δv it returns for leaving a circular orbit. Marked: the worked example at h = 0 km, v_esc = 11179.9 m/s, v_circ = 7905.37 m/s, Δv = 3274.51 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_escape_speed', h=0.0)
@@ -1849,6 +2073,14 @@ $$
 - **Method:** r = (mu (T/(2 pi))^2)^(1/3); $h = r - R$
 - **Assumes:** the altitude between 100 km and 1e6 km; two-body Earth
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![The circular orbit with the worked example's period T = 40554](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-altitude-for-period-orbit)
+
+*The circular orbit with the worked example's period T = 40554.7 s (675.912 min), drawn to scale around the Earth (radius 6378.14 km, stated). Marked: the package's altitude h = 19134.4 km and orbital speed v = 3952.68 m/s.*
+
+![h (orbit altitude) against T (orbital period (s, min, h, day)) from 4055](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-altitude-for-period-curve)
+
+*h (orbit altitude) against T (orbital period (s, min, h, day)) from 4055.47 s to 405547 s on a logarithmic axis. 38 points computed by aerospace-engineering-ai999x; marked: the worked example, T = 40554.7 s, h = 1.9134e+07 m.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_altitude_for_period', T=40554.74657601441)
@@ -1897,6 +2129,14 @@ $$
 
 *The three burns of bi-elliptic transfers from a circular orbit of r₁ = 12756.3 km to 15 r₁ around the Earth, stacked, for five intermediate apoapses, against the Hohmann transfer's 2.99743 km/s, all from the package; totals r_b = 17 r₁: 2.99791 km/s; r_b = 25 r₁: 2.9904 km/s; r_b = 35 r₁: 2.97848 km/s; r_b = 45 r₁: 2.96888 km/s; r_b = 60 r₁: 2.95846 km/s.*
 
+![Orbit transfer drawn to scale (Earth radius 6378](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-bielliptic-transfer-orbit)
+
+*Orbit transfer drawn to scale (Earth radius 6378.14 km, stated) from a circular orbit at h1 = 6378.14 km to h2 = 19134.4 km with intermediate apoapsis hb = 19134.4 km (the worked example): with the intermediate apoapsis equal to the final radius the bi-elliptic transfer is the Hohmann transfer (third burn zero). Marked: the package's burns Δv1 = 864.766, Δv2 = 725.331, Δv3 = 0 m/s, total 1590.1 m/s (Hohmann 1590.1 m/s), transfer time 33447.9 s.*
+
+![dv (total delta-v) against h1 (altitude of the initial circular orbit) from 3](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-bielliptic-transfer-curve)
+
+*dv (total delta-v) against h1 (altitude of the initial circular orbit) from 3.18907e+06 m to 9.5672e+06 m. One curve for each value of hb (altitude of the intermediate apoapsis (>= h2)): 1.9134e+07 m, 3.8269e+07 m. Other inputs as in the worked example: h2 = 19134409.799999997 m. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, h1 = 6.37814e+06 m, dv = 1590.1 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_bielliptic_transfer', h1=6378136.6, h2=19134409.799999997, hb=19134409.799999997)
 # -> dv1 = 864.766 m/s, dv2 = 725.331 m/s, dv3 = 0 m/s, dv = 1590.1 m/s, t = 33447.9 s, t_days = 0.387129, dv_hohmann = 1590.1 m/s   (SOLVED)
@@ -1936,6 +2176,10 @@ $$
 - **Assumes:** 2 deg <= transfer angle <= 358 deg, not within 2 deg of 180; tof > 0; zero revolutions, two-body Earth (mu = 398600.4418 km^3/s^2)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Lambert's problem in the plane: from r1 = (7000, 0, 0) km to r2 = (0, 7000, 0) km in 1457](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-lambert-problem-orbit)
+
+*Lambert's problem in the plane: from r1 = (7000, 0, 0) km to r2 = (0, 7000, 0) km in 1457.13 s (the worked example), Earth radius 6378.14 km (stated). Marked: the package's departure and arrival velocities v1 = [0.0, 7.54605329011, 0.0] km/s and v2 = [-7.54605329011, 0.0, 0.0] km/s and transfer angle 90°. The arc is the two-body orbit through r1 with velocity v1 (derived, with μ from the package's circular speed at |r1|: 398600 km³/s²; eccentricity 0).*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_lambert_problem', r1='7000, 0, 0', r2='0, 7000, 0', tof=1457.1291594215038)
 # -> v1 = [0.0, 7.54605329011, 0.0], v2 = [-7.54605329011, 0.0, 0.0], dtheta_deg = 90   (SOLVED)
@@ -1973,6 +2217,14 @@ $$
 - **Method:** dOmega/dt = -$(3/2)$ n J2 $(R/p)^{2}$ cos i, $n = \sqrt{\frac{\mu}{a^{3}}}$, $p = a$(1 - e^2)
 - **Assumes:** 100 $km  \leq  hp  \leq  ha  \leq  1e5$ km; 1 deg <= i <= 179 deg; first-order secular J2 theory, $J_{2} = 1.08263e-3$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![raan_rate_deg_day (node drift rate in degrees per day (negative = westward regression)) against hp (perigee altitude (or the altitude of a circular orbit)) from 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-j2-nodal-regression-curve)
+
+*raan_rate_deg_day (node drift rate in degrees per day (negative = westward regression)) against hp (perigee altitude (or the altitude of a circular orbit)) from 1.91344e+06 m to 1.9134e+08 m on a logarithmic axis. One curve for each value of i (inclination (deg)): 1.0472 rad, 0.392699 rad, 1.1781 rad. 35 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, hp = 1.9134e+07 m, raan_rate_deg_day = -0.0389221.*
+
+![raan_rate_deg_day (node drift rate in degrees per day (negative = westward regression)) over hp (perigee altitude (or the altitude of a circular orbit)) from 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-j2-nodal-regression-field)
+
+*raan_rate_deg_day (node drift rate in degrees per day (negative = westward regression)) over hp (perigee altitude (or the altitude of a circular orbit)) from 1.91344e+06 m to 1.9134e+08 m and i (inclination (deg)) from 0 rad to 1.5708 rad (logarithmic horizontal axis): each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light -3.95271 to dark -2.9548e-15); iso-lines at raan_rate_deg_day = -3, -2, -1; blank cells: inputs the capability refuses. Marked: the worked example, hp = 1.9134e+07 m, i = 1.0472 rad, raan_rate_deg_day = -0.0389221.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_j2_nodal_regression', hp=19134409.799999997, i=1.0471975511965976)
@@ -2017,6 +2269,10 @@ $$
 - **Assumes:** 100 $km  \leq  hp < ha  \leq  1e5$ km; eccentricity >= 1e-4; 1 deg <= i <= 179 deg; first-order secular J2 theory
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![argp_rate_deg_day (perigee rotation rate in degrees per day) against ha (apogee altitude) from 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-j2-apsidal-rotation-curve)
+
+*argp_rate_deg_day (perigee rotation rate in degrees per day) against ha (apogee altitude) from 1.2756e+07 m to 3.8269e+07 m. One curve for each value of hp (perigee altitude): 1.2756e+07 m, 6.37814e+06 m, 2.5513e+07 m. Other inputs as in the worked example: i = 1.5707963267948966 rad. 30 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, ha = 2.5513e+07 m, argp_rate_deg_day = -0.0442847.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_j2_apsidal_rotation', hp=12756273.2, ha=25512546.4, i=1.5707963267948966)
 # -> argp_rate_deg_day = -0.0442847, argp_rate = -8.94575e-09 rad/s   (SOLVED)
@@ -2051,6 +2307,10 @@ $$
 - **Method:** cos i = -(dOmega/dt)_sun / ($(3/2)$ n J2 (R/r)^2)
 - **Assumes:** 100 $km  \leq  h  \leq  6000$ km (none exists above about 5970 km); circular orbit, first-order J2, node rate 360 deg per 365.2421897 days
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![i_deg (sun-synchronous inclination in degrees (retrograde, > 90)) against h (altitude of the circular orbit (km)) from 70000 m to 7e+06 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-sun-synchronous-inclination-curve)
+
+*i_deg (sun-synchronous inclination in degrees (retrograde, > 90)) against h (altitude of the circular orbit (km)) from 70000 m to 7e+06 m on a logarithmic axis. 35 points computed by aerospace-engineering-ai999x; marked: the worked example, h = 700000 m, i_deg = 98.188.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_sun_synchronous_inclination', h=700000.0)
@@ -2095,6 +2355,10 @@ $$
 - **Method:** beta = m/(CD A); a_max = VE^2 sin($\gamma)/(2$ e H); h* = H ln(rho0 H/(beta sin gamma)); V* = VE $e^{-1/2}$
 - **Assumes:** 2 deg <= gamma_e <= 90 deg; peak above sea level; straight-line path, gravity and lift neglected, exponential atmosphere rho0 exp(-h/H)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![n_max (peak deceleration in g (9](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-ballistic-entry-peak-deceleration-curve)
+
+*n_max (peak deceleration in g (9.80665 m/s^2)) against VE (entry speed) from 3500 m/s to 10500 m/s. One curve for each value of gamma_e (entry flight-path angle below the horizontal (deg)): 1.5708 rad, 0.392699 rad, 1.1781 rad. Other inputs as in the worked example: m = 1000.0 kg, CD = 1.0, A = 1.0 m^2. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, VE = 7000 m/s, n_max = 127.649.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_ballistic_entry_peak_deceleration', m=1000.0, CD=1.0, A=1.0, VE=7000.0, gamma_e=1.5707963267948966)
@@ -2144,6 +2408,10 @@ $$
 
 *Speed against altitude of a ballistic entry (m = 1000 kg, C_D = 1, A = 1 m², entry speed 7 km/s, vertical), 91 altitudes computed by the package; marked: peak deceleration 127.649 g at h = 15.6746 km, V = 4.24571 km/s.*
 
+![V (speed at the altitude) against h (altitude) from 1567](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-ballistic-entry-velocity-curve)
+
+*V (speed at the altitude) against h (altitude) from 1567.46 m to 156746 m on a logarithmic axis. One curve for each value of VE (entry speed): 7000 m/s, 3500 m/s, 14000 m/s. Other inputs as in the worked example: m = 1000.0 kg, CD = 1.0, A = 1.0 m^2, gamma_e = 1.5707963267948966 rad. 41 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, h = 15674.6 m, V = 4245.71 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_ballistic_entry_velocity', m=1000.0, CD=1.0, A=1.0, VE=7000.0, gamma_e=1.5707963267948966, h=15674.557464134641)
 # -> V = 4245.71 m/s, n = 127.649, a = 1251.81 m/s^2   (SOLVED)
@@ -2189,6 +2457,14 @@ $$
 
 *Drag polar C_D = C_D0 + C_Di for C_D0 = 0.02, aspect ratio 10 and Oswald factor 0.8: the induced drag at 41 speeds from the package (W = 10000 N, S = 16 m², sea level); the tangent from the origin touches at the best lift-to-drag point it computes — marked: C_D = 0.04, C_L = 0.708982, L/D = 17.7245.*
 
+![Parabolic drag polar for C_D0 = 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-drag-polar-optimum-polar)
+
+*Parabolic drag polar for C_D0 = 0.02, aspect ratio 10.0, Oswald factor 0.8 (the worked example): induced drag from the package at 46 speeds (W = 10000 N, S = 16 m², sea level, stated) added to C_D0. Marked: the package's three optimum points, each at C_D = C_L/(L/D) of its returned values — minimum drag C_L = 0.708982 with (L/D)max = 17.7245 (the tangent from the origin), minimum power C_L = 1.22799 (L/D 15.3499), best jet range C_L = 0.409331 (L/D 15.3499).*
+
+![LD_max (maximum lift-to-drag ratio) against CD0 (zero-lift (parasite) drag coefficient) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-drag-polar-optimum-curve)
+
+*LD_max (maximum lift-to-drag ratio) against CD0 (zero-lift (parasite) drag coefficient) from 0.01 to 0.03. One curve for each value of AR (wing aspect ratio b^2/S): 10, 5, 20. Other inputs as in the worked example: e = 0.8. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, CD0 = 0.02, LD_max = 17.7245.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_drag_polar_optimum', CD0=0.02, AR=10.0, e=0.8)
 # -> CL_md = 0.708982, LD_max = 17.7245, CL_mp = 1.22799, LD_mp = 15.3499, CL_mr = 0.409331, LD_mr = 15.3499   (SOLVED)
@@ -2233,6 +2509,14 @@ $$
 - **Assumes:** W, $S > 0$; -1 $km  \leq  h  \leq  47$ km; parabolic drag polar; steady level flight, $L = W$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Drag and power required in level flight (the worked example: W = 10000 N, S = 20 m², h = 0 m, C_D0 = 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-min-drag-power-speeds-curve)
+
+*Drag and power required in level flight (the worked example: W = 10000 N, S = 20 m², h = 0 m, C_D0 = 0.02, AR = 10, e = 0.8): at 51 speeds the zero-lift drag q·S·C_D0 (dynamic pressure from the package's flight condition) plus the package's induced drag, and power D·V (derived sums). Marked: the package's minimum-drag speed 33.9324 m/s with D_min = 564.19 N, minimum-power speed 25.7831 m/s with P_min = 16796.9 W, best-range speed 44.6576 m/s.*
+
+![V_md (speed for minimum drag (max L/D)) against S (wing area (m^2, ft^2)) from 10 m^2 to 30 m^2](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-min-drag-power-speeds-curve-2)
+
+*V_md (speed for minimum drag (max L/D)) against S (wing area (m^2, ft^2)) from 10 m^2 to 30 m^2. One curve for each value of W (aircraft weight (N, kN, lbf)): 10000 N, 5000 N, 20000 N. Other inputs as in the worked example: h = 0.0 m, CD0 = 0.02, AR = 10.0, e = 0.8. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, S = 20 m^2, V_md = 33.9324 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_min_drag_power_speeds', W=10000.0, S=20.0, h=0.0, CD0=0.02, AR=10.0, e=0.8)
 # -> V_md = 33.9324 m/s, D_min = 564.19 N, V_mp = 25.7831 m/s, P_min = 16796.9 W, V_mr = 44.6576 m/s   (SOLVED)
@@ -2275,6 +2559,10 @@ $$
 - **Assumes:** $V > 0$; $0 < W_{1} < W_{0}$; $1  \leq  L/D  \leq  60$; constant V, L/D and TSFC (cruise-climb)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![R (range) against c (thrust-specific fuel consumption (kg/(N*s), 1/h, lb/(lbf*h))) from 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-breguet-range-jet-curve)
+
+*R (range) against c (thrust-specific fuel consumption (kg/(N*s), 1/h, lb/(lbf*h))) from 1.4163e-05 kg/(N*s) to 4.2488e-05 kg/(N*s). One curve for each value of V (cruise true airspeed): 200 m/s, 100 m/s, 400 m/s. Other inputs as in the worked example: LD = 15.0, W0 = 271828.1828459045 N, W1 = 100000.0 N. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, c = 2.8325e-05 kg/(N*s), R = 1.0800e+07 m.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_breguet_range_jet', V=200.0, c=2.832545036049801e-05, LD=15.0, W0=271828.1828459045, W1=100000.0)
 # -> R = 1.08e+07 m, R_km = 10800, t = 54000 s, t_h = 15   (SOLVED)
@@ -2313,6 +2601,10 @@ $$
 - **Method:** E = (1/(g0 c)) (L/D) ln(W0/W1)
 - **Assumes:** $0 < W_{1} < W_{0}$; $1  \leq  L/D  \leq  60$; constant L/D and TSFC
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![E (endurance) against c (thrust-specific fuel consumption (kg/(N*s), 1/h, lb/(lbf*h))) from 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-breguet-endurance-jet-curve)
+
+*E (endurance) against c (thrust-specific fuel consumption (kg/(N*s), 1/h, lb/(lbf*h))) from 1.4163e-05 kg/(N*s) to 4.2488e-05 kg/(N*s). One curve for each value of LD (lift-to-drag ratio): 15, 7.5, 30. Other inputs as in the worked example: W0 = 271828.1828459045 N, W1 = 100000.0 N. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, c = 2.8325e-05 kg/(N*s), E = 54000 s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_breguet_endurance_jet', c=2.832545036049801e-05, LD=15.0, W0=271828.1828459045, W1=100000.0)
@@ -2354,6 +2646,10 @@ $$
 - **Method:** $W_{1} = W_{0}$ exp(-R g0 c/(V L/D)); $Wf = W_{0} - W_{1}$
 - **Assumes:** R, $V > 0$; fuel at most 80% of W0; constant V, L/D and TSFC
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Wf (fuel weight burned) against W0 (weight at the start of cruise) from 135914 N to 407742 N](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-jet-fuel-for-range-curve)
+
+*Wf (fuel weight burned) against W0 (weight at the start of cruise) from 135914 N to 407742 N. One curve for each value of R (cruise distance (km, nmi)): 1.0800e+07 m, 5.4e+06 m. Other inputs as in the worked example: V = 200.0 m/s, c = 2.832545036049801e-05 kg/(N*s), LD = 15.0. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, W0 = 271828 N, Wf = 171828 N.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_jet_fuel_for_range', R=10800000.0, V=200.0, c=2.832545036049801e-05, LD=15.0, W0=271828.1828459045)
@@ -2399,6 +2695,10 @@ $$
 - **Assumes:** $0 < W_{1} < W_{0}$; $0.05  \leq  CL  \leq  3$; $CD < CL$; constant altitude, CL and TSFC
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![R (range) against CD (cruise drag coefficient) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-jet-range-constant-altitude-curve)
+
+*R (range) against CD (cruise drag coefficient) from 0.025 to 0.075. One curve for each value of c (thrust-specific fuel consumption): 1.0000e-05 kg/(N*s), 5.0000e-06 kg/(N*s), 2.0000e-05 kg/(N*s). Other inputs as in the worked example: W0 = 400000.0 N, W1 = 100000.0 N, S = 100.0 m^2, h = 0.0 m, CL = 0.5. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, CD = 0.05, R = 1.1654e+07 m.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_jet_range_constant_altitude', W0=400000.0, W1=100000.0, S=100.0, h=0.0, CL=0.5, CD=0.05, c=1e-05)
 # -> R = 1.16539e+07 m, R_km = 11653.9, t = 141363 s, t_h = 39.2674   (SOLVED)
@@ -2438,6 +2738,10 @@ $$
 - **Method:** R = (eta/(g0 c)) (L/D) ln(W0/W1), c the mass flow per shaft power
 - **Assumes:** $0.1  \leq  \eta  \leq  1$; $0 < W_{1} < W_{0}$; $1  \leq  L/D  \leq  60$; constant L/D, efficiency and BSFC
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![R (range) against c (power-specific fuel consumption (kg/J, g/(kW*h), lb/(hp*h))) from 5](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-breguet-range-prop-curve)
+
+*R (range) against c (power-specific fuel consumption (kg/J, g/(kW*h), lb/(hp*h))) from 5.0000e-08 kg/J to 1.5000e-07 kg/J. One curve for each value of LD (lift-to-drag ratio): 15, 7.5, 30. Other inputs as in the worked example: eta = 0.8, W0 = 27182.818284590452 N, W1 = 10000.0 N. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, c = 1.0000e-07 kg/J, R = 1.2237e+07 m.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_breguet_range_prop', eta=0.8, c=1e-07, LD=15.0, W0=27182.818284590452, W1=10000.0)
@@ -2482,6 +2786,10 @@ $$
 - **Assumes:** $0.1  \leq  \eta  \leq  1$; $0 < W_{1} < W_{0}$; $0.05  \leq  CL  \leq  3$; constant altitude and CL
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![E (endurance) against c (power-specific fuel consumption) from 5](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-prop-endurance-constant-altitude-curve)
+
+*E (endurance) against c (power-specific fuel consumption) from 5.0000e-08 kg/J to 1.5000e-07 kg/J. One curve for each value of W1 (final weight): 10000 N, 5000 N, 20000 N. Other inputs as in the worked example: eta = 0.8, CL = 1.0, CD = 0.05, S = 20.0 m^2, h = 0.0 m, W0 = 40000.0 N. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, c = 1.0000e-07 kg/J, E = 571041 s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_prop_endurance_constant_altitude', eta=0.8, c=1e-07, CL=1.0, CD=0.05, S=20.0, h=0.0, W0=40000.0, W1=10000.0)
 # -> E = 571041 s, E_h = 158.622   (SOLVED)
@@ -2524,6 +2832,10 @@ $$
 - **Method:** $dV/dt = A - B$ $V^{2}$, $A = g$ (T/W - mu), $B = g$ rho S (CD - mu CL)/(2W); $s = ln$(A/(A - B VLO^2))/(2B); t = artanh(VLO sqrt(B/A))/sqrt(A B)
 - **Assumes:** thrust large enough to keep accelerating up to VLO; $0  \leq  mu  \leq  0.8$; constant thrust, level runway, no wind
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![s (ground-roll distance) against W (weight) from 1000 N to 100000 N on a logarithmic axis](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-takeoff-ground-roll-curve)
+
+*s (ground-roll distance) against W (weight) from 1000 N to 100000 N on a logarithmic axis. One curve for each value of VLO (lift-off speed): 40 m/s, 20 m/s, 80 m/s. Other inputs as in the worked example: S = 10.0 m^2, h = 0.0 m, T = 3000.0 N, mu = 0.02, CL = 1.0, CD = 0.02. 41 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, W = 10000 N, s = 291.347 m.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_takeoff_ground_roll', W=10000.0, S=10.0, h=0.0, T=3000.0, mu=0.02, CL=1.0, CD=0.02, VLO=40.0)
@@ -2568,6 +2880,10 @@ $$
 - **Assumes:** $0  \leq  mu  \leq  0.8$; the net deceleration positive throughout; level runway, no wind, constant reverse thrust
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![s (ground-roll distance) against mu (braking friction coefficient) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-landing-ground-roll-curve)
+
+*s (ground-roll distance) against mu (braking friction coefficient) from 0.02 to 0.98. One curve for each value of VTD (touchdown speed): 30 m/s, 15 m/s, 60 m/s. Other inputs as in the worked example: W = 10000.0 N, S = 10.0 m^2, h = 0.0 m, CL = 0.25, CD = 0.1. 33 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, mu = 0.4, s = 114.718 m.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_landing_ground_roll', W=10000.0, S=10.0, h=0.0, VTD=30.0, mu=0.4, CL=0.25, CD=0.1)
 # -> s = 114.718 m, t = 7.64787 s   (SOLVED)
@@ -2609,6 +2925,14 @@ $$
 - **Method:** $n = \frac{1}{\cos{\left(\phi \right)}}$; R = V^2/(g tan(phi)); $\omega = g$ tan(phi)/V
 - **Assumes:** 1 deg <= phi <= 85 deg; $V > 0$; level, coordinated turn at constant speed
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![A level, coordinated turn at V = 100 m/s with bank angle 45° (the worked example)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-level-turn-bank-schematic)
+
+*A level, coordinated turn at V = 100 m/s with bank angle 45° (the worked example). Rear view: the lift, tilted by the bank angle, carries the weight and supplies the turning force (L = n·W). Top view: the turn circle. Marked, from the package: n = 1.41421, φ = 45°, radius R = 1019.72 m, turn rate 5.6188°/s, time for 360° 64.0707 s.*
+
+![R (turn radius) against phi (bank angle (deg)) from 0 rad to 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-level-turn-bank-curve)
+
+*R (turn radius) against phi (bank angle (deg)) from 0 rad to 1.5708 rad. One curve for each value of V (true airspeed): 100 m/s, 50 m/s, 200 m/s. 37 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, phi = 0.785398 rad, R = 1019.72 m.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_level_turn_bank', V=100.0, phi=0.7853981633974483)
@@ -2657,6 +2981,14 @@ $$
 - **Assumes:** $1.0002  \leq  n  \leq  11.5$; $V > 0$; level, coordinated turn at constant speed
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![A level, coordinated turn at V = 100 m/s with load factor n = 2 (the worked example)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-level-turn-load-factor-schematic)
+
+*A level, coordinated turn at V = 100 m/s with load factor n = 2 (the worked example). Rear view: the lift, tilted by the bank angle, carries the weight and supplies the turning force (L = n·W). Top view: the turn circle. Marked, from the package: n = 2, φ = 60°, radius R = 588.733 m, turn rate 9.73204°/s, time for 360° 36.9912 s.*
+
+![R (turn radius) against n (load factor (g)) from 1 to 3](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-level-turn-load-factor-curve)
+
+*R (turn radius) against n (load factor (g)) from 1 to 3. One curve for each value of V (true airspeed): 100 m/s, 50 m/s, 200 m/s. 30 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, n = 2, R = 588.733 m.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_level_turn_load_factor', V=100.0, n=2.0)
 # -> n = 2, phi_deg = 60, R = 588.733 m, omega = 0.169856 rad/s, omega_deg = 9.73204, t_360 = 36.9912 s   (SOLVED)
@@ -2695,6 +3027,10 @@ $$
 - **Method:** t = integral of $dh/RC = (Hc/RC0)$ ln($(Hc - h_{1})/(Hc - h_{2})$)
 - **Assumes:** $0  \leq  h_{1} < h_{2} < Hc$; RC(h) = RC0 $(1 - h/Hc)$ (stated linear model)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![t (time to climb) against Hc (absolute ceiling) from 5000 m to 15000 m](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-time-to-climb-curve)
+
+*t (time to climb) against Hc (absolute ceiling) from 5000 m to 15000 m. One curve for each value of RC0 (maximum rate of climb at sea level (m/s, ft/min)): 10 m/s, 5 m/s, 20 m/s. Other inputs as in the worked example: h1 = 0.0 m, h2 = 6321.205588285577 m. 27 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, Hc = 10000 m, t = 1000 s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_time_to_climb', RC0=10.0, Hc=10000.0, h1=0.0, h2=6321.205588285577)
@@ -2739,6 +3075,10 @@ $$
 - **Assumes:** minimum drag < T < 0.8 W; small climb angle (lift = weight); parabolic drag polar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![RC_max (maximum rate of climb) against W (weight) from 50000 N to 150000 N](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-max-rate-of-climb-jet-curve)
+
+*RC_max (maximum rate of climb) against W (weight) from 50000 N to 150000 N. One curve for each value of S (wing area): 30 m^2, 15 m^2, 60 m^2. Other inputs as in the worked example: h = 0.0 m, T = 30000.0 N, CD0 = 0.02, AR = 7.0, e = 0.8. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, W = 100000 N, RC_max = 31.1332 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_max_rate_of_climb_jet', W=100000.0, S=30.0, h=0.0, T=30000.0, CD0=0.02, AR=7.0, e=0.8)
 # -> RC_max = 31.1332 m/s, V = 167.945 m/s, gamma_deg = 10.6831   (SOLVED)
@@ -2780,6 +3120,10 @@ $$
 - **Method:** sin(gamma_max) = T/W - 2 sqrt(K CD0) at the minimum-drag speed
 - **Assumes:** minimum drag < T < 0.8 W; lift = weight (small angle); parabolic drag polar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![gamma_max_deg (maximum climb angle in degrees) against W (weight) from 50000 N to 150000 N](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-max-climb-angle-jet-curve)
+
+*gamma_max_deg (maximum climb angle in degrees) against W (weight) from 50000 N to 150000 N. One curve for each value of T (available thrust): 30000 N, 15000 N, 60000 N. Other inputs as in the worked example: S = 30.0 m^2, h = 0.0 m, CD0 = 0.02, AR = 7.0, e = 0.8. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, W = 100000 N, gamma_max_deg = 13.4482.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_max_climb_angle_jet', W=100000.0, S=30.0, h=0.0, T=30000.0, CD0=0.02, AR=7.0, e=0.8)
@@ -2825,6 +3169,10 @@ $$
 - **Assumes:** available power above the minimum power required; climb angle below 30 degrees (lift = weight); parabolic drag polar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![RC_max (maximum rate of climb) against S (wing area) from 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-max-rate-of-climb-prop-curve)
+
+*RC_max (maximum rate of climb) against S (wing area) from 1.6 m^2 to 160 m^2 on a logarithmic axis. One curve for each value of P (shaft power (W, kW, hp)): 120000 W, 60000 W, 240000 W. Other inputs as in the worked example: W = 11000.0 N, h = 0.0 m, eta = 0.8, CD0 = 0.03, AR = 7.5, e = 0.8. 32 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, S = 16 m^2, RC_max = 6.02265 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_max_rate_of_climb_prop', W=11000.0, S=16.0, h=0.0, P=120000.0, eta=0.8, CD0=0.03, AR=7.5, e=0.8)
 # -> RC_max = 6.02265 m/s, V = 29.356 m/s, gamma_deg = 11.8388   (SOLVED)
@@ -2866,6 +3214,14 @@ $$
 - **Assumes:** minimum drag below the sea-level thrust; ceiling below 47 km; thrust proportional to density (stated lapse); parabolic drag polar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Climb performance with altitude of a jet (the worked example: W = 100000 N, S = 30 m², sea-level thrust 13486](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-absolute-ceiling-jet-envelope)
+
+*Climb performance with altitude of a jet (the worked example: W = 100000 N, S = 30 m², sea-level thrust 13486.7 N, C_D0 = 0.02, AR = 7, e = 0.8): at 41 altitudes the package's best rate of climb with the thrust lapsing in proportion to the ISA density ratio (from its atmosphere capability), as its ceiling capabilities assume. Marked: the package's absolute ceiling h_abs = 6669.77 m (21882.4 ft), where the density ratio is 0.5.*
+
+![h_abs (absolute ceiling) against T0 (sea-level thrust) from 6743](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-absolute-ceiling-jet-curve)
+
+*h_abs (absolute ceiling) against T0 (sea-level thrust) from 6743.36 N to 20230.1 N. One curve for each value of W (weight): 100000 N, 50000 N, 200000 N. Other inputs as in the worked example: S = 30.0 m^2, CD0 = 0.02, AR = 7.0, e = 0.8. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, T0 = 13486.7 N, h_abs = 6669.77 m.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_absolute_ceiling_jet', W=100000.0, S=30.0, T0=13486.71062689471, CD0=0.02, AR=7.0, e=0.8)
 # -> h_abs = 6669.77 m, h_abs_ft = 21882.4, sigma = 0.5   (SOLVED)
@@ -2906,6 +3262,14 @@ $$
 - **Method:** solve RC_max(h) = RCs by bisection, with RC_max from the optimum climb speed V^2 = (T + sqrt(T^2 + 12ab))/(6a) and $T = T_{0}$ $\rho/rho0$
 - **Assumes:** $T_{0} < 0.8$ W; climb possible at sea level; ceiling below 47 km; thrust proportional to density; small climb angle
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Climb performance with altitude of a jet (the worked example: W = 100000 N, S = 30 m², sea-level thrust 30000 N, C_D0 = 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-service-ceiling-jet-envelope)
+
+*Climb performance with altitude of a jet (the worked example: W = 100000 N, S = 30 m², sea-level thrust 30000 N, C_D0 = 0.02, AR = 7, e = 0.8): at 41 altitudes the package's best rate of climb with the thrust lapsing in proportion to the ISA density ratio (from its atmosphere capability), as its ceiling capabilities assume. Marked: the package's service ceiling (climb 0.5 m/s) h_s = 12557.9 m (41200.5 ft) and its absolute ceiling for the same aircraft, 12794.2 m.*
+
+![h_s (service ceiling) against T0 (sea-level thrust) from 15000 N to 45000 N](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-service-ceiling-jet-curve)
+
+*h_s (service ceiling) against T0 (sea-level thrust) from 15000 N to 45000 N. One curve for each value of W (weight): 100000 N, 50000 N, 200000 N. Other inputs as in the worked example: S = 30.0 m^2, CD0 = 0.02, AR = 7.0, e = 0.8. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, T0 = 30000 N, h_s = 12557.9 m.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_service_ceiling_jet', W=100000.0, S=30.0, T0=30000.0, CD0=0.02, AR=7.0, e=0.8)
@@ -2951,6 +3315,14 @@ $$
 - **Assumes:** linear aerodynamics (small angles); thrust and fuselage moment effects neglected beyond h_ac; stated ranges of each input
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Longitudinal static stability along the mean chord (fractions of the chord from the leading edge LE to the trailing edge TE; the aerofoil outline is schematic): wing aerodynamic centre 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-neutral-point-diagram)
+
+*Longitudinal static stability along the mean chord (fractions of the chord from the leading edge LE to the trailing edge TE; the aerofoil outline is schematic): wing aerodynamic centre 0.25 and centre of gravity 0.3 (the worked example; lift slopes 5.0 and 5.0, tail volume terms St/S = 0.2, lt/c = 4.0, downwash gradient 0.5). Marked: the package's neutral point 0.613636 c and static margin 0.313636 c (with CL_α = 5.5, Cm_α = -1.725).*
+
+![h_n (neutral point / mean chord) against a_w (wing lift-curve slope (per rad)) from 2](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-neutral-point-curve)
+
+*h_n (neutral point / mean chord) against a_w (wing lift-curve slope (per rad)) from 2.5 to 7.5. One curve for each value of h_ac (wing-body aerodynamic centre / mean chord): 0.25, 0.125, 0.5. Other inputs as in the worked example: a_t = 5.0, St_S = 0.2, lt_c = 4.0, deps = 0.5, h_cg = 0.3. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, a_w = 5, h_n = 0.613636.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_neutral_point', h_ac=0.25, a_w=5.0, a_t=5.0, St_S=0.2, lt_c=4.0, deps=0.5, h_cg=0.3)
 # -> h_n = 0.613636, SM = 0.313636, CL_alpha = 5.5, Cm_alpha = -1.725   (SOLVED)
@@ -2989,6 +3361,14 @@ $$
 - **Method:** $v_i = sqrt$(T/(2 rho A)), $A = pi$ $D^{2}/4$; $P = T$ v_i; $w = 2$ v_i
 - **Assumes:** T, D, $\rho > 0$; ideal actuator disk: uniform, inviscid, no swirl
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Momentum (actuator-disk) theory in hover: thrust 6](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-actuator-disk-hover-schematic)
+
+*Momentum (actuator-disk) theory in hover: thrust 6.28319 N on a disk of diameter 2 m in air of density 1.0 kg/m³ (the worked example). The stream tube contracts through the disk; its outline is drawn from continuity with the returned speeds (far-wake radius 0.707107 m, derived). Marked, from the package: induced speed at the disk v_i = 1 m/s, far-wake increment w = 2 m/s, ideal power 6.28319 W.*
+
+![P_ideal (ideal induced power) against D (rotor (disk) diameter) from 1 m to 3 m](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-actuator-disk-hover-curve)
+
+*P_ideal (ideal induced power) against D (rotor (disk) diameter) from 1 m to 3 m. One curve for each value of T (thrust): 6.28319 N, 3.14159 N, 12.5664 N. Other inputs as in the worked example: rho = 1.0 kg/m^3. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, D = 2 m, P_ideal = 6.28319 W.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_actuator_disk_hover', T=6.283185307179586, D=2.0, rho=1.0)
@@ -3031,6 +3411,14 @@ $$
 - **Assumes:** T, V, D, $\rho > 0$; ideal actuator disk
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Momentum (actuator-disk) theory in forward (axial) flight: thrust 25](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-actuator-disk-forward-schematic)
+
+*Momentum (actuator-disk) theory in forward (axial) flight: thrust 25.1327 N on a disk of diameter 2 m in air of density 1.0 kg/m³, free stream 3 m/s (the worked example). The stream tube contracts through the disk; its outline is drawn from continuity with the returned speeds (far-wake radius 0.894427 m, derived). Marked, from the package: induced speed at the disk v_i = 1 m/s, far-wake increment w = 2 m/s, ideal power 100.531 W, ideal efficiency 0.75.*
+
+![eta_ideal (ideal propulsive efficiency T V/P) against V (flight (axial) speed) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-actuator-disk-forward-curve)
+
+*eta_ideal (ideal propulsive efficiency T V/P) against V (flight (axial) speed) from 0.3 m/s to 30 m/s on a logarithmic axis. One curve for each value of D (propeller diameter): 2 m, 1 m, 4 m. Other inputs as in the worked example: T = 25.132741228718345 N, rho = 1.0 kg/m^3. 41 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, V = 3 m/s, eta_ideal = 0.75.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_actuator_disk_forward', T=25.132741228718345, V=3.0, D=2.0, rho=1.0)
 # -> v_i = 1 m/s, P_ideal = 100.531 W, eta_ideal = 0.75, w = 2 m/s   (SOLVED)
@@ -3071,6 +3459,10 @@ $$
 - **Assumes:** $0  \leq  m  \leq  0.095$; $0.05  \leq  p  \leq  0.95$ when $m > 0$; |alpha| <= 15 deg; thin airfoil, inviscid, incompressible, unstalled
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![CL (section lift coefficient) against alpha (angle of attack (deg)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-naca4-thin-airfoil-curve)
+
+*CL (section lift coefficient) against alpha (angle of attack (deg)) from 0.05 rad to 0.15 rad. Other inputs as in the worked example: m = 0.0, p = 0.4. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, alpha = 0.1 rad, CL = 0.628319.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_naca4_thin_airfoil', m=0.0, p=0.4, alpha=0.1)
 # -> alpha_L0_deg = 0, CL = 0.628319, Cm_c4 = 0, Cm_le = -0.15708   (SOLVED)
@@ -3110,6 +3502,10 @@ $$
 - **Method:** a = a0/(1 + a0/(pi AR)); $CL = a$ alpha; CDi = CL^2/(pi AR); alpha_i = CL/(pi AR)
 - **Assumes:** $2  \leq  AR  \leq  40$; $3  \leq  a_{0}  \leq  7.5$ per rad; |alpha| <= 15 deg; untwisted elliptic planform, attached flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![CL (wing lift coefficient) against alpha (angle of attack from zero lift (deg)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-elliptic-wing-lifting-line-curve)
+
+*CL (wing lift coefficient) against alpha (angle of attack from zero lift (deg)) from 0.05 rad to 0.15 rad. One curve for each value of AR (aspect ratio): 2, 4. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, alpha = 0.1 rad, CL = 0.314159.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_elliptic_wing_lifting_line', AR=2.0, alpha=0.1)
@@ -3156,6 +3552,14 @@ $$
 
 *Ground speed for every course (5° steps) of an aircraft flying 100 m/s through a 20 m/s wind from 300°, each solved by the package's wind triangle: slowest 80 m/s heading into the wind (course 300°), fastest 120 m/s with it (course 120°, marked); largest wind correction 11.537°.*
 
+![Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens — the example's head wind is collinear)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-triangle)
+
+*Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens — the example's head wind is collinear). Air vector + wind vector = ground vector. Marked, from the package: heading 81.8699°, wind correction angle -8.1301°, ground speed 84.8528 m/s (164.941 kt).*
+
+![GS (ground speed) against TAS (true airspeed (kt, km/h, m/s)) from 50 m/s to 150 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-curve)
+
+*GS (ground speed) against TAS (true airspeed (kt, km/h, m/s)) from 50 m/s to 150 m/s. One curve for each value of wind_speed (wind speed): 20 m/s, 10 m/s, 40 m/s. Other inputs as in the worked example: course = 1.5707963267948966 rad, wind_from = 1.5707963267948966 rad. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, TAS = 100 m/s, GS = 80 m/s.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_wind_triangle', TAS=100.0, course=1.5707963267948966, wind_from=1.5707963267948966, wind_speed=20.0)
 # -> heading_deg = 90, wca_deg = 0, GS = 80 m/s, GS_kt = 155.508   (SOLVED)
@@ -3199,6 +3603,14 @@ $$
 - **Assumes:** 150 $K  \leq  T  \leq  350$ K; $M < 5$; full recovery (recovery factor 1)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![T0 (total (stagnation) temperature) against V (true airspeed) from 31](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-total-temperature-curve)
+
+*T0 (total (stagnation) temperature) against V (true airspeed) from 31.6968 m/s to 3169.68 m/s on a logarithmic axis. Outputs with the same unit drawn together: dT (ram temperature rise). Other inputs as in the worked example: T = 250.0 K. 34 points computed by aerospace-engineering-ai999x; marked: the worked example, V = 316.968 m/s, T0 = 300 K.*
+
+![T0 (total (stagnation) temperature) over V (true airspeed) from 31](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-total-temperature-field)
+
+*T0 (total (stagnation) temperature) over V (true airspeed) from 31.6968 m/s to 3169.68 m/s and T (static (outside) air temperature) from 125 K to 375 K (logarithmic horizontal axis): each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 161.214 K to dark 1595.23 K); iso-lines at T0 = 250, 500, 750, 1000, 1250, 1500 K; blank cells: inputs the capability refuses. Marked: the worked example, V = 316.968 m/s, T = 250 K, T0 = 300 K.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_total_temperature', V=316.96778261595074, T=250.0)
 # -> T0 = 300 K, dT = 50 K, M = 1   (SOLVED)
@@ -3240,6 +3652,14 @@ $$
 - **Assumes:** 2 to 5 stages; 0.01 <= eps <= 0.5; delta-v below what the stages could reach with zero payload; impulsive staging, no gravity or drag losses
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Optimally staged rocket for Δv = 8156](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-optimal-staging-staging)
+
+*Optimally staged rocket for Δv = 8156.94 m/s with a payload of 1000 kg, specific impulses 300, 300 s and structural fractions 0.1, 0.1 (the worked example), drawn as a stack: stage 1 at the bottom, payload on top. Marked, from the package: stage masses 30000, 5000 kg, lift-off mass 36000 kg, payload fraction 0.0277778, stage mass ratios 4, 4.*
+
+![m0 (minimum lift-off mass) against dv (required total delta-v) from 4078](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-optimal-staging-curve)
+
+*m0 (minimum lift-off mass) against dv (required total delta-v) from 4078.47 m/s to 12235.4 m/s. One curve for each value of m_pl (payload mass): 1000 kg, 500 kg, 2000 kg. Other inputs as in the worked example: Isp = 300, 300, eps = 0.1, 0.1. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, dv = 8156.94 m/s, m0 = 36000 kg.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_optimal_staging', Isp='300, 300', eps='0.1, 0.1', dv=8156.942157885825, m_pl=1000.0)
 # -> m0 = 36000 kg, payload_fraction = 0.0277778, R = [4.0, 4.0], stage_mass = [30000.0, 5000.0]   (SOLVED)
@@ -3278,6 +3698,14 @@ $$
 - **Method:** sin(eta) = R cos(eps)/(R + h); $\lambda = 90$ deg - eps - eta; $d = R$ sin(lambda)/sin(eta); coverage = (1 - cos(lambda))/2
 - **Assumes:** 100 $km  \leq  h  \leq  1e6$ km; 0 <= eps_min <= 80 deg; spherical Earth of radius 6378.1366 km
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Coverage of a satellite at h = 6378](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-satellite-coverage-orbit)
+
+*Coverage of a satellite at h = 6378.14 km (the worked example; minimum elevation 0) drawn to scale over the Earth (radius 6378.14 km, stated): the lines of sight to the edge of coverage, the Earth central angle λ and the nadir angle η. Marked, from the package: λ = 60°, η = 30°, slant range 1.1047e+07 m, fraction of the surface covered 0.25.*
+
+![lambda_deg (Earth central angle to the coverage edge, degrees) against h (satellite altitude) from 637814 m to 6](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-satellite-coverage-curve)
+
+*lambda_deg (Earth central angle to the coverage edge, degrees) against h (satellite altitude) from 637814 m to 6.3781e+07 m on a logarithmic axis. 41 points computed by aerospace-engineering-ai999x; marked: the worked example, h = 6.37814e+06 m, lambda_deg = 60.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_satellite_coverage', h=6378136.6)
@@ -3319,6 +3747,14 @@ $$
 - **Method:** $V_s = sqrt$(2 W/(rho S CL_max)); EAS = V sqrt(rho/rho0)
 - **Assumes:** W, $S > 0$; 0.5 <= CL_max <= 5; -1 $km  \leq  h  \leq  47$ km; level flight, load factor 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Lift coefficient needed for level flight against speed for W = 10000 N, S = 16 m², h = 0 m (the worked example), 51 runs of the package's level-flight capability](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-stall-speed-curve)
+
+*Lift coefficient needed for level flight against speed for W = 10000 N, S = 16 m², h = 0 m (the worked example), 51 runs of the package's level-flight capability. Marked: the package's stall speed 25.2538 m/s (49.0895 kt, EAS 25.2538 m/s), where the needed C_L reaches C_Lmax = 1.6; wing loading 625 N/m².*
+
+![V_stall (stall speed (true airspeed)) against S (wing area (m^2, ft^2)) from 8 m^2 to 24 m^2](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-stall-speed-curve-2)
+
+*V_stall (stall speed (true airspeed)) against S (wing area (m^2, ft^2)) from 8 m^2 to 24 m^2. One curve for each value of W (aircraft weight (N, kN, lbf)): 10000 N, 5000 N, 20000 N. Other inputs as in the worked example: CLmax = 1.6, h = 0.0 m. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, S = 16 m^2, V_stall = 25.2538 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_stall_speed', W=10000.0, S=16.0, CLmax=1.6, h=0.0)
@@ -3365,6 +3801,14 @@ $$
 - **Assumes:** W, S, $V > 0$; -1 $km  \leq  h  \leq  47$ km; level flight, $L = W$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Lift coefficient needed for level flight against speed for W = 10000 N, S = 16 m², h = 0 m (the worked example), 51 runs of the package's level-flight capability](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-level-flight-lift-coefficient-curve)
+
+*Lift coefficient needed for level flight against speed for W = 10000 N, S = 16 m², h = 0 m (the worked example), 51 runs of the package's level-flight capability. Marked: V = 50 m/s needs C_L = 0.408164 (q = 1531.25 Pa, wing loading 625 N/m²).*
+
+![CL (lift coefficient) against V (true airspeed (m/s, kt, km/h)) from 25 m/s to 75 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-level-flight-lift-coefficient-curve-2)
+
+*CL (lift coefficient) against V (true airspeed (m/s, kt, km/h)) from 25 m/s to 75 m/s. One curve for each value of W (aircraft weight): 10000 N, 5000 N, 20000 N. Other inputs as in the worked example: S = 16.0 m^2, h = 0.0 m. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, V = 50 m/s, CL = 0.408164.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_level_flight_lift_coefficient', W=10000.0, S=16.0, V=50.0, h=0.0)
 # -> CL = 0.408164, q = 1531.25 Pa, wing_loading = 625 N/m^2   (SOLVED)
@@ -3407,6 +3851,14 @@ $$
 - **Method:** W/S; W/(g0 S); 1 lbf/ft^2 = 47.880 $N/m^{2}$
 - **Assumes:** W, $S > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![wing_loading (wing loading W/S) against S (wing area (m^2, ft^2)) from 60 m^2 to 180 m^2](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wing-loading-curve)
+
+*wing_loading (wing loading W/S) against S (wing area (m^2, ft^2)) from 60 m^2 to 180 m^2. One curve for each value of W (aircraft weight (N, kN, lbf)): 600000 N, 300000 N, 1.2e+06 N. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, S = 120 m^2, wing_loading = 5000 N/m^2.*
+
+![wing_loading (wing loading W/S) over W (aircraft weight (N, kN, lbf)) from 300000 N to 900000 N and S (wing area (m^2, ft^2)) from 60 m^2 to 180 m^2: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 1666](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wing-loading-field)
+
+*wing_loading (wing loading W/S) over W (aircraft weight (N, kN, lbf)) from 300000 N to 900000 N and S (wing area (m^2, ft^2)) from 60 m^2 to 180 m^2: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 1666.67 N/m^2 to dark 15000 N/m^2); iso-lines at wing_loading = 2500, 5000, 7500, 10000, 12500 N/m^2. Marked: the worked example, W = 600000 N, S = 120 m^2, wing_loading = 5000 N/m^2.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_wing_loading', W=600000.0, S=120.0)
@@ -3457,6 +3909,10 @@ $$
 - **Assumes:** W, S, $V > 0$; $1  \leq  AR  \leq  50$; $0.3  \leq  e  \leq  1$; level flight, $L = W$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Di (induced drag) against V (true airspeed) from 25 m/s to 75 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-induced-drag-curve)
+
+*Di (induced drag) against V (true airspeed) from 25 m/s to 75 m/s. One curve for each value of W (aircraft weight): 10000 N, 5000 N, 20000 N. Other inputs as in the worked example: S = 16.0 m^2, h = 0.0 m, AR = 8.0, e = 0.8. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, V = 50 m/s, Di = 203.004 N.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_induced_drag', W=10000.0, S=16.0, V=50.0, h=0.0, AR=8.0, e=0.8)
 # -> CL = 0.408164, CDi = 0.00828588, Di = 203.004 N, P_induced = 10150.2 W   (SOLVED)
@@ -3497,6 +3953,14 @@ $$
 - **Method:** tan(gamma) = D/L; $R = h$ L/D; sink rate = V sin(gamma)
 - **Assumes:** $h > 0$; $0 < L/D  \leq  100$; still air, steady glide
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![A still-air glide from 2000 m with lift-to-drag ratio 15 (the worked example); the vertical axis is stretched](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-glide-range-path)
+
+*A still-air glide from 2000 m with lift-to-drag ratio 15 (the worked example); the vertical axis is stretched. Marked: the package's range 30000 m and glide angle 3.81407°.*
+
+![range (glide range over the ground) against dh (height to be lost) from 1000 m to 3000 m](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-glide-range-curve)
+
+*range (glide range over the ground) against dh (height to be lost) from 1000 m to 3000 m. One curve for each value of LD (lift-to-drag (glide) ratio): 15, 7.5, 30. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, dh = 2000 m, range = 30000 m.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_glide_range', dh=2000.0, LD=15.0)
@@ -3547,6 +4011,14 @@ $$
 - **Assumes:** mdot, $ve > 0$; pe, pa, Ae given together or not at all; steady, one-dimensional exit flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![F (thrust) against mdot (propellant mass flow rate (kg/s)) from 125 kg/s to 375 kg/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-thrust-curve)
+
+*F (thrust) against mdot (propellant mass flow rate (kg/s)) from 125 kg/s to 375 kg/s. One curve for each value of ve (exhaust velocity at the nozzle exit): 3000 m/s, 1500 m/s, 6000 m/s. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, mdot = 250 kg/s, F = 750000 N.*
+
+![F (thrust) over mdot (propellant mass flow rate (kg/s)) from 125 kg/s to 375 kg/s and ve (exhaust velocity at the nozzle exit) from 1500 m/s to 4500 m/s: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 187500 N to dark 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-thrust-field)
+
+*F (thrust) over mdot (propellant mass flow rate (kg/s)) from 125 kg/s to 375 kg/s and ve (exhaust velocity at the nozzle exit) from 1500 m/s to 4500 m/s: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 187500 N to dark 1.6875e+06 N); iso-lines at F = 2.50e5, 5.00e5, 7.50e5, 1.00e6, 1.25e6, 1.50e6 N. Marked: the worked example, mdot = 250 kg/s, ve = 3000 m/s, F = 750000 N.*
+
 ```python
 aerospace_engineering_ai999x.solve('aero_rocket_thrust', mdot=250.0, ve=3000.0)
 # -> F = 750000 N, F_kN = 750, Isp = 305.915 s, c_eff = 3000 m/s, F_pressure = 0 N   (SOLVED)
@@ -3589,6 +4061,10 @@ $$
 - **Method:** beta = m/(CD A)
 - **Assumes:** m, CD, $A > 0$; $CD  \leq  5$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![beta (ballistic coefficient m/(CD A)) against CD (drag coefficient) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-ballistic-coefficient-curve)
+
+*beta (ballistic coefficient m/(CD A)) against CD (drag coefficient) from 0.6 to 1.8. One curve for each value of m (mass): 1000 kg, 500 kg, 2000 kg. Other inputs as in the worked example: A = 1.5 m^2. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, CD = 1.2, beta = 555.556 kg/m^2.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_ballistic_coefficient', m=1000.0, CD=1.2, A=1.5)
@@ -3637,6 +4113,14 @@ $$
 - **Method:** $M = V/a$, $a = sqrt$(gamma R T); $q = \rho$ $V^{2}/2$; EAS = V sqrt(rho/rho0); $Re = \rho$ V L/mu (Sutherland)
 - **Assumes:** $V > 0$; -1 $km  \leq  h  \leq  47$ km
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![M (Mach number) against V (true airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-flight-condition-curve)
+
+*M (Mach number) against V (true airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s. Other inputs as in the worked example: h = 0.0 m. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, V = 100 m/s, M = 0.293863.*
+
+![M (Mach number) over V (true airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s and h (geometric altitude (standard atmosphere)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-flight-condition-field)
+
+*M (Mach number) over V (true airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s and h (geometric altitude (standard atmosphere)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 0.14693 to dark 0.4408); iso-lines at M = 0.15, 0.2, 0.25, 0.3, 0.35, 0.4. Marked: the worked example, V = 100 m/s, h = 0 m, M = 0.293863.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_flight_condition', V=100.0, h=0.0)
