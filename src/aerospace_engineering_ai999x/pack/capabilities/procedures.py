@@ -3215,9 +3215,11 @@ def jet_fuel_for_range(R, V, c, LD, W0):
     _tsfc_in(c)
     _ld_in(LD)
     _pos("the initial weight", W0)
-    W1 = W0 * math.exp(-R * G0 * c / (V * LD))
+    x = R * G0 * c / (V * LD)
+    W1 = W0 * math.exp(-x)
     _need(W1 >= 0.2 * W0, "the fuel needed would exceed 80% of the initial weight")
-    return _out(W1=W1, Wf=W0 - W1, mf=(W0 - W1) / G0)
+    Wf = -W0 * math.expm1(-x)          # not W0 - W1: on a short range the two weights agree in most of their digits
+    return _out(W1=W1, Wf=Wf, mf=Wf / G0)
 
 
 def ref_jet_fuel_for_range(R, V, c, LD, W0):

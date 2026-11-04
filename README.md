@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/AI999X/aerospace-engineering-ai999x/actions/workflows/ci.yml/badge.svg)](https://github.com/AI999X/aerospace-engineering-ai999x/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/aerospace-engineering-ai999x)](https://pypi.org/project/aerospace-engineering-ai999x/) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/AI999X/aerospace-engineering-ai999x)
 
-**[Install](https://pypi.org/project/aerospace-engineering-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
+**[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/aerospace-engineering-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/aerospace-engineering-ai999x/)** · **[Guides](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
 License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
 
@@ -12,7 +12,298 @@ aerospace-engineering-ai999x is an offline, deterministic Python solver that ans
 
 **aerospace-engineering-ai999x** is a compact, deterministic aerospace engineering engine for Python. It reads a question in plain English (or a typed call), picks a certified aerospace engineering capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions — or an honest refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green)
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green) ![Rust](https://img.shields.io/badge/Rust-Windows%20%7C%20Linux%20%7C%20WebAssembly-orange)
+
+**Run it your way.** aerospace-engineering-ai999x comes as the AI999X desktop app and as the command-line program `aerospace-engineering` for Windows and Linux, runs in your browser as WebAssembly, and installs as a Python package. The desktop app, the command line and the browser run the same compiled Rust program on your own device: offline, no Python needed.
+
+## Get it
+
+| Way to run it | For | Get it |
+|---|---|---|
+| **AI999X Aerospace Engineering desktop app** 1.2.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.2.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-linux-x86_64.tar.gz) |
+| **Command line** (`aerospace-engineering`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) |
+| **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#try) |
+| **Python** | Python 3.10+ | `pip install aerospace-engineering-ai999x` |
+
+Checksums: [SHA256SUMS](https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS) · every version: [https://www.ai999x.com/downloads/desktop/latest/](https://www.ai999x.com/downloads/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+
+## Rust versions
+
+Aerospace Engineering also comes as native programs compiled from Rust, version 1.2.0 of the AI999X desktop app and command line: they run offline on your computer and need no Python. Each file is in this repository's `rust/` folder, on the [GitHub release v1.0.3](https://github.com/AI999X/aerospace-engineering-ai999x/releases/tag/v1.0.3) and on the website.
+
+| Program | System | File | Size | Download | Use |
+|---|---|---|---|---|---|
+| Desktop app (Aerospace Engineering) | Windows x86-64 | `ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip` | 7.3 MB | [Hub](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/aerospace-engineering-ai999x/releases/download/v1.0.3/ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip) | unzip, then double-click `ai999x-aerospace-engineering.exe` (no installer) |
+| Desktop app (Aerospace Engineering) | Linux x86-64 | `ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz` | 8.2 MB | [Hub](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/aerospace-engineering-ai999x/releases/download/v1.0.3/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz) | extract, then run `./ai999x-aerospace-engineering` (X11 or Wayland desktop) |
+| Command line (`aerospace-engineering`) | Windows x86-64 | `ai999x-aerospace-engineering-cli-1.2.0-windows-x86_64.zip` | 3.0 MB | [Hub](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/ai999x-aerospace-engineering-cli-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/aerospace-engineering-ai999x/releases/download/v1.0.3/ai999x-aerospace-engineering-cli-1.2.0-windows-x86_64.zip) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) | unzip, then `aerospace-engineering.exe ask "<question>"` or `aerospace-engineering.exe solve <capability> name=value` |
+| Command line (`aerospace-engineering`) | Linux x86-64 | `ai999x-aerospace-engineering-cli-1.2.0-linux-x86_64.tar.gz` | 3.0 MB | [Hub](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/ai999x-aerospace-engineering-cli-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/aerospace-engineering-ai999x/releases/download/v1.0.3/ai999x-aerospace-engineering-cli-1.2.0-linux-x86_64.tar.gz) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) | extract, then `./aerospace-engineering ask "<question>"` or `./aerospace-engineering solve <capability> name=value` |
+
+The command-line archive holds `aerospace-engineering` with a README of its commands and examples, the licence and the notice. Checksums: [`rust/SHA256SUMS`](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/SHA256SUMS) (`sha256sum -c SHA256SUMS`).
+
+## Quick start
+
+### Desktop app
+
+Download **AI999X Aerospace Engineering** for your system (above), unpack it and start it; type a question in words or pick a capability, fill in the form and press Compute. Figures and an explanation of the answer appear beside it. The AI999X desktop app has the same, with Aerospace Engineering among all AI999X models.
+
+Linux, from a terminal:
+
+```bash
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+tar xzf ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz
+./ai999x-aerospace-engineering-1.2.0-linux-x86_64/ai999x-aerospace-engineering
+```
+
+### Command line
+
+Linux:
+
+```bash
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.2.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.2.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+aerospace-engineering --version
+```
+
+Windows (PowerShell):
+
+```powershell
+$F = "ai999x-cli-1.2.0-windows-x86_64.zip"
+Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/$F" -OutFile $F
+Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS" -OutFile SHA256SUMS
+(Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
+Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.2.0-windows-x86_64"; $env:Path += ";$D"
+[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
+aerospace-engineering --version
+```
+
+Every command below was run as shown; the text under it is what the program printed.
+
+**What a capability needs** — The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
+
+```console
+$ aerospace-engineering info aero_oblique_shock
+Oblique shock from the deflection angle
+  theta-beta-M relation tan(theta) = 2 cot(beta) (M1^2 sin^2 beta - 1)/(M1^2 (g + cos 2 beta) + 2), solved by bisection on the chosen branch; normal-shock relations on Mn1 = M1 sin beta; M2 = Mn2 / sin(beta - theta)
+  in   M1       upstream Mach number (> 1) []
+  in   theta    flow deflection (wedge half-) angle (deg, rad) [rad]
+  in   branch   weak (default) or strong shock solution (choice) []
+  in   gamma    ratio of specific heats (default 1.4, air) []
+  out  beta_deg shock wave angle in degrees []
+  out  M2       downstream Mach number []
+  out  p2_p1    pressure ratio p2/p1 []
+  out  T2_T1    temperature ratio T2/T1 []
+  out  rho2_rho1 density ratio rho2/rho1 []
+  out  p02_p01  stagnation pressure ratio []
+  out  Mn1      upstream Mach number normal to the shock []
+```
+
+**Solve** — Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
+
+```console
+$ aerospace-engineering solve aero_oblique_shock M1=2 "theta=10 deg"
+beta_deg = 39.31393184
+M2 = 1.640522229
+p2_p1 = 1.706578604
+T2_T1 = 1.170151284
+rho2_rho1 = 1.458425613
+p02_p01 = 0.9846440225
+Mn1 = 1.267138036
+  by: Oblique shock from the deflection angle  (theta-beta-M relation tan(theta) = 2 cot(beta) (M1^2 sin^2 beta - 1)/(M1^2 (g + cos 2 beta) + 2), solved by bisection on the chosen branch; normal-shock relations on Mn1 = M1 sin beta; M2 = Mn2 / sin(beta - theta))
+  M1 = 2
+  theta = 0.1745329252 rad
+  assumes: 1 < M1 <= 20; 0 < theta < theta_max(M1) (attached shock); 1.05 <= gamma <= 1.7
+```
+
+**Draw the figures** — The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
+
+```console
+$ aerospace-engineering figures aero_isa_properties "h=35000 ft" --out .
+[
+  {
+    "slug": "aero-isa-properties-live-1",
+    "title": "Density as geometric altitude above mean sea level (m, km,... varies",
+    "caption": "Density as h runs from 8750 to 6.125e+04 ft, every other input as you entered it (41 solutions). Marked: your h = 3.5e+04 ft gives rho = 0.3805. Your inputs: h = 35000 ft.",
+    "file": "./aero-isa-properties-live-1.svg"
+  },
+  {
+    "slug": "aero-isa-properties-live-2",
+    "title": "The computed values side by side",
+    "caption": "Every answer of one unit for your inputs: sigma (density ratio rho/rho0) = 0.3106; delta (pressure ratio p/p0) = 0.236; theta (temperature ratio T/T0) = 0.7598. Your inputs: h = 35000 ft.",
+    "file": "./aero-isa-properties-live-2.svg"
+  }
+]
+```
+
+**Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | aerospace-engineering batch
+
+`cases.jsonl`:
+
+```json
+{"key": "aero_oblique_shock", "inputs": {"M1": 2, "theta": "10 deg"}}
+{"key": "aero_isa_properties", "inputs": {"h": "35000 ft"}}
+```
+
+```console
+$ aerospace-engineering batch < cases.jsonl
+{"outcome":"SOLVED","message":"","value":39.3139318448,"unit":"","solved_for":"beta_deg","si":[["M1",2.0],["theta",0.17453292519943295]],"values":[["beta_deg",39.3139318448,""],["M2",1.640522229,""],["p2_p1",1.706578604,""],["T2_T1",1.1701512843,""],["rho2_rho1",1.45842561291,""],["p02_p01",0.984644022503,""],["Mn1",1.26713803645,""]],"target":"beta_deg","phrase":"shock wave angle in degrees","assumptions":["1 < M1 <= 20","0 < theta < theta_max(M1) (attached shock)","1.05 <= gamma <= 1.7"],"name":"Oblique shock from the deflection angle","equation":"theta-beta-M relation tan(theta) = 2 cot(beta) (M1^2 sin^2 beta - 1)/(M1^2 (g + cos 2 beta) + 2), solved by bisection on the chosen branch; normal-shock relations on Mn1 = M1 sin beta; M2 = Mn2 / sin(beta - theta)"}
+{"outcome":"SOLVED","message":"","value":0.380455436006,"unit":"kg/m^3","solved_for":"rho","si":[["h",10668.0]],"values":[["T",218.924175599,"K"],["p",23908.9066172,"Pa"],["rho",0.380455436006,"kg/m^3"],["a",296.614227594,"m/s"],["mu",0.0000143408368522,"Pa*s"],["sigma",0.310576080137,""],["delta",0.235962562223,""],["theta",0.75975768037,""],["H",10650.126831,"m"]],"target":"rho","phrase":"temperature","assumptions":["-1000 m <= h <= 47000 m"],"name":"Standard atmosphere at an altitude","equation":"H = r0 h/(r0 + h); in each layer T = Tb + L (H - Hb); p = pb (Tb/T)^(g0/(R L)) (L != 0) or pb exp(-g0 (H - Hb)/(R Tb)); rho = p/(R T); a = sqrt(gamma R T)"}
+```
+
+### In your browser
+
+Open [Aerospace Engineering on ai999x.com](https://www.ai999x.com/models/aerospace-engineering-ai999x/#try), choose a capability and press **Compute**: the model runs on your own device as WebAssembly; nothing is sent anywhere. Change any input (any unit of the right kind) and the answer, its explanation and the figures follow.
+
+In your own page: `aerospace_engineering_ai999x.wasm` and the loader `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js).
+
+### Python
+
+```bash
+pip install aerospace-engineering-ai999x
+```
+
+## Worked examples in every form
+
+The same worked example from the command line, from Python and in the browser. Each command-line output is what the program printed.
+
+### Critical Mach number of an airfoil
+
+The free-stream Mach number at which the flow first reaches sonic speed at the airfoil's minimum-pressure point, from its incompressible minimum pressure coefficient and a compressibility rule (Prandtl-Glauert or Karman-Tsien), air (gamma = 1.4).
+
+Command line:
+
+```console
+$ aerospace-engineering solve aero_critical_mach Cp0=-0.43 rule=prandtl-glauert
+M_cr = 0.7371059142
+Cp_cr = -0.6363043586
+  by: Critical Mach number of an airfoil  (Cp_cr(M) = 2/(g M^2) [((1 + (g-1)/2 M^2)/(1 + (g-1)/2))^(g/(g-1)) - 1]; equate to Cp0/sqrt(1 - M^2) (or the Karman-Tsien form) and solve)
+  Cp0 = -0.43
+  rule = prandtl-glauert
+  assumes: -3 <= Cp0 < -0.01; subsonic, small-perturbation compressibility rules; air, gamma = 1.4
+```
+
+Python:
+
+```python
+import aerospace_engineering_ai999x as m
+
+a = m.solve("aero_critical_mach", Cp0="-0.43", rule="prandtl-glauert")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#cap-aero_critical_mach) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the free-stream Mach number at which local flow first becomes sonic over an airfoil, based on its incompressible minimum pressure coefficient of -0.43 and the selected compressibility rule. The resulting critical Mach number is 0.737106, with a matching critical pressure coefficient of -0.636304, indicating the threshold for significant compressibility effects.
+
+### Elliptic wing by lifting-line theory
+
+The lift-curve slope, lift coefficient, induced drag coefficient and induced angle of attack of an untwisted elliptic wing of a given aspect ratio at an angle of attack measured from zero lift (Prandtl lifting-line theory, span efficiency 1).
+
+Command line:
+
+```console
+$ aerospace-engineering solve aero_elliptic_wing_lifting_line AR=2 "alpha=0.1 rad"
+CL_alpha = 3.141592654
+CL = 0.3141592654
+CDi = 0.01570796327
+alpha_i_deg = 2.864788976
+  by: Elliptic wing by lifting-line theory  (a = a0/(1 + a0/(pi AR)); CL = a alpha; CDi = CL^2/(pi AR); alpha_i = CL/(pi AR))
+  AR = 2
+  alpha = 0.1 rad
+  assumes: 2 <= AR <= 40; 3 <= a0 <= 7.5 per rad; |alpha| <= 15 deg; untwisted elliptic planform, attached flow
+```
+
+Python:
+
+```python
+import aerospace_engineering_ai999x as m
+
+a = m.solve("aero_elliptic_wing_lifting_line", AR="2", alpha="0.1 rad")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#cap-aero_elliptic_wing_lifting_line) and press **Compute in your browser**.
+
+_What this means:_ The finite-wing lift-curve slope is 3.14159 per radian, producing a lift coefficient of 0.314159 and an induced drag coefficient of 0.015708.
+
+### Thin-airfoil theory for a NACA 4-digit airfoil
+
+The zero-lift angle, lift coefficient and the pitching-moment coefficients about the quarter chord and the leading edge of a cambered NACA 4-digit airfoil at an angle of attack, from thin-airfoil theory.
+
+Command line:
+
+```console
+$ aerospace-engineering solve aero_naca4_thin_airfoil m=0 p=0 "alpha=0.1 rad"
+alpha_L0_deg = 0
+CL = 0.6283185307
+Cm_c4 = 0
+Cm_le = -0.1570796327
+  by: Thin-airfoil theory for a NACA 4-digit airfoil  (Glauert: A0 = alpha - (1/pi) int dz/dx dtheta, An = (2/pi) int dz/dx cos(n theta) dtheta; CL = pi(2A0 + A1); Cm_c/4 = pi/4 (A2 - A1); integrals of the NACA mean line in closed form)
+  m = 0
+  p = 0
+  alpha = 0.1 rad
+  assumes: 0 <= m <= 0.095; 0.05 <= p <= 0.95 when m > 0; |alpha| <= 15 deg; thin airfoil, inviscid, incompressible, unstalled
+```
+
+Python:
+
+```python
+import aerospace_engineering_ai999x as m
+
+a = m.solve("aero_naca4_thin_airfoil", m="0", p="0", alpha="0.1 rad")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#cap-aero_naca4_thin_airfoil) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the aerodynamic characteristics of a NACA four-digit airfoil using thin-airfoil theory. Given the maximum camber fraction 0, the position of maximum camber 0, and the angle of attack 0.1 rad, it computes the section lift coefficient 0.628319, the zero-lift angle of attack 0, and the pitching moment coefficients about the quarter chord 0 and leading edge -0.15708. These values indicate how much lift the airfoil generates and where its aerodynamic center lies relative to the geometric chord.
+
+### Absolute ceiling of a jet aircraft
+
+The absolute ceiling of a jet aircraft (where the available thrust just equals the minimum drag) when the thrust falls in proportion to the air density, T = T0 rho/rho0.
+
+Command line:
+
+```console
+$ aerospace-engineering solve aero_absolute_ceiling_jet W=100000.0 S=30.0 T0=13486.71062689471 CD0=0.02 AR=7.0 e=0.8
+h_abs = 6669.76749 m
+h_abs_ft = 21882.43927
+sigma = 0.5
+  by: Absolute ceiling of a jet aircraft  (T0 sigma = D_min = 2W sqrt(K CD0): sigma = 2W sqrt(K CD0)/T0; the height of that density in the standard atmosphere)
+  W = 100000 N
+  S = 30 m^2
+  T0 = 13486.71063 N
+  CD0 = 0.02
+  AR = 7
+  e = 0.8
+  assumes: minimum drag below the sea-level thrust; ceiling below 47 km; thrust proportional to density (stated lapse); parabolic drag polar
+```
+
+Python:
+
+```python
+import aerospace_engineering_ai999x as m
+
+a = m.solve("aero_absolute_ceiling_jet", W=100000.0, S=30.0, T0=13486.71062689471, CD0=0.02, AR=7.0, e=0.8)
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#cap-aero_absolute_ceiling_jet) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the highest altitude where level flight is possible by equating available thrust to minimum drag. Using the weight 100000 N, sea-level thrust 13486.7 N, and aerodynamic coefficients including aspect ratio 7 and zero-lift drag coefficient 0.02, the model computes the required density ratio 0.5. The resulting absolute ceiling is 6669.77 m meters, or 21882.4 feet. This value represents the limit where excess thrust becomes zero, assuming thrust decreases linearly with air density.
+
+## Documentation
+
+- **Rust user guide** — the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/aerospace-engineering-ai999x/blob/main/docs/aerospace_engineering_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/aerospace-engineering-ai999x/blob/main/docs/aerospace_engineering_ai999x_rust_guide.md)
+- **Python guide** — every capability with a Python example: [PDF](https://huggingface.co/AI999X/aerospace-engineering-ai999x/blob/main/docs/aerospace_engineering_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/aerospace-engineering-ai999x/blob/main/docs/aerospace_engineering_ai999x_capabilities.md)
+- **Desktop app & command line** — downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
+- **Model page** — compute in your browser, every capability explained: https://www.ai999x.com/models/aerospace-engineering-ai999x/
 
 ## Highlights
 
@@ -20,6 +311,7 @@ aerospace-engineering-ai999x is an offline, deterministic Python solver that ans
 - **Zero wrong answers by design.** Seven explicit outcomes — SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR — never a silent guess. Every one of its 369 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
+- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `aerospace-engineering` command line for Windows and Linux, and WebAssembly on the model page — no Python, no network.
 - **Small and portable.** Pure Python (sympy, mpmath); identical answers on Windows and Linux (Python 3.10, 3.11, 3.12, 3.13, 3.14).
 - **Coverage:** the standard atmosphere, airspeeds, compressible flow and shocks, nozzles and rocket propulsion, rocket performance and staging, aircraft performance, static stability, propellers, wings and airfoils, orbits and re-entry.
 
@@ -38,7 +330,7 @@ aerospace-engineering-ai999x is an offline, deterministic Python solver that ans
 | Creator / engineer | Ibnul Jaif Farabi |
 | Organization | AI999X |
 
-## Quickstart
+## Python quick start
 
 ```bash
 pip install aerospace-engineering-ai999x
@@ -61,7 +353,7 @@ aerospace_engineering.ask("Who created you?").message
 # -> aerospace-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `aerospace-engineering-ai999x "<question>"`, `aerospace-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on aerospace-engineering-ai999x 1.0.3.
+The Python package also installs a Python command, `aerospace-engineering-ai999x "<question>"`; for the native program use `aerospace-engineering` (above). The outputs above were produced by running this exact code on aerospace-engineering-ai999x 1.0.3.
 
 ## Find the right capability, and draw it
 
@@ -83,7 +375,7 @@ aerospace_engineering.search("Solve x^2 - 5x + 6 = 0", k=2)
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
 
-## Worked examples
+## Python worked examples, with their steps
 
 Each question was put to `aerospace-engineering-ai999x`; the answer is the one it returned, with the steps it took.
 
