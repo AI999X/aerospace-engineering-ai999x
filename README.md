@@ -4,7 +4,7 @@
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/aerospace-engineering-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/aerospace-engineering-ai999x/)** · **[Guides](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.1.0
 
 Field: **Engineering** · Tasks: Question Answering, Token Classification, Text Classification, Sentence Similarity, Feature Extraction
 
@@ -20,26 +20,13 @@ aerospace-engineering-ai999x is an offline, deterministic Python solver that ans
 
 | Way to run it | For | Get it |
 |---|---|---|
-| **AI999X Aerospace Engineering desktop app** 1.2.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz) |
-| **AI999X desktop app** 1.2.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-linux-x86_64.tar.gz) |
-| **Command line** (`aerospace-engineering`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) |
+| **AI999X Aerospace Engineering desktop app** 1.4.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-aerospace-engineering-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-aerospace-engineering-1.4.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.4.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz) |
+| **Command line** (`aerospace-engineering`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz) |
 | **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#try) |
 | **Python** | Python 3.10+ | `pip install aerospace-engineering-ai999x` |
 
-Checksums: [SHA256SUMS](https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS) · every version: [https://www.ai999x.com/downloads/desktop/latest/](https://www.ai999x.com/downloads/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
-
-## Rust versions
-
-Aerospace Engineering also comes as native programs compiled from Rust, version 1.2.0 of the AI999X desktop app and command line: they run offline on your computer and need no Python. Each file is in this repository's `rust/` folder, on the [GitHub release v1.0.3](https://github.com/AI999X/aerospace-engineering-ai999x/releases/tag/v1.0.3) and on the website.
-
-| Program | System | File | Size | Download | Use |
-|---|---|---|---|---|---|
-| Desktop app (Aerospace Engineering) | Windows x86-64 | `ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip` | 7.3 MB | [Hub](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/aerospace-engineering-ai999x/releases/download/v1.0.3/ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-windows-x86_64.zip) | unzip, then double-click `ai999x-aerospace-engineering.exe` (no installer) |
-| Desktop app (Aerospace Engineering) | Linux x86-64 | `ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz` | 8.2 MB | [Hub](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/aerospace-engineering-ai999x/releases/download/v1.0.3/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz) | extract, then run `./ai999x-aerospace-engineering` (X11 or Wayland desktop) |
-| Command line (`aerospace-engineering`) | Windows x86-64 | `ai999x-aerospace-engineering-cli-1.2.0-windows-x86_64.zip` | 3.0 MB | [Hub](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/ai999x-aerospace-engineering-cli-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/aerospace-engineering-ai999x/releases/download/v1.0.3/ai999x-aerospace-engineering-cli-1.2.0-windows-x86_64.zip) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) | unzip, then `aerospace-engineering.exe ask "<question>"` or `aerospace-engineering.exe solve <capability> name=value` |
-| Command line (`aerospace-engineering`) | Linux x86-64 | `ai999x-aerospace-engineering-cli-1.2.0-linux-x86_64.tar.gz` | 3.0 MB | [Hub](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/ai999x-aerospace-engineering-cli-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/aerospace-engineering-ai999x/releases/download/v1.0.3/ai999x-aerospace-engineering-cli-1.2.0-linux-x86_64.tar.gz) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) | extract, then `./aerospace-engineering ask "<question>"` or `./aerospace-engineering solve <capability> name=value` |
-
-The command-line archive holds `aerospace-engineering` with a README of its commands and examples, the licence and the notice. Checksums: [`rust/SHA256SUMS`](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/rust/SHA256SUMS) (`sha256sum -c SHA256SUMS`).
+Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
 
 ## Quick start
 
@@ -50,11 +37,11 @@ Download **AI999X Aerospace Engineering** for your system (above), unpack it and
 Linux, from a terminal:
 
 ```bash
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-aerospace-engineering-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz
-./ai999x-aerospace-engineering-1.2.0-linux-x86_64/ai999x-aerospace-engineering
+tar xzf ai999x-aerospace-engineering-1.4.0-linux-x86_64.tar.gz
+./ai999x-aerospace-engineering-1.4.0-linux-x86_64/ai999x-aerospace-engineering
 ```
 
 ### Command line
@@ -62,23 +49,23 @@ tar xzf ai999x-aerospace-engineering-1.2.0-linux-x86_64.tar.gz
 Linux:
 
 ```bash
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.2.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.2.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 aerospace-engineering --version
 ```
 
 Windows (PowerShell):
 
 ```powershell
-$F = "ai999x-cli-1.2.0-windows-x86_64.zip"
-Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/$F" -OutFile $F
-Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.2.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 aerospace-engineering --version
 ```
@@ -119,26 +106,6 @@ Mn1 = 1.267138036
   M1 = 2
   theta = 0.1745329252 rad
   assumes: 1 < M1 <= 20; 0 < theta < theta_max(M1) (attached shock); 1.05 <= gamma <= 1.7
-```
-
-**Draw the figures** — The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```console
-$ aerospace-engineering figures aero_isa_properties "h=35000 ft" --out .
-[
-  {
-    "slug": "aero-isa-properties-live-1",
-    "title": "Density as geometric altitude above mean sea level (m, km,... varies",
-    "caption": "Density as h runs from 8750 to 6.125e+04 ft, every other input as you entered it (41 solutions). Marked: your h = 3.5e+04 ft gives rho = 0.3805. Your inputs: h = 35000 ft.",
-    "file": "./aero-isa-properties-live-1.svg"
-  },
-  {
-    "slug": "aero-isa-properties-live-2",
-    "title": "The computed values side by side",
-    "caption": "Every answer of one unit for your inputs: sigma (density ratio rho/rho0) = 0.3106; delta (pressure ratio p/p0) = 0.236; theta (temperature ratio T/T0) = 0.7598. Your inputs: h = 35000 ft.",
-    "file": "./aero-isa-properties-live-2.svg"
-  }
-]
 ```
 
 **Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | aerospace-engineering batch
@@ -319,7 +286,7 @@ _What this means:_ This calculation determines the highest altitude where level 
 
 | Property | Value |
 |---|---|
-| Package | `aerospace-engineering-ai999x` 1.0.3 (import `aerospace_engineering_ai999x`) |
+| Package | `aerospace-engineering-ai999x` 1.1.0 (import `aerospace_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic aerospace engineering engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 80 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -353,7 +320,7 @@ aerospace_engineering.ask("Who created you?").message
 # -> aerospace-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `aerospace-engineering-ai999x "<question>"`; for the native program use `aerospace-engineering` (above). The outputs above were produced by running this exact code on aerospace-engineering-ai999x 1.0.3.
+The Python package also installs a Python command, `aerospace-engineering-ai999x "<question>"`; for the native program use `aerospace-engineering` (above). The outputs above were produced by running this exact code on aerospace-engineering-ai999x 1.1.0.
 
 ## Find the right capability, and draw it
 
@@ -514,10 +481,10 @@ _Speed against altitude of a ballistic entry (m = 1000 kg, C_D = 1, A = 1 m², e
 ## Citation
 
 ```bibtex
-@software{aerospace_engineering_ai999x_1_0_3,
+@software{aerospace_engineering_ai999x_1_1_0,
   title  = {aerospace-engineering-ai999x: an offline, verified aerospace engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.3},
+  year   = {2026}, version = {1.1.0},
   url    = {https://huggingface.co/AI999X/aerospace-engineering-ai999x}
 }
 ```
