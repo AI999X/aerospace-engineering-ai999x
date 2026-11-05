@@ -191,7 +191,7 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 
 <a id="aero_isa_properties"></a>
 
-### Standard atmosphere at an altitude — `aero_isa_properties`
+### Standard atmosphere at an altitude: `aero_isa_properties`
 
 Temperature, pressure, density, speed of sound and viscosity of the International Standard Atmosphere (US 1976) at a geometric altitude, with the density, pressure and temperature ratios and the geopotential height.
 
@@ -258,7 +258,7 @@ aerospace_engineering_ai999x.solve('aero_isa_properties', h=5003.93591325625)
 
 <a id="aero_pressure_altitude"></a>
 
-### Pressure altitude from static pressure — `aero_pressure_altitude`
+### Pressure altitude from static pressure: `aero_pressure_altitude`
 
 The pressure altitude: the height in the standard atmosphere at which the standard pressure equals the measured static pressure (what an altimeter set to 1013.25 hPa reads).
 
@@ -316,7 +316,7 @@ aerospace_engineering_ai999x.solve('aero_pressure_altitude', p=5474.888669677774
 
 <a id="aero_density_altitude"></a>
 
-### Density altitude from pressure altitude and temperature — `aero_density_altitude`
+### Density altitude from pressure altitude and temperature, `aero_density_altitude`
 
 Air density and density altitude (the standard-atmosphere height with the same density) from the pressure altitude and the outside air temperature.
 
@@ -375,7 +375,7 @@ aerospace_engineering_ai999x.solve('aero_density_altitude', hp=0.0, T=300.0)
 
 <a id="aero_geopotential_altitude"></a>
 
-### Geopotential height from geometric altitude — `aero_geopotential_altitude`
+### Geopotential height from geometric altitude, `aero_geopotential_altitude`
 
 The geopotential height (the height in a uniform gravity field g0 with the same potential energy) and the local gravity at a geometric altitude.
 
@@ -422,7 +422,7 @@ aerospace_engineering_ai999x.solve('aero_geopotential_altitude', h=706307.333333
 
 <a id="aero_calibrated_airspeed"></a>
 
-### Calibrated airspeed from true airspeed — `aero_calibrated_airspeed`
+### Calibrated airspeed from true airspeed: `aero_calibrated_airspeed`
 
 The calibrated airspeed, impact pressure and pitot total pressure of an aircraft flying at a true airspeed at a pressure altitude (subsonic, compressible pitot formula).
 
@@ -476,7 +476,7 @@ aerospace_engineering_ai999x.solve('aero_calibrated_airspeed', V=200.0, hp=0.0)
 
 <a id="aero_true_airspeed_from_calibrated"></a>
 
-### True airspeed from calibrated airspeed — `aero_true_airspeed_from_calibrated`
+### True airspeed from calibrated airspeed: `aero_true_airspeed_from_calibrated`
 
 The true airspeed and flight Mach number from the calibrated airspeed, the pressure altitude and the outside air temperature (subsonic).
 
@@ -530,7 +530,7 @@ aerospace_engineering_ai999x.solve('aero_true_airspeed_from_calibrated', CAS=150
 
 <a id="aero_mach_from_pitot"></a>
 
-### Mach number from pitot and static pressures — `aero_mach_from_pitot`
+### Mach number from pitot and static pressures, `aero_mach_from_pitot`
 
 The flight Mach number from the static pressure and the pitot (total) pressure: the isentropic relation when subsonic, the Rayleigh pitot formula (normal shock ahead of the probe) when supersonic.
 
@@ -586,7 +586,7 @@ aerospace_engineering_ai999x.solve('aero_mach_from_pitot', p=10000.0, pt=56404.4
 
 <a id="aero_isentropic_flow"></a>
 
-### Isentropic flow ratios at a Mach number — `aero_isentropic_flow`
+### Isentropic flow ratios at a Mach number: `aero_isentropic_flow`
 
 Stagnation-to-static temperature, pressure and density ratios and the area ratio $A/A of$ isentropic flow of a perfect gas at a Mach number.
 
@@ -639,7 +639,7 @@ aerospace_engineering_ai999x.solve('aero_isentropic_flow', M=1.0, gamma=1.3)
 
 <a id="aero_mach_from_area_ratio"></a>
 
-### Mach number from the area ratio A/A* — `aero_mach_from_area_ratio`
+### Mach number from the area ratio A/A*, `aero_mach_from_area_ratio`
 
 The subsonic or supersonic Mach number at which isentropic flow has a given area ratio A/A*, with the static-to-stagnation pressure and temperature ratios there.
 
@@ -692,7 +692,7 @@ aerospace_engineering_ai999x.solve('aero_mach_from_area_ratio', ar=1.0, regime='
 
 <a id="aero_mach_from_pressure_ratio"></a>
 
-### Mach number from the stagnation-to-static pressure ratio — `aero_mach_from_pressure_ratio`
+### Mach number from the stagnation-to-static pressure ratio, `aero_mach_from_pressure_ratio`
 
 The Mach number of isentropic flow from the ratio of stagnation to static pressure $p_{0}/p$, with $T_{0}/T$ and $A/A .$
 
@@ -740,7 +740,7 @@ aerospace_engineering_ai999x.solve('aero_mach_from_pressure_ratio', pr=1.8929291
 
 <a id="aero_normal_shock"></a>
 
-### Normal shock relations — `aero_normal_shock`
+### Normal shock relations: `aero_normal_shock`
 
 Downstream Mach number and the pressure, temperature, density and stagnation-pressure ratios across a normal shock, with the pitot ratio $p02/p_{1}.$
 
@@ -799,7 +799,7 @@ aerospace_engineering_ai999x.solve('aero_normal_shock', M1=3.0)
 
 <a id="aero_oblique_shock"></a>
 
-### Oblique shock from the deflection angle — `aero_oblique_shock`
+### Oblique shock from the deflection angle: `aero_oblique_shock`
 
 The wave angle, downstream Mach number and the pressure, temperature, density and stagnation-pressure ratios of an attached oblique shock turning a supersonic flow by a deflection angle (weak or strong solution).
 
@@ -857,7 +857,7 @@ aerospace_engineering_ai999x.solve('aero_oblique_shock', M1=3.0, theta=0.4176000
 
 <a id="aero_prandtl_meyer"></a>
 
-### Prandtl-Meyer angle of a Mach number — `aero_prandtl_meyer`
+### Prandtl-Meyer angle of a Mach number: `aero_prandtl_meyer`
 
 The Prandtl-Meyer function nu(M): the angle through which a sonic flow must turn isentropically to reach Mach M.
 
@@ -903,7 +903,7 @@ aerospace_engineering_ai999x.solve('aero_prandtl_meyer', M=2.0)
 
 <a id="aero_mach_from_prandtl_meyer"></a>
 
-### Mach number from the Prandtl-Meyer angle — `aero_mach_from_prandtl_meyer`
+### Mach number from the Prandtl-Meyer angle: `aero_mach_from_prandtl_meyer`
 
 The supersonic Mach number whose Prandtl-Meyer angle is nu, with the maximum turning angle of the gas (expansion to vacuum).
 
@@ -950,7 +950,7 @@ aerospace_engineering_ai999x.solve('aero_mach_from_prandtl_meyer', nu=0.0)
 
 <a id="aero_expansion_fan"></a>
 
-### Prandtl-Meyer expansion fan — `aero_expansion_fan`
+### Prandtl-Meyer expansion fan: `aero_expansion_fan`
 
 The downstream Mach number and the pressure, temperature and density ratios when a supersonic flow turns away from itself by an angle through a centred expansion fan.
 
@@ -1000,7 +1000,7 @@ aerospace_engineering_ai999x.solve('aero_expansion_fan', M1=1.0, theta=0.4604136
 
 <a id="aero_normal_shock_from_pressure_ratio"></a>
 
-### Normal shock from its pressure ratio — `aero_normal_shock_from_pressure_ratio`
+### Normal shock from its pressure ratio: `aero_normal_shock_from_pressure_ratio`
 
 The upstream and downstream Mach numbers and the temperature, density and stagnation-pressure ratios of a normal shock of known static pressure ratio $p_{2}/p_{1}$ (shock strength).
 
@@ -1053,7 +1053,7 @@ aerospace_engineering_ai999x.solve('aero_normal_shock_from_pressure_ratio', p21=
 
 <a id="aero_oblique_shock_from_wave_angle"></a>
 
-### Oblique shock from the wave angle — `aero_oblique_shock_from_wave_angle`
+### Oblique shock from the wave angle: `aero_oblique_shock_from_wave_angle`
 
 The flow deflection, downstream Mach number and the property ratios of an oblique shock of known wave angle (for example measured on a schlieren photograph).
 
@@ -1109,7 +1109,7 @@ aerospace_engineering_ai999x.solve('aero_oblique_shock_from_wave_angle', M1=2.0,
 
 <a id="aero_max_deflection_angle"></a>
 
-### Maximum deflection angle of an attached oblique shock — `aero_max_deflection_angle`
+### Maximum deflection angle of an attached oblique shock, `aero_max_deflection_angle`
 
 The largest wedge (deflection) angle for which an oblique shock stays attached at a given upstream Mach number, with the wave angle, downstream Mach number and pressure ratio at that limit; beyond it the shock detaches.
 
@@ -1161,7 +1161,7 @@ aerospace_engineering_ai999x.solve('aero_max_deflection_angle', M1=3.0)
 
 <a id="aero_fanno_flow"></a>
 
-### Fanno flow (adiabatic duct flow with friction) — `aero_fanno_flow`
+### Fanno flow (adiabatic duct flow with friction), `aero_fanno_flow`
 
 For adiabatic flow with wall friction in a constant-area duct: the friction length f L*/D needed to reach Mach 1 from Mach M, and the pressure, temperature, density and stagnation-pressure ratios to the sonic (choked) state.
 
@@ -1210,7 +1210,7 @@ aerospace_engineering_ai999x.solve('aero_fanno_flow', M=0.5)
 
 <a id="aero_rayleigh_flow"></a>
 
-### Rayleigh flow (duct flow with heat addition) — `aero_rayleigh_flow`
+### Rayleigh flow (duct flow with heat addition), `aero_rayleigh_flow`
 
 For frictionless constant-area flow with heat addition: the stagnation temperature, temperature, pressure, density and stagnation-pressure ratios to the sonic (thermally choked) state at a Mach number.
 
@@ -1259,7 +1259,7 @@ aerospace_engineering_ai999x.solve('aero_rayleigh_flow', M=2.0)
 
 <a id="aero_choked_mass_flow"></a>
 
-### Choked mass flow through a nozzle throat — `aero_choked_mass_flow`
+### Choked mass flow through a nozzle throat: `aero_choked_mass_flow`
 
 The maximum (choked) mass flow of a perfect gas through a sonic throat from the stagnation pressure and temperature, with the throat (critical) pressure, temperature and speed.
 
@@ -1310,7 +1310,7 @@ aerospace_engineering_ai999x.solve('aero_choked_mass_flow', p0=100000.0, T0=300.
 
 <a id="aero_characteristic_velocity"></a>
 
-### Characteristic velocity c* of a rocket propellant — `aero_characteristic_velocity`
+### Characteristic velocity c* of a rocket propellant, `aero_characteristic_velocity`
 
 The characteristic exhaust velocity c* = pc At / mdot of ideal rocket combustion products from the chamber temperature, molar mass and ratio of specific heats, with the Vandenkerckhove function.
 
@@ -1352,7 +1352,7 @@ aerospace_engineering_ai999x.solve('aero_characteristic_velocity', Tc=3000.0, Mw
 
 <a id="aero_thrust_coefficient"></a>
 
-### Nozzle thrust coefficient — `aero_thrust_coefficient`
+### Nozzle thrust coefficient: `aero_thrust_coefficient`
 
 The thrust coefficient CF = F/(pc At) of an ideal rocket nozzle of given expansion area ratio at an ambient pressure, with the exit pressure ratio and Mach number and the vacuum thrust coefficient.
 
@@ -1397,7 +1397,7 @@ aerospace_engineering_ai999x.solve('aero_thrust_coefficient', gamma=1.4, eps=1.6
 
 <a id="aero_ideal_exhaust_velocity"></a>
 
-### Ideal rocket exhaust velocity — `aero_ideal_exhaust_velocity`
+### Ideal rocket exhaust velocity: `aero_ideal_exhaust_velocity`
 
 The exhaust velocity of an ideal rocket nozzle expanding combustion products from the chamber to the exit pressure, with the specific impulse at that exit pressure (optimum expansion) and the exit Mach number.
 
@@ -1442,7 +1442,7 @@ aerospace_engineering_ai999x.solve('aero_ideal_exhaust_velocity', Tc=3000.0, Mw=
 
 <a id="aero_optimum_area_ratio"></a>
 
-### Optimum nozzle area ratio — `aero_optimum_area_ratio`
+### Optimum nozzle area ratio: `aero_optimum_area_ratio`
 
 The nozzle expansion area ratio that expands the exhaust exactly to the ambient pressure (optimum expansion, maximum thrust at that pressure), with the exit Mach number and the thrust coefficient.
 
@@ -1485,7 +1485,7 @@ aerospace_engineering_ai999x.solve('aero_optimum_area_ratio', gamma=1.4, pc=7824
 
 <a id="aero_rocket_engine_performance"></a>
 
-### Ideal rocket engine performance — `aero_rocket_engine_performance`
+### Ideal rocket engine performance: `aero_rocket_engine_performance`
 
 Thrust, mass flow, specific impulse, thrust coefficient, characteristic velocity and the exit pressure, velocity and Mach number of an ideal rocket engine from its chamber conditions, propellant products, throat area, expansion ratio and the ambient pressure.
 
@@ -1541,7 +1541,7 @@ aerospace_engineering_ai999x.solve('aero_rocket_engine_performance', pc=1000000.
 
 <a id="aero_throat_area_for_thrust"></a>
 
-### Throat area of a rocket engine for a required thrust — `aero_throat_area_for_thrust`
+### Throat area of a rocket engine for a required thrust, `aero_throat_area_for_thrust`
 
 The throat and exit areas, mass flow and specific impulse of an ideal rocket engine sized to give a required thrust at an ambient pressure.
 
@@ -1589,7 +1589,7 @@ aerospace_engineering_ai999x.solve('aero_throat_area_for_thrust', F=1000.0, pc=1
 
 <a id="aero_nozzle_normal_shock"></a>
 
-### Normal shock position in a converging-diverging nozzle — `aero_nozzle_normal_shock`
+### Normal shock position in a converging-diverging nozzle, `aero_nozzle_normal_shock`
 
 Where a normal shock stands in the diverging part of a converging-diverging nozzle for a given back pressure: the area ratio at the shock, the Mach numbers before and after it, the exit Mach number and the stagnation-pressure loss.
 
@@ -1644,7 +1644,7 @@ aerospace_engineering_ai999x.solve('aero_nozzle_normal_shock', pc=1000000.0, pb=
 
 <a id="aero_critical_mach"></a>
 
-### Critical Mach number of an airfoil — `aero_critical_mach`
+### Critical Mach number of an airfoil: `aero_critical_mach`
 
 The free-stream Mach number at which the flow first reaches sonic speed at the airfoil's minimum-pressure point, from its incompressible minimum pressure coefficient and a compressibility rule (Prandtl-Glauert or Karman-Tsien), air $(\gamma = 1.4)$.
 
@@ -1685,7 +1685,7 @@ aerospace_engineering_ai999x.solve('aero_critical_mach', Cp0=-0.43, rule='prandt
 
 <a id="aero_rocket_delta_v"></a>
 
-### Rocket delta-v from specific impulse (Tsiolkovsky) — `aero_rocket_delta_v`
+### Rocket delta-v from specific impulse (Tsiolkovsky), `aero_rocket_delta_v`
 
 The ideal velocity change of a rocket (no gravity or drag) from its specific impulse and its initial and burnout masses.
 
@@ -1735,7 +1735,7 @@ aerospace_engineering_ai999x.solve('aero_rocket_delta_v', Isp=450.0, m0=4000.0, 
 
 <a id="aero_propellant_for_delta_v"></a>
 
-### Propellant mass for a required delta-v — `aero_propellant_for_delta_v`
+### Propellant mass for a required delta-v: `aero_propellant_for_delta_v`
 
 The propellant mass, initial mass and mass ratio a rocket stage needs to give a velocity change, from its specific impulse and burnout mass (structure plus payload).
 
@@ -1782,7 +1782,7 @@ aerospace_engineering_ai999x.solve('aero_propellant_for_delta_v', dv=2941.995, I
 
 <a id="aero_delta_v_gravity_loss"></a>
 
-### Gravity loss of a vertical rocket burn — `aero_delta_v_gravity_loss`
+### Gravity loss of a vertical rocket burn: `aero_delta_v_gravity_loss`
 
 The burnout speed of a rocket climbing vertically under constant thrust and constant gravity (no drag), its ideal delta-v and the gravity loss g tb.
 
@@ -1827,7 +1827,7 @@ aerospace_engineering_ai999x.solve('aero_delta_v_gravity_loss', Isp=300.0, m0=27
 
 <a id="aero_vertical_rocket_trajectory"></a>
 
-### Burnout height and apogee of a vertical rocket — `aero_vertical_rocket_trajectory`
+### Burnout height and apogee of a vertical rocket, `aero_vertical_rocket_trajectory`
 
 Burnout speed and height, apogee height and time to apogee of a rocket launched vertically under constant thrust and mass flow and constant gravity, neglecting drag.
 
@@ -1873,7 +1873,7 @@ aerospace_engineering_ai999x.solve('aero_vertical_rocket_trajectory', Isp=300.0,
 
 <a id="aero_multistage_delta_v"></a>
 
-### Delta-v of a multistage rocket — `aero_multistage_delta_v`
+### Delta-v of a multistage rocket: `aero_multistage_delta_v`
 
 The total ideal velocity change of a multistage rocket and the contribution of each stage, from each stage's specific impulse and the vehicle mass at its ignition and at its burnout.
 
@@ -1915,7 +1915,7 @@ aerospace_engineering_ai999x.solve('aero_multistage_delta_v', Isp='300, 300', m0
 
 <a id="aero_identical_stages_payload"></a>
 
-### Payload fraction of a rocket with identical stages — `aero_identical_stages_payload`
+### Payload fraction of a rocket with identical stages, `aero_identical_stages_payload`
 
 For a rocket of n identical stages (same specific impulse and structural coefficient, equal delta-v split): the payload ratio of each stage, the overall payload fraction, the stage mass ratio and the gross lift-off mass per kilogram of payload.
 
@@ -1960,7 +1960,7 @@ aerospace_engineering_ai999x.solve('aero_identical_stages_payload', n=1, dv=4078
 
 <a id="aero_circular_orbit"></a>
 
-### Circular orbit at an altitude above the Earth — `aero_circular_orbit`
+### Circular orbit at an altitude above the Earth, `aero_circular_orbit`
 
 Orbital speed, period and revolutions per day of a circular orbit at an altitude above the Earth's equatorial radius.
 
@@ -2006,7 +2006,7 @@ aerospace_engineering_ai999x.solve('aero_circular_orbit', h=19134409.799999997)
 
 <a id="aero_escape_speed"></a>
 
-### Escape speed at an altitude above the Earth — `aero_escape_speed`
+### Escape speed at an altitude above the Earth, `aero_escape_speed`
 
 The speed needed to escape the Earth's gravity from an altitude, the circular orbital speed there and the burn needed to escape from that circular orbit.
 
@@ -2052,7 +2052,7 @@ aerospace_engineering_ai999x.solve('aero_escape_speed', h=6378136.6)
 
 <a id="aero_altitude_for_period"></a>
 
-### Circular-orbit altitude for an orbital period — `aero_altitude_for_period`
+### Circular-orbit altitude for an orbital period, `aero_altitude_for_period`
 
 The altitude above the Earth of the circular orbit with a given period (for example a geostationary orbit, one sidereal day), and its orbital speed.
 
@@ -2097,7 +2097,7 @@ aerospace_engineering_ai999x.solve('aero_altitude_for_period', T=40554.746576014
 
 <a id="aero_bielliptic_transfer"></a>
 
-### Bi-elliptic transfer between circular orbits — `aero_bielliptic_transfer`
+### Bi-elliptic transfer between circular orbits, `aero_bielliptic_transfer`
 
 The three burns, total delta-v and transfer time of a bi-elliptic transfer from a lower to a higher circular orbit around the Earth through an intermediate apoapsis, with the Hohmann delta-v for comparison.
 
@@ -2151,7 +2151,7 @@ aerospace_engineering_ai999x.solve('aero_bielliptic_transfer', h1=6378136.6, h2=
 
 <a id="aero_lambert_problem"></a>
 
-### Lambert's problem (orbit through two positions in a given time) — `aero_lambert_problem`
+### Lambert's problem (orbit through two positions in a given time), `aero_lambert_problem`
 
 The velocities at departure and arrival of the zero-revolution Earth orbit that goes from one position to another in a given time of flight (prograde or retrograde), with the transfer angle.
 
@@ -2195,7 +2195,7 @@ aerospace_engineering_ai999x.solve('aero_lambert_problem', r1='7000, 0, 0', r2='
 
 <a id="aero_j2_nodal_regression"></a>
 
-### Nodal regression from the Earth's oblateness (J2) — `aero_j2_nodal_regression`
+### Nodal regression from the Earth's oblateness (J2), `aero_j2_nodal_regression`
 
 The secular drift of the right ascension of the ascending node caused by the Earth's equatorial bulge (J2), from the perigee and apogee altitudes and the inclination.
 
@@ -2246,7 +2246,7 @@ aerospace_engineering_ai999x.solve('aero_j2_nodal_regression', hp=19134409.79999
 
 <a id="aero_j2_apsidal_rotation"></a>
 
-### Rotation of the line of apsides from J2 — `aero_j2_apsidal_rotation`
+### Rotation of the line of apsides from J2: `aero_j2_apsidal_rotation`
 
 The secular rotation of the argument of perigee of an eccentric Earth orbit caused by J2 (zero at the critical inclination 63.4 degrees, as used by Molniya orbits).
 
@@ -2287,7 +2287,7 @@ aerospace_engineering_ai999x.solve('aero_j2_apsidal_rotation', hp=12756273.2, ha
 
 <a id="aero_sun_synchronous_inclination"></a>
 
-### Inclination of a sun-synchronous orbit — `aero_sun_synchronous_inclination`
+### Inclination of a sun-synchronous orbit: `aero_sun_synchronous_inclination`
 
 The inclination at which J2 makes a circular orbit's plane turn eastward at one revolution per year (sun-synchronous), at an altitude, with the orbital period.
 
@@ -2327,7 +2327,7 @@ aerospace_engineering_ai999x.solve('aero_sun_synchronous_inclination', h=700000.
 
 <a id="aero_ballistic_entry_peak_deceleration"></a>
 
-### Peak deceleration of a ballistic re-entry (Allen-Eggers) — `aero_ballistic_entry_peak_deceleration`
+### Peak deceleration of a ballistic re-entry (Allen-Eggers), `aero_ballistic_entry_peak_deceleration`
 
 The peak deceleration (in g), the altitude where it occurs and the speed there for a body entering an exponential atmosphere on a straight ballistic path, from its mass, drag coefficient and reference area (ballistic coefficient m/(CD A)), entry speed and flight-path angle.
 
@@ -2375,7 +2375,7 @@ aerospace_engineering_ai999x.solve('aero_ballistic_entry_peak_deceleration', m=1
 
 <a id="aero_ballistic_entry_velocity"></a>
 
-### Speed and deceleration of a ballistic re-entry at an altitude — `aero_ballistic_entry_velocity`
+### Speed and deceleration of a ballistic re-entry at an altitude, `aero_ballistic_entry_velocity`
 
 The speed and the deceleration of a body on a straight ballistic entry into an exponential atmosphere when it reaches a given altitude (Allen-Eggers).
 
@@ -2426,7 +2426,7 @@ aerospace_engineering_ai999x.solve('aero_ballistic_entry_velocity', m=1000.0, CD
 
 <a id="aero_drag_polar_optimum"></a>
 
-### Best lift coefficients and lift-to-drag ratios of a drag polar — `aero_drag_polar_optimum`
+### Best lift coefficients and lift-to-drag ratios of a drag polar, `aero_drag_polar_optimum`
 
 For a parabolic drag polar CD = CD0 + CL^2/(pi e AR): the lift coefficient and L/D for minimum drag (maximum L/D), for minimum power (best propeller endurance) and for the jet's best range (maximum sqrt(CL)/CD).
 
@@ -2455,11 +2455,11 @@ $$
 
 ![Drag polar C_D = C_D0 + C_Di for C_D0 = 0](https://huggingface.co/AI999X/aerospace-engineering-ai999x/resolve/main/figures/aero-drag-polar-optimum-scatter.svg)
 
-*Drag polar C_D = C_D0 + C_Di for C_D0 = 0.02, aspect ratio 10 and Oswald factor 0.8: the induced drag at 41 speeds from the package (W = 10000 N, S = 16 m², sea level); the tangent from the origin touches at the best lift-to-drag point it computes — marked: C_D = 0.04, C_L = 0.708982, L/D = 17.7245.*
+*Drag polar C_D = C_D0 + C_Di for C_D0 = 0.02, aspect ratio 10 and Oswald factor 0.8: the induced drag at 41 speeds from the package (W = 10000 N, S = 16 m², sea level); the tangent from the origin touches at the best lift-to-drag point it computes, marked: C_D = 0.04, C_L = 0.708982, L/D = 17.7245.*
 
 ![Parabolic drag polar for C_D0 = 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-drag-polar-optimum-polar)
 
-*Parabolic drag polar for C_D0 = 0.02, aspect ratio 10.0, Oswald factor 0.8 (the worked example): induced drag from the package at 46 speeds (W = 10000 N, S = 16 m², sea level, stated) added to C_D0. Marked: the package's three optimum points, each at C_D = C_L/(L/D) of its returned values — minimum drag C_L = 0.708982 with (L/D)max = 17.7245 (the tangent from the origin), minimum power C_L = 1.22799 (L/D 15.3499), best jet range C_L = 0.409331 (L/D 15.3499).*
+*Parabolic drag polar for C_D0 = 0.02, aspect ratio 10.0, Oswald factor 0.8 (the worked example): induced drag from the package at 46 speeds (W = 10000 N, S = 16 m², sea level, stated) added to C_D0. Marked: the package's three optimum points, each at C_D = C_L/(L/D) of its returned values, minimum drag C_L = 0.708982 with (L/D)max = 17.7245 (the tangent from the origin), minimum power C_L = 1.22799 (L/D 15.3499), best jet range C_L = 0.409331 (L/D 15.3499).*
 
 ![LD_max (maximum lift-to-drag ratio) against CD0 (zero-lift (parasite) drag coefficient) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-drag-polar-optimum-curve)
 
@@ -2480,7 +2480,7 @@ aerospace_engineering_ai999x.solve('aero_drag_polar_optimum', CD0=0.02, AR=10.0,
 
 <a id="aero_min_drag_power_speeds"></a>
 
-### Speeds for minimum drag, minimum power and best jet range — `aero_min_drag_power_speeds`
+### Speeds for minimum drag, minimum power and best jet range, `aero_min_drag_power_speeds`
 
 In steady level flight at an altitude: the speed for minimum drag and the minimum drag, the speed for minimum power required and that power, and the jet's best-range speed, for a parabolic drag polar.
 
@@ -2532,7 +2532,7 @@ aerospace_engineering_ai999x.solve('aero_min_drag_power_speeds', W=10000.0, S=20
 
 <a id="aero_breguet_range_jet"></a>
 
-### Breguet range of a jet aircraft — `aero_breguet_range_jet`
+### Breguet range of a jet aircraft: `aero_breguet_range_jet`
 
 The cruise range and flight time of a jet aircraft at constant speed and lift-to-drag ratio (cruise-climb) from its thrust-specific fuel consumption and the weights at the start and end of cruise.
 
@@ -2578,7 +2578,7 @@ aerospace_engineering_ai999x.solve('aero_breguet_range_jet', V=200.0, c=2.832545
 
 <a id="aero_breguet_endurance_jet"></a>
 
-### Endurance of a jet aircraft — `aero_breguet_endurance_jet`
+### Endurance of a jet aircraft: `aero_breguet_endurance_jet`
 
 The time a jet aircraft can stay airborne at constant lift-to-drag ratio from its thrust-specific fuel consumption and initial and final weights (independent of speed).
 
@@ -2621,7 +2621,7 @@ aerospace_engineering_ai999x.solve('aero_breguet_endurance_jet', c=2.83254503604
 
 <a id="aero_jet_fuel_for_range"></a>
 
-### Fuel a jet needs for a cruise range — `aero_jet_fuel_for_range`
+### Fuel a jet needs for a cruise range: `aero_jet_fuel_for_range`
 
 The fuel weight (and mass) a jet aircraft burns cruising a distance at constant speed and L/D, and its weight at the end, from the Breguet relation.
 
@@ -2666,7 +2666,7 @@ aerospace_engineering_ai999x.solve('aero_jet_fuel_for_range', R=10800000.0, V=20
 
 <a id="aero_jet_range_constant_altitude"></a>
 
-### Jet range at constant altitude and lift coefficient — `aero_jet_range_constant_altitude`
+### Jet range at constant altitude and lift coefficient, `aero_jet_range_constant_altitude`
 
 The range and flight time of a jet cruising at a constant altitude and constant lift coefficient, so that its speed falls as fuel burns (the second Breguet form).
 
@@ -2714,7 +2714,7 @@ aerospace_engineering_ai999x.solve('aero_jet_range_constant_altitude', W0=400000
 
 <a id="aero_breguet_range_prop"></a>
 
-### Breguet range of a propeller aircraft — `aero_breguet_range_prop`
+### Breguet range of a propeller aircraft: `aero_breguet_range_prop`
 
 The cruise range of a propeller-driven aircraft at constant lift-to-drag ratio and propeller efficiency from its power-specific fuel consumption and initial and final weights.
 
@@ -2758,7 +2758,7 @@ aerospace_engineering_ai999x.solve('aero_breguet_range_prop', eta=0.8, c=1e-07, 
 
 <a id="aero_prop_endurance_constant_altitude"></a>
 
-### Endurance of a propeller aircraft at constant altitude — `aero_prop_endurance_constant_altitude`
+### Endurance of a propeller aircraft at constant altitude, `aero_prop_endurance_constant_altitude`
 
 How long a propeller-driven aircraft can loiter at a constant altitude and lift coefficient, from its propeller efficiency, power-specific fuel consumption, drag polar point, wing area and weights.
 
@@ -2805,7 +2805,7 @@ aerospace_engineering_ai999x.solve('aero_prop_endurance_constant_altitude', eta=
 
 <a id="aero_takeoff_ground_roll"></a>
 
-### Takeoff ground roll — `aero_takeoff_ground_roll`
+### Takeoff ground roll: `aero_takeoff_ground_roll`
 
 The ground-roll distance and time to lift-off speed of an aircraft accelerating under constant thrust against aerodynamic drag and rolling friction on a level runway.
 
@@ -2852,7 +2852,7 @@ aerospace_engineering_ai999x.solve('aero_takeoff_ground_roll', W=10000.0, S=10.0
 
 <a id="aero_landing_ground_roll"></a>
 
-### Landing ground roll — `aero_landing_ground_roll`
+### Landing ground roll: `aero_landing_ground_roll`
 
 The ground-roll distance and time from touchdown to a stop of an aircraft braking on a level runway, with aerodynamic drag, lift (which unloads the wheels) and optional reverse thrust.
 
@@ -2899,7 +2899,7 @@ aerospace_engineering_ai999x.solve('aero_landing_ground_roll', W=10000.0, S=10.0
 
 <a id="aero_level_turn_bank"></a>
 
-### Level coordinated turn at a bank angle — `aero_level_turn_bank`
+### Level coordinated turn at a bank angle: `aero_level_turn_bank`
 
 The load factor, turn radius, turn rate and the time for a full circle of an aircraft in a level, coordinated turn at a true airspeed and bank angle.
 
@@ -2954,7 +2954,7 @@ aerospace_engineering_ai999x.solve('aero_level_turn_bank', V=50.0, phi=1.0471975
 
 <a id="aero_level_turn_load_factor"></a>
 
-### Level turn at a load factor — `aero_level_turn_load_factor`
+### Level turn at a load factor: `aero_level_turn_load_factor`
 
 The bank angle, turn radius, turn rate and time for a full circle of a level coordinated turn flown at a true airspeed and load factor (g).
 
@@ -3004,7 +3004,7 @@ aerospace_engineering_ai999x.solve('aero_level_turn_load_factor', V=100.0, n=2.0
 
 <a id="aero_time_to_climb"></a>
 
-### Time to climb with a linearly decreasing rate of climb — `aero_time_to_climb`
+### Time to climb with a linearly decreasing rate of climb, `aero_time_to_climb`
 
 The time to climb between two altitudes when the maximum rate of climb falls linearly from its sea-level value to zero at the absolute ceiling (the standard textbook model).
 
@@ -3047,7 +3047,7 @@ aerospace_engineering_ai999x.solve('aero_time_to_climb', RC0=10.0, Hc=10000.0, h
 
 <a id="aero_max_rate_of_climb_jet"></a>
 
-### Maximum rate of climb of a jet — `aero_max_rate_of_climb_jet`
+### Maximum rate of climb of a jet: `aero_max_rate_of_climb_jet`
 
 The maximum rate of climb of a jet aircraft (constant thrust) at an altitude, the speed at which it occurs and the climb angle there, for a parabolic drag polar.
 
@@ -3093,7 +3093,7 @@ aerospace_engineering_ai999x.solve('aero_max_rate_of_climb_jet', W=100000.0, S=3
 
 <a id="aero_max_climb_angle_jet"></a>
 
-### Steepest climb angle of a jet — `aero_max_climb_angle_jet`
+### Steepest climb angle of a jet: `aero_max_climb_angle_jet`
 
 The maximum climb angle of a jet aircraft (constant thrust, small-angle approximation lift = weight), the speed for it and the rate of climb at that speed.
 
@@ -3140,7 +3140,7 @@ aerospace_engineering_ai999x.solve('aero_max_climb_angle_jet', W=100000.0, S=30.
 
 <a id="aero_max_rate_of_climb_prop"></a>
 
-### Maximum rate of climb of a propeller aircraft — `aero_max_rate_of_climb_prop`
+### Maximum rate of climb of a propeller aircraft, `aero_max_rate_of_climb_prop`
 
 The maximum rate of climb of a propeller aircraft (constant shaft power and propeller efficiency) at an altitude, the speed for it (minimum power required) and the climb angle there.
 
@@ -3187,7 +3187,7 @@ aerospace_engineering_ai999x.solve('aero_max_rate_of_climb_prop', W=11000.0, S=1
 
 <a id="aero_absolute_ceiling_jet"></a>
 
-### Absolute ceiling of a jet aircraft — `aero_absolute_ceiling_jet`
+### Absolute ceiling of a jet aircraft: `aero_absolute_ceiling_jet`
 
 The absolute ceiling of a jet aircraft (where the available thrust just equals the minimum drag) when the thrust falls in proportion to the air density, $T = T_{0}$ $\rho/rho0.$
 
@@ -3236,7 +3236,7 @@ aerospace_engineering_ai999x.solve('aero_absolute_ceiling_jet', W=100000.0, S=30
 
 <a id="aero_service_ceiling_jet"></a>
 
-### Service ceiling of a jet aircraft — `aero_service_ceiling_jet`
+### Service ceiling of a jet aircraft: `aero_service_ceiling_jet`
 
 The service ceiling of a jet aircraft: the altitude where its maximum rate of climb has fallen to 100 ft/min (0.508 m/s, or a stated value), with thrust proportional to density.
 
@@ -3285,7 +3285,7 @@ aerospace_engineering_ai999x.solve('aero_service_ceiling_jet', W=100000.0, S=30.
 
 <a id="aero_neutral_point"></a>
 
-### Neutral point and static margin (wing and tail) — `aero_neutral_point`
+### Neutral point and static margin (wing and tail), `aero_neutral_point`
 
 The stick-fixed neutral point, the static margin, the airplane lift-curve slope and the pitching-moment slope Cm_alpha of a wing-tail aircraft (positions as fractions of the mean aerodynamic chord, aft of its leading edge).
 
@@ -3338,7 +3338,7 @@ aerospace_engineering_ai999x.solve('aero_neutral_point', h_ac=0.25, a_w=5.0, a_t
 
 <a id="aero_actuator_disk_hover"></a>
 
-### Ideal hover power of a rotor (momentum theory) — `aero_actuator_disk_hover`
+### Ideal hover power of a rotor (momentum theory), `aero_actuator_disk_hover`
 
 The induced velocity at the disk, the ideal (induced) power and the far-wake velocity of a hovering rotor or static propeller from its thrust, diameter and the air density (actuator-disk momentum theory).
 
@@ -3385,7 +3385,7 @@ aerospace_engineering_ai999x.solve('aero_actuator_disk_hover', T=6.2831853071795
 
 <a id="aero_actuator_disk_forward"></a>
 
-### Ideal propeller in axial flight (momentum theory) — `aero_actuator_disk_forward`
+### Ideal propeller in axial flight (momentum theory), `aero_actuator_disk_forward`
 
 The induced velocity, ideal power, ideal (Froude) propulsive efficiency and far-wake velocity increment of a propeller producing a thrust at a flight speed (actuator-disk momentum theory).
 
@@ -3434,7 +3434,7 @@ aerospace_engineering_ai999x.solve('aero_actuator_disk_forward', T=25.1327412287
 
 <a id="aero_naca4_thin_airfoil"></a>
 
-### Thin-airfoil theory for a NACA 4-digit airfoil — `aero_naca4_thin_airfoil`
+### Thin-airfoil theory for a NACA 4-digit airfoil, `aero_naca4_thin_airfoil`
 
 The zero-lift angle, lift coefficient and the pitching-moment coefficients about the quarter chord and the leading edge of a cambered NACA 4-digit airfoil at an angle of attack, from thin-airfoil theory.
 
@@ -3478,7 +3478,7 @@ aerospace_engineering_ai999x.solve('aero_naca4_thin_airfoil', m=0.0, p=0.4, alph
 
 <a id="aero_elliptic_wing_lifting_line"></a>
 
-### Elliptic wing by lifting-line theory — `aero_elliptic_wing_lifting_line`
+### Elliptic wing by lifting-line theory: `aero_elliptic_wing_lifting_line`
 
 The lift-curve slope, lift coefficient, induced drag coefficient and induced angle of attack of an untwisted elliptic wing of a given aspect ratio at an angle of attack measured from zero lift (Prandtl lifting-line theory, span efficiency 1).
 
@@ -3522,7 +3522,7 @@ aerospace_engineering_ai999x.solve('aero_elliptic_wing_lifting_line', AR=2.0, al
 
 <a id="aero_wind_triangle"></a>
 
-### Wind triangle: heading and ground speed — `aero_wind_triangle`
+### Wind triangle: heading and ground speed, `aero_wind_triangle`
 
 The heading to fly, the wind correction angle and the ground speed for an aircraft of a given true airspeed to make good a true course in a wind (direction the wind blows from, and its speed).
 
@@ -3552,9 +3552,9 @@ $$
 
 *Ground speed for every course (5° steps) of an aircraft flying 100 m/s through a 20 m/s wind from 300°, each solved by the package's wind triangle: slowest 80 m/s heading into the wind (course 300°), fastest 120 m/s with it (course 120°, marked); largest wind correction 11.537°.*
 
-![Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens — the example's head wind is collinear)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-triangle)
+![Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens, the example's head wind is collinear)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-triangle)
 
-*Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens — the example's head wind is collinear). Air vector + wind vector = ground vector. Marked, from the package: heading 81.8699°, wind correction angle -8.1301°, ground speed 84.8528 m/s (164.941 kt).*
+*Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens, the example's head wind is collinear). Air vector + wind vector = ground vector. Marked, from the package: heading 81.8699°, wind correction angle -8.1301°, ground speed 84.8528 m/s (164.941 kt).*
 
 ![GS (ground speed) against TAS (true airspeed (kt, km/h, m/s)) from 50 m/s to 150 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-curve)
 
@@ -3580,7 +3580,7 @@ aerospace_engineering_ai999x.solve('aero_wind_triangle', TAS=100.0, course=0.5, 
 
 <a id="aero_total_temperature"></a>
 
-### Total (stagnation) air temperature in flight — `aero_total_temperature`
+### Total (stagnation) air temperature in flight, `aero_total_temperature`
 
 The total (stagnation) air temperature, the ram temperature rise and the Mach number of an aircraft flying at a true airspeed through air of a static temperature (full recovery, perfect gas, air gamma = 1.4).
 
@@ -3626,7 +3626,7 @@ aerospace_engineering_ai999x.solve('aero_total_temperature', V=316.9677826159507
 
 <a id="aero_optimal_staging"></a>
 
-### Optimal staging of a multistage rocket — `aero_optimal_staging`
+### Optimal staging of a multistage rocket: `aero_optimal_staging`
 
 The lightest rocket that gives a payload a required delta-v with stages of given specific impulses and structural coefficients: the optimal mass ratio and mass of each stage, the lift-off mass and the payload fraction (Lagrange-multiplier solution).
 
@@ -3675,7 +3675,7 @@ aerospace_engineering_ai999x.solve('aero_optimal_staging', Isp='300, 300', eps='
 
 <a id="aero_satellite_coverage"></a>
 
-### Coverage of a satellite at an altitude — `aero_satellite_coverage`
+### Coverage of a satellite at an altitude: `aero_satellite_coverage`
 
 The Earth central angle out to the edge of a satellite's coverage, the off-nadir angle and slant range to that edge, and the fraction of the Earth's surface in view, for a minimum elevation angle at the ground (0 = the geometric horizon).
 
@@ -3722,7 +3722,7 @@ aerospace_engineering_ai999x.solve('aero_satellite_coverage', h=6378136.6)
 
 <a id="aero_stall_speed"></a>
 
-### Stall speed in level flight — `aero_stall_speed`
+### Stall speed in level flight: `aero_stall_speed`
 
 The stall speed $V_s = sqrt$(2W/(rho S CL_max)) of an aircraft in level flight at an altitude of the standard atmosphere, as true and equivalent airspeed.
 
@@ -3776,7 +3776,7 @@ aerospace_engineering_ai999x.solve('aero_stall_speed', W=600000.0, S=120.0, CLma
 
 <a id="aero_level_flight_lift_coefficient"></a>
 
-### Lift coefficient in level flight — `aero_level_flight_lift_coefficient`
+### Lift coefficient in level flight: `aero_level_flight_lift_coefficient`
 
 The lift coefficient CL = 2W/(rho $V^{2}$ S) needed for steady level flight at a true airspeed and altitude, with the dynamic pressure.
 
@@ -3829,7 +3829,7 @@ aerospace_engineering_ai999x.solve('aero_level_flight_lift_coefficient', W=60000
 
 <a id="aero_wing_loading"></a>
 
-### Wing loading — `aero_wing_loading`
+### Wing loading: `aero_wing_loading`
 
 The wing loading W/S of an aircraft in $N/m^{2}$, as a mass per area $(kg/m^{2})$ and in lbf/ft^2.
 
@@ -3881,7 +3881,7 @@ aerospace_engineering_ai999x.solve('aero_wing_loading', W=10675.7318766252, S=14
 
 <a id="aero_induced_drag"></a>
 
-### Induced drag in level flight — `aero_induced_drag`
+### Induced drag in level flight: `aero_induced_drag`
 
 The lift coefficient, induced drag coefficient CL^2/(pi e AR), induced drag and induced power of an aircraft in level flight at a true airspeed and altitude.
 
@@ -3928,7 +3928,7 @@ aerospace_engineering_ai999x.solve('aero_induced_drag', W=10000.0, S=16.0, V=50.
 
 <a id="aero_glide_range"></a>
 
-### Glide ratio, angle and range — `aero_glide_range`
+### Glide ratio, angle and range: `aero_glide_range`
 
 The still-air glide range $R = h$ (L/D) from a height h, the glide angle atan(D/L) and, with the airspeed, the sink rate and time aloft.
 
@@ -3983,7 +3983,7 @@ aerospace_engineering_ai999x.solve('aero_glide_range', dh=1000.0, LD=40.0, V=25.
 
 <a id="aero_rocket_thrust"></a>
 
-### Rocket thrust and specific impulse from mass flow and exhaust velocity — `aero_rocket_thrust`
+### Rocket thrust and specific impulse from mass flow and exhaust velocity, `aero_rocket_thrust`
 
 The thrust F = mdot ve + (pe - pa) Ae of a rocket engine, its specific impulse F/(mdot g0) and effective exhaust velocity, from the propellant mass flow and the exhaust velocity (with the pressure thrust when the exit conditions are given).
 
@@ -4039,7 +4039,7 @@ aerospace_engineering_ai999x.solve('aero_rocket_thrust', mdot=250.0, ve=3000.0, 
 
 <a id="aero_ballistic_coefficient"></a>
 
-### Ballistic coefficient — `aero_ballistic_coefficient`
+### Ballistic coefficient: `aero_ballistic_coefficient`
 
 The ballistic coefficient beta = m/(CD A) of a body (mass per unit drag area), in $kg/m^{2}$ and as a weight per area in lbf/ft^2.
 
@@ -4086,7 +4086,7 @@ aerospace_engineering_ai999x.solve('aero_ballistic_coefficient', m=50.0, CD=2.0,
 
 <a id="aero_flight_condition"></a>
 
-### Mach number, dynamic pressure, equivalent airspeed and Reynolds number at an altitude — `aero_flight_condition`
+### Mach number, dynamic pressure, equivalent airspeed and Reynolds number at an altitude, `aero_flight_condition`
 
 For a true airspeed at an altitude of the standard atmosphere: the Mach number, dynamic pressure, equivalent airspeed and (with a reference length) the Reynolds number.
 

@@ -1,4 +1,4 @@
-# aerospace-engineering: the Aerospace Engineering program — user guide
+# aerospace-engineering: the Aerospace Engineering program, user guide
 
 **aerospace-engineering-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
@@ -17,63 +17,63 @@ Aerospace Engineering covers the standard atmosphere, lift and drag, aircraft pe
 
 ## 1. Get it
 
-Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Aerospace Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-aerospace-engineering-1.4.0-windows-x86_64.zip |
-| Desktop app: Aerospace Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-aerospace-engineering-1.4.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz |
+| Desktop app: Aerospace Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-windows-x86_64.zip |
+| Desktop app: Aerospace Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Aerospace Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-aerospace-engineering-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-aerospace-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Aerospace Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-aerospace-engineering-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-aerospace-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-aerospace-engineering-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-aerospace-engineering-1.4.0-linux-x86_64.tar.gz
-./ai999x-aerospace-engineering-1.4.0-linux-x86_64/ai999x-aerospace-engineering
+tar xzf ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz
+./ai999x-aerospace-engineering-1.5.0-linux-x86_64/ai999x-aerospace-engineering
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
-./ai999x-1.4.0-linux-x86_64/ai999x
+tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
+./ai999x-1.5.0-linux-x86_64/ai999x
 ```
 
-### Command line — Linux
+### Command line: Linux
 
 The bundle holds one program per model; `aerospace-engineering` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 aerospace-engineering --version
 ```
 
-### Command line — Windows (PowerShell)
+### Command line: Windows (PowerShell)
 
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 aerospace-engineering --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ aerospace-engineering --version
-aerospace-engineering-ai999x 1.0.3 (Rust build, ax-engine 0.1.0)
+aerospace-engineering-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
 ```
 
 ### 2.2 Find a capability
@@ -191,41 +191,7 @@ $ aerospace-engineering solve aero_oblique_shock M1=2
 NEEDS_INPUT: aero_oblique_shock needs theta (flow deflection (wedge half-) angle (deg, rad)). Example: solve('aero_oblique_shock', M1=2, theta='0.185405 rad').
 ```
 
-### 2.8 Draw the figures
-
-The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```shell
-$ aerospace-engineering figures aero_isa_properties "h=35000 ft" --out .
-[
-  {
-    "slug": "aero-isa-properties-profile",
-    "title": "The standard atmosphere: temperature with altitude",
-    "caption": "Temperature of the International Standard Atmosphere from 0 to 47 km, 95 altitudes each a solve of the model: 288.1 K at sea level, 216.8 K at 11 km (the tropopause), 269.7 K at 47 km. Marked: the given altitude h = 10.67 km with T = 218.9 K. In SI units: rho = 0.3805 kg/m^3. Your inputs: h = 35000 ft.",
-    "file": ".\\aero-isa-properties-profile.svg"
-  },
-  {
-    "slug": "aero-isa-properties-profile-2",
-    "title": "Standard atmosphere: temperature, pressure and density",
-    "caption": "The International Standard Atmosphere to 47 km, 48 altitudes each a solve of the model: temperature (top) and the pressure and density ratios on a logarithmic axis (bottom). Marked: the given altitude h = 10.67 km: T = 218.9 K, p = 23.91 kPa, ρ = 0.3805 kg/m³, σ = 0.3106, δ = 0.236. Your inputs: h = 35000 ft.",
-    "file": ".\\aero-isa-properties-profile-2.svg"
-  },
-  {
-    "slug": "aero-isa-properties-live-1",
-    "title": "Density as geometric altitude above mean sea level (m, km,... varies",
-    "caption": "Density as h runs from 8750 to 6.125e+04 ft, every other input as you entered it (41 solutions). Marked: your h = 3.5e+04 ft gives rho = 0.3805. Your inputs: h = 35000 ft.",
-    "file": ".\\aero-isa-properties-live-1.svg"
-  },
-  {
-    "slug": "aero-isa-properties-live-2",
-    "title": "The computed values side by side",
-    "caption": "Every answer of one unit for your inputs: sigma (density ratio rho/rho0) = 0.3106; delta (pressure ratio p/p0) = 0.236; theta (temperature ratio T/T0) = 0.7598. Your inputs: h = 35000 ft.",
-    "file": ".\\aero-isa-properties-live-2.svg"
-  }
-]
-```
-
-### 2.9 Many questions at once
+### 2.8 Many questions at once
 
 One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | aerospace-engineering batch
 
@@ -298,36 +264,6 @@ answers = [json.loads(line) for line in out.splitlines()]
 
 `aerospace-engineering figures <capability> name=value ... --out DIR` draws the live figures for those inputs and writes each as an SVG file into DIR (an existing folder); without `--out` the SVG text comes back as JSON. The desktop app and the model page draw the same figures as soon as you press Compute.
 
-```shell
-$ aerospace-engineering figures aero_isa_properties "h=35000 ft" --out .
-[
-  {
-    "slug": "aero-isa-properties-profile",
-    "title": "The standard atmosphere: temperature with altitude",
-    "caption": "Temperature of the International Standard Atmosphere from 0 to 47 km, 95 altitudes each a solve of the model: 288.1 K at sea level, 216.8 K at 11 km (the tropopause), 269.7 K at 47 km. Marked: the given altitude h = 10.67 km with T = 218.9 K. In SI units: rho = 0.3805 kg/m^3. Your inputs: h = 35000 ft.",
-    "file": ".\\aero-isa-properties-profile.svg"
-  },
-  {
-    "slug": "aero-isa-properties-profile-2",
-    "title": "Standard atmosphere: temperature, pressure and density",
-    "caption": "The International Standard Atmosphere to 47 km, 48 altitudes each a solve of the model: temperature (top) and the pressure and density ratios on a logarithmic axis (bottom). Marked: the given altitude h = 10.67 km: T = 218.9 K, p = 23.91 kPa, ρ = 0.3805 kg/m³, σ = 0.3106, δ = 0.236. Your inputs: h = 35000 ft.",
-    "file": ".\\aero-isa-properties-profile-2.svg"
-  },
-  {
-    "slug": "aero-isa-properties-live-1",
-    "title": "Density as geometric altitude above mean sea level (m, km,... varies",
-    "caption": "Density as h runs from 8750 to 6.125e+04 ft, every other input as you entered it (41 solutions). Marked: your h = 3.5e+04 ft gives rho = 0.3805. Your inputs: h = 35000 ft.",
-    "file": ".\\aero-isa-properties-live-1.svg"
-  },
-  {
-    "slug": "aero-isa-properties-live-2",
-    "title": "The computed values side by side",
-    "caption": "Every answer of one unit for your inputs: sigma (density ratio rho/rho0) = 0.3106; delta (pressure ratio p/p0) = 0.236; theta (temperature ratio T/T0) = 0.7598. Your inputs: h = 35000 ft.",
-    "file": ".\\aero-isa-properties-live-2.svg"
-  }
-]
-```
-
 ## 7. In a web page or Node.js: WebAssembly
 
 The same model is a WebAssembly module, `aerospace_engineering_ai999x.wasm` (https://www.ai999x.com/compute/rust/aerospace_engineering_ai999x.wasm), with a small loader, `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js). It runs in a browser, a Web Worker or Node.js, with no server.
@@ -351,7 +287,7 @@ By topic. For each: what it does, what it needs and gives, when it applies, and 
 
 <a id="aero_critical_mach"></a>
 
-#### Critical Mach number of an airfoil — `aero_critical_mach`
+#### Critical Mach number of an airfoil: `aero_critical_mach`
 
 The free-stream Mach number at which the flow first reaches sonic speed at the airfoil's minimum-pressure point, from its incompressible minimum pressure coefficient and a compressibility rule (Prandtl-Glauert or Karman-Tsien), air (gamma = 1.4).
 
@@ -361,10 +297,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Cp0` | in | incompressible minimum pressure coefficient (negative) | — |
-| `rule` | in | compressibility correction: prandtl-glauert or karman-tsien | — |
-| `M_cr` | out | critical Mach number | — |
-| `Cp_cr` | out | critical (sonic) pressure coefficient at M_cr | — |
+| `Cp0` | in | incompressible minimum pressure coefficient (negative) | - |
+| `rule` | in | compressibility correction: prandtl-glauert or karman-tsien | - |
+| `M_cr` | out | critical Mach number | - |
+| `Cp_cr` | out | critical (sonic) pressure coefficient at M_cr | - |
 
 **Applies when:** -3 <= Cp0 < -0.01; subsonic, small-perturbation compressibility rules; air, gamma = 1.4.
 
@@ -382,7 +318,7 @@ Cp_cr = -0.6363043586
 
 <a id="aero_elliptic_wing_lifting_line"></a>
 
-#### Elliptic wing by lifting-line theory — `aero_elliptic_wing_lifting_line`
+#### Elliptic wing by lifting-line theory: `aero_elliptic_wing_lifting_line`
 
 The lift-curve slope, lift coefficient, induced drag coefficient and induced angle of attack of an untwisted elliptic wing of a given aspect ratio at an angle of attack measured from zero lift (Prandtl lifting-line theory, span efficiency 1).
 
@@ -392,13 +328,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `AR` | in | aspect ratio | — |
+| `AR` | in | aspect ratio | - |
 | `alpha` | in | angle of attack from zero lift (deg) | rad |
-| `a0` | in | section lift-curve slope per radian (default 2 pi) (optional) | — |
-| `CL_alpha` | out | wing lift-curve slope per radian | — |
-| `CL` | out | wing lift coefficient | — |
-| `CDi` | out | induced drag coefficient | — |
-| `alpha_i_deg` | out | induced angle of attack in degrees | — |
+| `a0` | in | section lift-curve slope per radian (default 2 pi) (optional) | - |
+| `CL_alpha` | out | wing lift-curve slope per radian | - |
+| `CL` | out | wing lift coefficient | - |
+| `CDi` | out | induced drag coefficient | - |
+| `alpha_i_deg` | out | induced angle of attack in degrees | - |
 
 **Applies when:** 2 <= AR <= 40; 3 <= a0 <= 7.5 per rad; |alpha| <= 15 deg; untwisted elliptic planform, attached flow.
 
@@ -418,7 +354,7 @@ alpha_i_deg = 2.864788976
 
 <a id="aero_naca4_thin_airfoil"></a>
 
-#### Thin-airfoil theory for a NACA 4-digit airfoil — `aero_naca4_thin_airfoil`
+#### Thin-airfoil theory for a NACA 4-digit airfoil, `aero_naca4_thin_airfoil`
 
 The zero-lift angle, lift coefficient and the pitching-moment coefficients about the quarter chord and the leading edge of a cambered NACA 4-digit airfoil at an angle of attack, from thin-airfoil theory.
 
@@ -428,13 +364,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `m` | in | maximum camber as a fraction of the chord (first digit / 100) | — |
-| `p` | in | chordwise position of maximum camber (second digit / 10; 0 for a symmetric section) | — |
+| `m` | in | maximum camber as a fraction of the chord (first digit / 100) | - |
+| `p` | in | chordwise position of maximum camber (second digit / 10; 0 for a symmetric section) | - |
 | `alpha` | in | angle of attack (deg) | rad |
-| `alpha_L0_deg` | out | zero-lift angle of attack in degrees | — |
-| `CL` | out | section lift coefficient | — |
-| `Cm_c4` | out | moment coefficient about the quarter chord | — |
-| `Cm_le` | out | moment coefficient about the leading edge | — |
+| `alpha_L0_deg` | out | zero-lift angle of attack in degrees | - |
+| `CL` | out | section lift coefficient | - |
+| `Cm_c4` | out | moment coefficient about the quarter chord | - |
+| `Cm_le` | out | moment coefficient about the leading edge | - |
 
 **Applies when:** 0 <= m <= 0.095; 0.05 <= p <= 0.95 when m > 0; |alpha| <= 15 deg; thin airfoil, inviscid, incompressible, unstalled.
 
@@ -457,7 +393,7 @@ Cm_le = -0.1570796327
 
 <a id="aero_absolute_ceiling_jet"></a>
 
-#### Absolute ceiling of a jet aircraft — `aero_absolute_ceiling_jet`
+#### Absolute ceiling of a jet aircraft: `aero_absolute_ceiling_jet`
 
 The absolute ceiling of a jet aircraft (where the available thrust just equals the minimum drag) when the thrust falls in proportion to the air density, T = T0 rho/rho0.
 
@@ -470,12 +406,12 @@ $$
 | `W` | in | weight | N |
 | `S` | in | wing area | m^2 |
 | `T0` | in | sea-level thrust | N |
-| `CD0` | in | zero-lift drag coefficient | — |
-| `AR` | in | aspect ratio | — |
-| `e` | in | Oswald efficiency factor | — |
+| `CD0` | in | zero-lift drag coefficient | - |
+| `AR` | in | aspect ratio | - |
+| `e` | in | Oswald efficiency factor | - |
 | `h_abs` | out | absolute ceiling | m |
-| `h_abs_ft` | out | absolute ceiling in feet | — |
-| `sigma` | out | density ratio at the ceiling | — |
+| `h_abs_ft` | out | absolute ceiling in feet | - |
+| `sigma` | out | density ratio at the ceiling | - |
 
 **Applies when:** minimum drag below the sea-level thrust; ceiling below 47 km; thrust proportional to density (stated lapse); parabolic drag polar.
 
@@ -498,7 +434,7 @@ sigma = 0.5
 
 <a id="aero_drag_polar_optimum"></a>
 
-#### Best lift coefficients and lift-to-drag ratios of a drag polar — `aero_drag_polar_optimum`
+#### Best lift coefficients and lift-to-drag ratios of a drag polar, `aero_drag_polar_optimum`
 
 For a parabolic drag polar CD = CD0 + CL^2/(pi e AR): the lift coefficient and L/D for minimum drag (maximum L/D), for minimum power (best propeller endurance) and for the jet's best range (maximum sqrt(CL)/CD).
 
@@ -508,15 +444,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `CD0` | in | zero-lift (parasite) drag coefficient | — |
-| `AR` | in | wing aspect ratio b^2/S | — |
-| `e` | in | Oswald span efficiency factor | — |
-| `CL_md` | out | lift coefficient for minimum drag | — |
-| `LD_max` | out | maximum lift-to-drag ratio | — |
-| `CL_mp` | out | lift coefficient for minimum power required | — |
-| `LD_mp` | out | L/D at minimum power | — |
-| `CL_mr` | out | lift coefficient for best jet range (max sqrt(CL)/CD) | — |
-| `LD_mr` | out | L/D at best jet range | — |
+| `CD0` | in | zero-lift (parasite) drag coefficient | - |
+| `AR` | in | wing aspect ratio b^2/S | - |
+| `e` | in | Oswald span efficiency factor | - |
+| `CL_md` | out | lift coefficient for minimum drag | - |
+| `LD_max` | out | maximum lift-to-drag ratio | - |
+| `CL_mp` | out | lift coefficient for minimum power required | - |
+| `LD_mp` | out | L/D at minimum power | - |
+| `CL_mr` | out | lift coefficient for best jet range (max sqrt(CL)/CD) | - |
+| `LD_mr` | out | L/D at best jet range | - |
 
 **Applies when:** 0.002 <= CD0 <= 0.2; 1 <= AR <= 50; 0.3 <= e <= 1; parabolic drag polar.
 
@@ -539,7 +475,7 @@ In the worked example, CD0 = 0.02, AR = 10, e = 0.8 go through the equation abov
 
 <a id="aero_breguet_range_jet"></a>
 
-#### Breguet range of a jet aircraft — `aero_breguet_range_jet`
+#### Breguet range of a jet aircraft: `aero_breguet_range_jet`
 
 The cruise range and flight time of a jet aircraft at constant speed and lift-to-drag ratio (cruise-climb) from its thrust-specific fuel consumption and the weights at the start and end of cruise.
 
@@ -551,13 +487,13 @@ $$
 |---|---|---|---|
 | `V` | in | cruise true airspeed | m/s |
 | `c` | in | thrust-specific fuel consumption (kg/(N*s), 1/h, lb/(lbf*h)) | kg/(N*s) |
-| `LD` | in | lift-to-drag ratio | — |
+| `LD` | in | lift-to-drag ratio | - |
 | `W0` | in | weight at the start of cruise | N |
 | `W1` | in | weight at the end of cruise | N |
 | `R` | out | range | m |
-| `R_km` | out | range in km | — |
+| `R_km` | out | range in km | - |
 | `t` | out | flight time | s |
-| `t_h` | out | flight time in hours | — |
+| `t_h` | out | flight time in hours | - |
 
 **Applies when:** V > 0; 0 < W1 < W0; 1 <= L/D <= 60; constant V, L/D and TSFC (cruise-climb).
 
@@ -580,7 +516,7 @@ t_h = 15
 
 <a id="aero_breguet_range_prop"></a>
 
-#### Breguet range of a propeller aircraft — `aero_breguet_range_prop`
+#### Breguet range of a propeller aircraft: `aero_breguet_range_prop`
 
 The cruise range of a propeller-driven aircraft at constant lift-to-drag ratio and propeller efficiency from its power-specific fuel consumption and initial and final weights.
 
@@ -590,13 +526,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `eta` | in | propeller efficiency | — |
+| `eta` | in | propeller efficiency | - |
 | `c` | in | power-specific fuel consumption (kg/J, g/(kW*h), lb/(hp*h)) | kg/J |
-| `LD` | in | lift-to-drag ratio | — |
+| `LD` | in | lift-to-drag ratio | - |
 | `W0` | in | initial weight | N |
 | `W1` | in | final weight | N |
 | `R` | out | range | m |
-| `R_km` | out | range in km | — |
+| `R_km` | out | range in km | - |
 
 **Applies when:** 0.1 <= eta <= 1; 0 < W1 < W0; 1 <= L/D <= 60; constant L/D, efficiency and BSFC.
 
@@ -617,7 +553,7 @@ R_km = 12236.59455
 
 <a id="aero_breguet_endurance_jet"></a>
 
-#### Endurance of a jet aircraft — `aero_breguet_endurance_jet`
+#### Endurance of a jet aircraft: `aero_breguet_endurance_jet`
 
 The time a jet aircraft can stay airborne at constant lift-to-drag ratio from its thrust-specific fuel consumption and initial and final weights (independent of speed).
 
@@ -628,11 +564,11 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `c` | in | thrust-specific fuel consumption (kg/(N*s), 1/h, lb/(lbf*h)) | kg/(N*s) |
-| `LD` | in | lift-to-drag ratio | — |
+| `LD` | in | lift-to-drag ratio | - |
 | `W0` | in | initial weight | N |
 | `W1` | in | final weight | N |
 | `E` | out | endurance | s |
-| `E_h` | out | endurance in hours | — |
+| `E_h` | out | endurance in hours | - |
 
 **Applies when:** 0 < W1 < W0; 1 <= L/D <= 60; constant L/D and TSFC.
 
@@ -652,7 +588,7 @@ E_h = 15
 
 <a id="aero_prop_endurance_constant_altitude"></a>
 
-#### Endurance of a propeller aircraft at constant altitude — `aero_prop_endurance_constant_altitude`
+#### Endurance of a propeller aircraft at constant altitude, `aero_prop_endurance_constant_altitude`
 
 How long a propeller-driven aircraft can loiter at a constant altitude and lift coefficient, from its propeller efficiency, power-specific fuel consumption, drag polar point, wing area and weights.
 
@@ -662,16 +598,16 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `eta` | in | propeller efficiency | — |
+| `eta` | in | propeller efficiency | - |
 | `c` | in | power-specific fuel consumption | kg/J |
-| `CL` | in | lift coefficient | — |
-| `CD` | in | drag coefficient | — |
+| `CL` | in | lift coefficient | - |
+| `CD` | in | drag coefficient | - |
 | `S` | in | wing area | m^2 |
 | `h` | in | altitude | m |
 | `W0` | in | initial weight | N |
 | `W1` | in | final weight | N |
 | `E` | out | endurance | s |
-| `E_h` | out | endurance in hours | — |
+| `E_h` | out | endurance in hours | - |
 
 **Applies when:** 0.1 <= eta <= 1; 0 < W1 < W0; 0.05 <= CL <= 3; constant altitude and CL.
 
@@ -695,7 +631,7 @@ E_h = 158.6224674
 
 <a id="aero_jet_fuel_for_range"></a>
 
-#### Fuel a jet needs for a cruise range — `aero_jet_fuel_for_range`
+#### Fuel a jet needs for a cruise range: `aero_jet_fuel_for_range`
 
 The fuel weight (and mass) a jet aircraft burns cruising a distance at constant speed and L/D, and its weight at the end, from the Breguet relation.
 
@@ -708,7 +644,7 @@ $$
 | `R` | in | cruise distance (km, nmi) | m |
 | `V` | in | cruise speed | m/s |
 | `c` | in | thrust-specific fuel consumption | kg/(N*s) |
-| `LD` | in | lift-to-drag ratio | — |
+| `LD` | in | lift-to-drag ratio | - |
 | `W0` | in | weight at the start of cruise | N |
 | `W1` | out | weight at the end of cruise | N |
 | `Wf` | out | fuel weight burned | N |
@@ -734,7 +670,7 @@ mf = 17521.59839 kg
 
 <a id="aero_glide_range"></a>
 
-#### Glide ratio, angle and range — `aero_glide_range`
+#### Glide ratio, angle and range: `aero_glide_range`
 
 The still-air glide range R = h (L/D) from a height h, the glide angle atan(D/L) and, with the airspeed, the sink rate and time aloft.
 
@@ -745,11 +681,11 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `dh` | in | height to be lost | m |
-| `LD` | in | lift-to-drag (glide) ratio | — |
+| `LD` | in | lift-to-drag (glide) ratio | - |
 | `V` | in | airspeed along the glide path (optional) (optional) | m/s |
 | `range` | out | glide range over the ground | m |
-| `range_km` | out | glide range, km | — |
-| `glide_angle_deg` | out | glide angle below the horizon, degrees | — |
+| `range_km` | out | glide range, km | - |
+| `glide_angle_deg` | out | glide angle below the horizon, degrees | - |
 | `sink_rate` | out | sink rate V sin(gamma) | m/s |
 | `time` | out | time to lose the height | s |
 
@@ -770,7 +706,7 @@ glide_angle_deg = 3.814074834
 
 <a id="aero_induced_drag"></a>
 
-#### Induced drag in level flight — `aero_induced_drag`
+#### Induced drag in level flight: `aero_induced_drag`
 
 The lift coefficient, induced drag coefficient CL^2/(pi e AR), induced drag and induced power of an aircraft in level flight at a true airspeed and altitude.
 
@@ -784,10 +720,10 @@ $$
 | `S` | in | wing area | m^2 |
 | `V` | in | true airspeed | m/s |
 | `h` | in | altitude (standard atmosphere) | m |
-| `AR` | in | wing aspect ratio b^2/S | — |
-| `e` | in | Oswald span efficiency factor | — |
-| `CL` | out | lift coefficient | — |
-| `CDi` | out | induced drag coefficient | — |
+| `AR` | in | wing aspect ratio b^2/S | - |
+| `e` | in | Oswald span efficiency factor | - |
+| `CL` | out | lift coefficient | - |
+| `CDi` | out | induced drag coefficient | - |
 | `Di` | out | induced drag | N |
 | `P_induced` | out | induced power Di V | W |
 
@@ -813,7 +749,7 @@ P_induced = 10150.19469 W
 
 <a id="aero_jet_range_constant_altitude"></a>
 
-#### Jet range at constant altitude and lift coefficient — `aero_jet_range_constant_altitude`
+#### Jet range at constant altitude and lift coefficient, `aero_jet_range_constant_altitude`
 
 The range and flight time of a jet cruising at a constant altitude and constant lift coefficient, so that its speed falls as fuel burns (the second Breguet form).
 
@@ -827,13 +763,13 @@ $$
 | `W1` | in | final weight | N |
 | `S` | in | wing area | m^2 |
 | `h` | in | cruise altitude | m |
-| `CL` | in | cruise lift coefficient | — |
-| `CD` | in | cruise drag coefficient | — |
+| `CL` | in | cruise lift coefficient | - |
+| `CD` | in | cruise drag coefficient | - |
 | `c` | in | thrust-specific fuel consumption | kg/(N*s) |
 | `R` | out | range | m |
-| `R_km` | out | range in km | — |
+| `R_km` | out | range in km | - |
 | `t` | out | flight time | s |
-| `t_h` | out | flight time in hours | — |
+| `t_h` | out | flight time in hours | - |
 
 **Applies when:** 0 < W1 < W0; 0.05 <= CL <= 3; CD < CL; constant altitude, CL and TSFC.
 
@@ -858,7 +794,7 @@ t_h = 39.26741211
 
 <a id="aero_landing_ground_roll"></a>
 
-#### Landing ground roll — `aero_landing_ground_roll`
+#### Landing ground roll: `aero_landing_ground_roll`
 
 The ground-roll distance and time from touchdown to a stop of an aircraft braking on a level runway, with aerodynamic drag, lift (which unloads the wheels) and optional reverse thrust.
 
@@ -872,9 +808,9 @@ $$
 | `S` | in | wing area | m^2 |
 | `h` | in | airfield altitude | m |
 | `VTD` | in | touchdown speed | m/s |
-| `mu` | in | braking friction coefficient | — |
-| `CL` | in | lift coefficient during the roll | — |
-| `CD` | in | drag coefficient during the roll | — |
+| `mu` | in | braking friction coefficient | - |
+| `CL` | in | lift coefficient during the roll | - |
+| `CD` | in | drag coefficient during the roll | - |
 | `Tr` | in | reverse thrust (default 0) (optional) | N |
 | `s` | out | ground-roll distance | m |
 | `t` | out | ground-roll time | s |
@@ -900,7 +836,7 @@ t = 7.647871597 s
 
 <a id="aero_level_turn_bank"></a>
 
-#### Level coordinated turn at a bank angle — `aero_level_turn_bank`
+#### Level coordinated turn at a bank angle: `aero_level_turn_bank`
 
 The load factor, turn radius, turn rate and the time for a full circle of an aircraft in a level, coordinated turn at a true airspeed and bank angle.
 
@@ -913,11 +849,11 @@ $$
 | `V` | in | true airspeed | m/s |
 | `phi` | in | bank angle (deg) | rad |
 | `g` | in | gravity (default 9.80665 m/s^2) (optional) | m/s^2 |
-| `n` | out | load factor L/W | — |
-| `phi_deg` | out | bank angle in degrees | — |
+| `n` | out | load factor L/W | - |
+| `phi_deg` | out | bank angle in degrees | - |
 | `R` | out | turn radius | m |
 | `omega` | out | turn rate | rad/s |
-| `omega_deg` | out | turn rate in degrees per second | — |
+| `omega_deg` | out | turn rate in degrees per second | - |
 | `t_360` | out | time for a 360-degree turn | s |
 
 **Applies when:** 1 deg <= phi <= 85 deg; V > 0; level, coordinated turn at constant speed.
@@ -940,7 +876,7 @@ t_360 = 64.07065927 s
 
 <a id="aero_level_turn_load_factor"></a>
 
-#### Level turn at a load factor — `aero_level_turn_load_factor`
+#### Level turn at a load factor: `aero_level_turn_load_factor`
 
 The bank angle, turn radius, turn rate and time for a full circle of a level coordinated turn flown at a true airspeed and load factor (g).
 
@@ -951,13 +887,13 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `V` | in | true airspeed | m/s |
-| `n` | in | load factor (g) | — |
+| `n` | in | load factor (g) | - |
 | `g` | in | gravity (default 9.80665 m/s^2) (optional) | m/s^2 |
-| `n` | out | load factor | — |
-| `phi_deg` | out | bank angle in degrees | — |
+| `n` | out | load factor | - |
+| `phi_deg` | out | bank angle in degrees | - |
 | `R` | out | turn radius | m |
 | `omega` | out | turn rate | rad/s |
-| `omega_deg` | out | turn rate in degrees per second | — |
+| `omega_deg` | out | turn rate in degrees per second | - |
 | `t_360` | out | time for a 360-degree turn | s |
 
 **Applies when:** 1.0002 <= n <= 11.5; V > 0; level, coordinated turn at constant speed.
@@ -980,7 +916,7 @@ t_360 = 36.99121238 s
 
 <a id="aero_level_flight_lift_coefficient"></a>
 
-#### Lift coefficient in level flight — `aero_level_flight_lift_coefficient`
+#### Lift coefficient in level flight: `aero_level_flight_lift_coefficient`
 
 The lift coefficient CL = 2W/(rho V^2 S) needed for steady level flight at a true airspeed and altitude, with the dynamic pressure.
 
@@ -994,7 +930,7 @@ $$
 | `S` | in | wing area | m^2 |
 | `V` | in | true airspeed (m/s, kt, km/h) | m/s |
 | `h` | in | altitude (standard atmosphere) | m |
-| `CL` | out | lift coefficient | — |
+| `CL` | out | lift coefficient | - |
 | `q` | out | dynamic pressure | Pa |
 | `wing_loading` | out | wing loading W/S | N/m^2 |
 
@@ -1017,7 +953,7 @@ wing_loading = 625 N/m^2
 
 <a id="aero_max_rate_of_climb_jet"></a>
 
-#### Maximum rate of climb of a jet — `aero_max_rate_of_climb_jet`
+#### Maximum rate of climb of a jet: `aero_max_rate_of_climb_jet`
 
 The maximum rate of climb of a jet aircraft (constant thrust) at an altitude, the speed at which it occurs and the climb angle there, for a parabolic drag polar.
 
@@ -1031,12 +967,12 @@ $$
 | `S` | in | wing area | m^2 |
 | `h` | in | altitude | m |
 | `T` | in | available thrust | N |
-| `CD0` | in | zero-lift drag coefficient | — |
-| `AR` | in | aspect ratio | — |
-| `e` | in | Oswald efficiency factor | — |
+| `CD0` | in | zero-lift drag coefficient | - |
+| `AR` | in | aspect ratio | - |
+| `e` | in | Oswald efficiency factor | - |
 | `RC_max` | out | maximum rate of climb | m/s |
 | `V` | out | speed for the maximum rate of climb | m/s |
-| `gamma_deg` | out | climb angle at that speed, degrees | — |
+| `gamma_deg` | out | climb angle at that speed, degrees | - |
 
 **Applies when:** minimum drag < T < 0.8 W; small climb angle (lift = weight); parabolic drag polar.
 
@@ -1060,7 +996,7 @@ gamma_deg = 10.6831113
 
 <a id="aero_max_rate_of_climb_prop"></a>
 
-#### Maximum rate of climb of a propeller aircraft — `aero_max_rate_of_climb_prop`
+#### Maximum rate of climb of a propeller aircraft, `aero_max_rate_of_climb_prop`
 
 The maximum rate of climb of a propeller aircraft (constant shaft power and propeller efficiency) at an altitude, the speed for it (minimum power required) and the climb angle there.
 
@@ -1074,13 +1010,13 @@ $$
 | `S` | in | wing area | m^2 |
 | `h` | in | altitude | m |
 | `P` | in | shaft power (W, kW, hp) | W |
-| `eta` | in | propeller efficiency | — |
-| `CD0` | in | zero-lift drag coefficient | — |
-| `AR` | in | aspect ratio | — |
-| `e` | in | Oswald efficiency factor | — |
+| `eta` | in | propeller efficiency | - |
+| `CD0` | in | zero-lift drag coefficient | - |
+| `AR` | in | aspect ratio | - |
+| `e` | in | Oswald efficiency factor | - |
 | `RC_max` | out | maximum rate of climb | m/s |
 | `V` | out | speed for the maximum rate of climb | m/s |
-| `gamma_deg` | out | climb angle in degrees | — |
+| `gamma_deg` | out | climb angle in degrees | - |
 
 **Applies when:** available power above the minimum power required; climb angle below 30 degrees (lift = weight); parabolic drag polar.
 
@@ -1105,7 +1041,7 @@ gamma_deg = 11.83878973
 
 <a id="aero_service_ceiling_jet"></a>
 
-#### Service ceiling of a jet aircraft — `aero_service_ceiling_jet`
+#### Service ceiling of a jet aircraft: `aero_service_ceiling_jet`
 
 The service ceiling of a jet aircraft: the altitude where its maximum rate of climb has fallen to 100 ft/min (0.508 m/s, or a stated value), with thrust proportional to density.
 
@@ -1118,12 +1054,12 @@ $$
 | `W` | in | weight | N |
 | `S` | in | wing area | m^2 |
 | `T0` | in | sea-level thrust | N |
-| `CD0` | in | zero-lift drag coefficient | — |
-| `AR` | in | aspect ratio | — |
-| `e` | in | Oswald efficiency factor | — |
+| `CD0` | in | zero-lift drag coefficient | - |
+| `AR` | in | aspect ratio | - |
+| `e` | in | Oswald efficiency factor | - |
 | `RCs` | in | rate of climb that defines the ceiling (default 100 ft/min = 0.508 m/s) (optional) | m/s |
 | `h_s` | out | service ceiling | m |
-| `h_s_ft` | out | service ceiling in feet | — |
+| `h_s_ft` | out | service ceiling in feet | - |
 
 **Applies when:** T0 < 0.8 W; climb possible at sea level; ceiling below 47 km; thrust proportional to density; small climb angle.
 
@@ -1145,7 +1081,7 @@ h_s_ft = 41200.52548
 
 <a id="aero_min_drag_power_speeds"></a>
 
-#### Speeds for minimum drag, minimum power and best jet range — `aero_min_drag_power_speeds`
+#### Speeds for minimum drag, minimum power and best jet range, `aero_min_drag_power_speeds`
 
 In steady level flight at an altitude: the speed for minimum drag and the minimum drag, the speed for minimum power required and that power, and the jet's best-range speed, for a parabolic drag polar.
 
@@ -1158,9 +1094,9 @@ $$
 | `W` | in | aircraft weight (N, kN, lbf) | N |
 | `S` | in | wing area (m^2, ft^2) | m^2 |
 | `h` | in | altitude (standard atmosphere) | m |
-| `CD0` | in | zero-lift drag coefficient | — |
-| `AR` | in | aspect ratio | — |
-| `e` | in | Oswald efficiency factor | — |
+| `CD0` | in | zero-lift drag coefficient | - |
+| `AR` | in | aspect ratio | - |
+| `e` | in | Oswald efficiency factor | - |
 | `V_md` | out | speed for minimum drag (max L/D) | m/s |
 | `D_min` | out | minimum drag | N |
 | `V_mp` | out | speed for minimum power required | m/s |
@@ -1190,7 +1126,7 @@ V_mr = 44.65755637 m/s
 
 <a id="aero_stall_speed"></a>
 
-#### Stall speed in level flight — `aero_stall_speed`
+#### Stall speed in level flight: `aero_stall_speed`
 
 The stall speed V_s = sqrt(2W/(rho S CL_max)) of an aircraft in level flight at an altitude of the standard atmosphere, as true and equivalent airspeed.
 
@@ -1202,10 +1138,10 @@ $$
 |---|---|---|---|
 | `W` | in | aircraft weight (N, kN, lbf) | N |
 | `S` | in | wing area (m^2, ft^2) | m^2 |
-| `CLmax` | in | maximum lift coefficient | — |
+| `CLmax` | in | maximum lift coefficient | - |
 | `h` | in | altitude (standard atmosphere) | m |
 | `V_stall` | out | stall speed (true airspeed) | m/s |
-| `V_stall_kt` | out | stall speed in knots (TAS) | — |
+| `V_stall_kt` | out | stall speed in knots (TAS) | - |
 | `EAS_stall` | out | stall speed as equivalent airspeed | m/s |
 | `wing_loading` | out | wing loading W/S | N/m^2 |
 
@@ -1229,7 +1165,7 @@ wing_loading = 625 N/m^2
 
 <a id="aero_max_climb_angle_jet"></a>
 
-#### Steepest climb angle of a jet — `aero_max_climb_angle_jet`
+#### Steepest climb angle of a jet: `aero_max_climb_angle_jet`
 
 The maximum climb angle of a jet aircraft (constant thrust, small-angle approximation lift = weight), the speed for it and the rate of climb at that speed.
 
@@ -1243,10 +1179,10 @@ $$
 | `S` | in | wing area | m^2 |
 | `h` | in | altitude | m |
 | `T` | in | available thrust | N |
-| `CD0` | in | zero-lift drag coefficient | — |
-| `AR` | in | aspect ratio | — |
-| `e` | in | Oswald efficiency factor | — |
-| `gamma_max_deg` | out | maximum climb angle in degrees | — |
+| `CD0` | in | zero-lift drag coefficient | - |
+| `AR` | in | aspect ratio | - |
+| `e` | in | Oswald efficiency factor | - |
+| `gamma_max_deg` | out | maximum climb angle in degrees | - |
 | `V` | out | speed for the steepest climb | m/s |
 | `RC` | out | rate of climb at that speed | m/s |
 
@@ -1272,7 +1208,7 @@ In the worked example, W = 100 kN, S = 30 m^2, h = 0 m, T = 30 kN, CD0 = 0.02, A
 
 <a id="aero_takeoff_ground_roll"></a>
 
-#### Takeoff ground roll — `aero_takeoff_ground_roll`
+#### Takeoff ground roll: `aero_takeoff_ground_roll`
 
 The ground-roll distance and time to lift-off speed of an aircraft accelerating under constant thrust against aerodynamic drag and rolling friction on a level runway.
 
@@ -1286,9 +1222,9 @@ $$
 | `S` | in | wing area | m^2 |
 | `h` | in | airfield altitude (standard atmosphere) | m |
 | `T` | in | thrust (constant during the roll) | N |
-| `mu` | in | rolling friction coefficient | — |
-| `CL` | in | lift coefficient during the ground run | — |
-| `CD` | in | drag coefficient during the ground run | — |
+| `mu` | in | rolling friction coefficient | - |
+| `CL` | in | lift coefficient during the ground run | - |
+| `CD` | in | drag coefficient during the ground run | - |
 | `VLO` | in | lift-off speed | m/s |
 | `s` | out | ground-roll distance | m |
 | `t` | out | ground-roll time | s |
@@ -1315,7 +1251,7 @@ t = 14.56737447 s
 
 <a id="aero_time_to_climb"></a>
 
-#### Time to climb with a linearly decreasing rate of climb — `aero_time_to_climb`
+#### Time to climb with a linearly decreasing rate of climb, `aero_time_to_climb`
 
 The time to climb between two altitudes when the maximum rate of climb falls linearly from its sea-level value to zero at the absolute ceiling (the standard textbook model).
 
@@ -1330,7 +1266,7 @@ $$
 | `h1` | in | starting altitude | m |
 | `h2` | in | final altitude | m |
 | `t` | out | time to climb | s |
-| `t_min` | out | time to climb in minutes | — |
+| `t_min` | out | time to climb in minutes | - |
 
 **Applies when:** 0 <= h1 < h2 < Hc; RC(h) = RC0 (1 - h/Hc) (stated linear model).
 
@@ -1350,7 +1286,7 @@ t_min = 16.66666667
 
 <a id="aero_wind_triangle"></a>
 
-#### Wind triangle: heading and ground speed — `aero_wind_triangle`
+#### Wind triangle: heading and ground speed, `aero_wind_triangle`
 
 The heading to fly, the wind correction angle and the ground speed for an aircraft of a given true airspeed to make good a true course in a wind (direction the wind blows from, and its speed).
 
@@ -1364,10 +1300,10 @@ $$
 | `course` | in | true course to make good (deg) | rad |
 | `wind_from` | in | direction the wind blows from (deg true) | rad |
 | `wind_speed` | in | wind speed | m/s |
-| `heading_deg` | out | true heading to fly, degrees | — |
-| `wca_deg` | out | wind correction angle, degrees (positive = right of course) | — |
+| `heading_deg` | out | true heading to fly, degrees | - |
+| `wca_deg` | out | wind correction angle, degrees (positive = right of course) | - |
 | `GS` | out | ground speed | m/s |
-| `GS_kt` | out | ground speed in knots | — |
+| `GS_kt` | out | ground speed in knots | - |
 
 **Applies when:** crosswind component below 0.99 TAS; positive ground speed; angles in [0, 360] degrees.
 
@@ -1389,7 +1325,7 @@ GS_kt = 79.99999999
 
 <a id="aero_wing_loading"></a>
 
-#### Wing loading — `aero_wing_loading`
+#### Wing loading: `aero_wing_loading`
 
 The wing loading W/S of an aircraft in N/m^2, as a mass per area (kg/m^2) and in lbf/ft^2.
 
@@ -1402,8 +1338,8 @@ $$
 | `W` | in | aircraft weight (N, kN, lbf) | N |
 | `S` | in | wing area (m^2, ft^2) | m^2 |
 | `wing_loading` | out | wing loading W/S | N/m^2 |
-| `wing_loading_kg_m2` | out | wing loading as mass per area, kg/m^2 | — |
-| `wing_loading_psf` | out | wing loading in lbf/ft^2 | — |
+| `wing_loading_kg_m2` | out | wing loading as mass per area, kg/m^2 | - |
+| `wing_loading_psf` | out | wing loading in lbf/ft^2 | - |
 
 **Applies when:** W, S > 0.
 
@@ -1424,7 +1360,7 @@ wing_loading_psf = 104.4271712
 
 <a id="aero_calibrated_airspeed"></a>
 
-#### Calibrated airspeed from true airspeed — `aero_calibrated_airspeed`
+#### Calibrated airspeed from true airspeed: `aero_calibrated_airspeed`
 
 The calibrated airspeed, impact pressure and pitot total pressure of an aircraft flying at a true airspeed at a pressure altitude (subsonic, compressible pitot formula).
 
@@ -1438,7 +1374,7 @@ $$
 | `hp` | in | pressure altitude (m, ft) | m |
 | `T` | in | outside air temperature (default: standard temperature) (optional) | K |
 | `CAS` | out | calibrated airspeed | m/s |
-| `CAS_kt` | out | calibrated airspeed in knots | — |
+| `CAS_kt` | out | calibrated airspeed in knots | - |
 | `qc` | out | impact pressure pt - p | Pa |
 | `pt` | out | pitot total pressure | Pa |
 
@@ -1460,7 +1396,7 @@ pt = 105019.3766 Pa
 
 <a id="aero_mach_from_pitot"></a>
 
-#### Mach number from pitot and static pressures — `aero_mach_from_pitot`
+#### Mach number from pitot and static pressures, `aero_mach_from_pitot`
 
 The flight Mach number from the static pressure and the pitot (total) pressure: the isentropic relation when subsonic, the Rayleigh pitot formula (normal shock ahead of the probe) when supersonic.
 
@@ -1472,8 +1408,8 @@ $$
 |---|---|---|---|
 | `p` | in | static pressure | Pa |
 | `pt` | in | pitot (total) pressure measured by the probe | Pa |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `M` | out | flight Mach number | — |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `M` | out | flight Mach number | - |
 
 **Applies when:** pt > p > 0; M <= 20; 1.05 <= gamma <= 1.7.
 
@@ -1490,7 +1426,7 @@ In the worked example, p = 10 kPa, pt = 18.92929159 kPa go through the equation 
 
 <a id="aero_total_temperature"></a>
 
-#### Total (stagnation) air temperature in flight — `aero_total_temperature`
+#### Total (stagnation) air temperature in flight, `aero_total_temperature`
 
 The total (stagnation) air temperature, the ram temperature rise and the Mach number of an aircraft flying at a true airspeed through air of a static temperature (full recovery, perfect gas, air gamma = 1.4).
 
@@ -1504,7 +1440,7 @@ $$
 | `T` | in | static (outside) air temperature | K |
 | `T0` | out | total (stagnation) temperature | K |
 | `dT` | out | ram temperature rise | K |
-| `M` | out | flight Mach number | — |
+| `M` | out | flight Mach number | - |
 
 **Applies when:** 150 K <= T <= 350 K; M < 5; full recovery (recovery factor 1).
 
@@ -1523,7 +1459,7 @@ M = 0.9999999999
 
 <a id="aero_true_airspeed_from_calibrated"></a>
 
-#### True airspeed from calibrated airspeed — `aero_true_airspeed_from_calibrated`
+#### True airspeed from calibrated airspeed: `aero_true_airspeed_from_calibrated`
 
 The true airspeed and flight Mach number from the calibrated airspeed, the pressure altitude and the outside air temperature (subsonic).
 
@@ -1537,9 +1473,9 @@ $$
 | `hp` | in | pressure altitude (m, ft) | m |
 | `T` | in | outside air temperature (default: standard temperature) (optional) | K |
 | `TAS` | out | true airspeed | m/s |
-| `TAS_kt` | out | true airspeed in knots | — |
+| `TAS_kt` | out | true airspeed in knots | - |
 | `qc` | out | impact pressure | Pa |
-| `M` | out | flight Mach number | — |
+| `M` | out | flight Mach number | - |
 
 **Applies when:** 0 < CAS < a0; subsonic flight; -1 km <= hp <= 47 km; 150 K <= T <= 350 K.
 
@@ -1561,7 +1497,7 @@ M = 0.1814117022
 
 <a id="aero_fanno_flow"></a>
 
-#### Fanno flow (adiabatic duct flow with friction) — `aero_fanno_flow`
+#### Fanno flow (adiabatic duct flow with friction), `aero_fanno_flow`
 
 For adiabatic flow with wall friction in a constant-area duct: the friction length f L*/D needed to reach Mach 1 from Mach M, and the pressure, temperature, density and stagnation-pressure ratios to the sonic (choked) state.
 
@@ -1571,13 +1507,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M` | in | Mach number at the duct station (0.05 to 10, not 1) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `fLD` | out | f L*/D with the Darcy friction factor f (= 4 times the Fanning factor) | — |
-| `p_pstar` | out | p/p* | — |
-| `T_Tstar` | out | T/T* | — |
-| `rho_rhostar` | out | rho/rho* (= V*/V) | — |
-| `p0_p0star` | out | p0/p0* | — |
+| `M` | in | Mach number at the duct station (0.05 to 10, not 1) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `fLD` | out | f L*/D with the Darcy friction factor f (= 4 times the Fanning factor) | - |
+| `p_pstar` | out | p/p* | - |
+| `T_Tstar` | out | T/T* | - |
+| `rho_rhostar` | out | rho/rho* (= V*/V) | - |
+| `p0_p0star` | out | p0/p0* | - |
 
 **Applies when:** 0.05 <= M <= 10; adiabatic, constant area, constant friction factor; 1.05 <= gamma <= 1.7.
 
@@ -1597,7 +1533,7 @@ In the worked example, M = 2 go through the equation above and give fLD = 0.3049
 
 <a id="aero_isentropic_flow"></a>
 
-#### Isentropic flow ratios at a Mach number — `aero_isentropic_flow`
+#### Isentropic flow ratios at a Mach number: `aero_isentropic_flow`
 
 Stagnation-to-static temperature, pressure and density ratios and the area ratio A/A* of isentropic flow of a perfect gas at a Mach number.
 
@@ -1607,12 +1543,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M` | in | Mach number (0.01 to 10) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `T0_T` | out | stagnation-to-static temperature ratio T0/T | — |
-| `p0_p` | out | stagnation-to-static pressure ratio p0/p | — |
-| `rho0_rho` | out | stagnation-to-static density ratio rho0/rho | — |
-| `A_Astar` | out | area ratio A/A* (A* = sonic throat area) | — |
+| `M` | in | Mach number (0.01 to 10) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `T0_T` | out | stagnation-to-static temperature ratio T0/T | - |
+| `p0_p` | out | stagnation-to-static pressure ratio p0/p | - |
+| `rho0_rho` | out | stagnation-to-static density ratio rho0/rho | - |
+| `A_Astar` | out | area ratio A/A* (A* = sonic throat area) | - |
 
 **Applies when:** 0.01 <= M <= 10; 1.05 <= gamma <= 1.7; isentropic flow of a calorically perfect gas.
 
@@ -1631,7 +1567,7 @@ A_Astar = 1.6875
 
 <a id="aero_mach_from_area_ratio"></a>
 
-#### Mach number from the area ratio A/A* — `aero_mach_from_area_ratio`
+#### Mach number from the area ratio A/A*, `aero_mach_from_area_ratio`
 
 The subsonic or supersonic Mach number at which isentropic flow has a given area ratio A/A*, with the static-to-stagnation pressure and temperature ratios there.
 
@@ -1641,12 +1577,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `ar` | in | area ratio A/A* (>= 1) | — |
-| `regime` | in | which branch: subsonic or supersonic | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `M` | out | Mach number | — |
-| `p_p0` | out | static-to-stagnation pressure ratio p/p0 | — |
-| `T_T0` | out | static-to-stagnation temperature ratio T/T0 | — |
+| `ar` | in | area ratio A/A* (>= 1) | - |
+| `regime` | in | which branch: subsonic or supersonic | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `M` | out | Mach number | - |
+| `p_p0` | out | static-to-stagnation pressure ratio p/p0 | - |
+| `T_T0` | out | static-to-stagnation temperature ratio T/T0 | - |
 
 **Applies when:** 1 <= A/A* <= 10000; 1.05 <= gamma <= 1.7.
 
@@ -1665,7 +1601,7 @@ T_T0 = 0.5555555556
 
 <a id="aero_mach_from_prandtl_meyer"></a>
 
-#### Mach number from the Prandtl-Meyer angle — `aero_mach_from_prandtl_meyer`
+#### Mach number from the Prandtl-Meyer angle: `aero_mach_from_prandtl_meyer`
 
 The supersonic Mach number whose Prandtl-Meyer angle is nu, with the maximum turning angle of the gas (expansion to vacuum).
 
@@ -1676,9 +1612,9 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `nu` | in | Prandtl-Meyer angle (deg, rad) | rad |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `M` | out | Mach number | — |
-| `nu_max_deg` | out | maximum Prandtl-Meyer angle (M -> infinity) in degrees | — |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `M` | out | Mach number | - |
+| `nu_max_deg` | out | maximum Prandtl-Meyer angle (M -> infinity) in degrees | - |
 
 **Applies when:** 0 <= nu < nu(M = 50); 1.05 <= gamma <= 1.7.
 
@@ -1695,7 +1631,7 @@ nu_max_deg = 130.4540769
 
 <a id="aero_mach_from_pressure_ratio"></a>
 
-#### Mach number from the stagnation-to-static pressure ratio — `aero_mach_from_pressure_ratio`
+#### Mach number from the stagnation-to-static pressure ratio, `aero_mach_from_pressure_ratio`
 
 The Mach number of isentropic flow from the ratio of stagnation to static pressure p0/p, with T0/T and A/A*.
 
@@ -1705,11 +1641,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `pr` | in | stagnation-to-static pressure ratio p0/p (> 1) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `M` | out | Mach number | — |
-| `T0_T` | out | stagnation-to-static temperature ratio | — |
-| `A_Astar` | out | area ratio A/A* | — |
+| `pr` | in | stagnation-to-static pressure ratio p0/p (> 1) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `M` | out | Mach number | - |
+| `T0_T` | out | stagnation-to-static temperature ratio | - |
+| `A_Astar` | out | area ratio A/A* | - |
 
 **Applies when:** 1 < p0/p <= 1e6; M <= 20; 1.05 <= gamma <= 1.7.
 
@@ -1727,7 +1663,7 @@ A_Astar = 1.6875
 
 <a id="aero_max_deflection_angle"></a>
 
-#### Maximum deflection angle of an attached oblique shock — `aero_max_deflection_angle`
+#### Maximum deflection angle of an attached oblique shock, `aero_max_deflection_angle`
 
 The largest wedge (deflection) angle for which an oblique shock stays attached at a given upstream Mach number, with the wave angle, downstream Mach number and pressure ratio at that limit; beyond it the shock detaches.
 
@@ -1737,12 +1673,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M1` | in | upstream Mach number (>= 1.01) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `theta_max_deg` | out | maximum deflection angle in degrees | — |
-| `beta_deg` | out | wave angle at the maximum, degrees | — |
-| `M2` | out | downstream Mach number at the maximum | — |
-| `p2_p1` | out | pressure ratio at the maximum | — |
+| `M1` | in | upstream Mach number (>= 1.01) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `theta_max_deg` | out | maximum deflection angle in degrees | - |
+| `beta_deg` | out | wave angle at the maximum, degrees | - |
+| `M2` | out | downstream Mach number at the maximum | - |
+| `p2_p1` | out | pressure ratio at the maximum | - |
 
 **Applies when:** 1.01 <= M1 <= 20; 1.05 <= gamma <= 1.7.
 
@@ -1761,7 +1697,7 @@ p2_p1 = 3.645751311
 
 <a id="aero_normal_shock_from_pressure_ratio"></a>
 
-#### Normal shock from its pressure ratio — `aero_normal_shock_from_pressure_ratio`
+#### Normal shock from its pressure ratio: `aero_normal_shock_from_pressure_ratio`
 
 The upstream and downstream Mach numbers and the temperature, density and stagnation-pressure ratios of a normal shock of known static pressure ratio p2/p1 (shock strength).
 
@@ -1771,13 +1707,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `p21` | in | static pressure ratio across the shock p2/p1 (> 1) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `M1` | out | upstream Mach number | — |
-| `M2` | out | downstream Mach number | — |
-| `T2_T1` | out | temperature ratio | — |
-| `rho2_rho1` | out | density ratio | — |
-| `p02_p01` | out | stagnation pressure ratio | — |
+| `p21` | in | static pressure ratio across the shock p2/p1 (> 1) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `M1` | out | upstream Mach number | - |
+| `M2` | out | downstream Mach number | - |
+| `T2_T1` | out | temperature ratio | - |
+| `rho2_rho1` | out | density ratio | - |
+| `p02_p01` | out | stagnation pressure ratio | - |
 
 **Applies when:** 1 < p2/p1 <= 500; 1.05 <= gamma <= 1.7.
 
@@ -1797,7 +1733,7 @@ p02_p01 = 0.7208738615
 
 <a id="aero_normal_shock"></a>
 
-#### Normal shock relations — `aero_normal_shock`
+#### Normal shock relations: `aero_normal_shock`
 
 Downstream Mach number and the pressure, temperature, density and stagnation-pressure ratios across a normal shock, with the pitot ratio p02/p1.
 
@@ -1807,14 +1743,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M1` | in | upstream Mach number (> 1) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `M2` | out | downstream Mach number | — |
-| `p2_p1` | out | static pressure ratio p2/p1 | — |
-| `T2_T1` | out | temperature ratio T2/T1 | — |
-| `rho2_rho1` | out | density ratio rho2/rho1 | — |
-| `p02_p01` | out | stagnation pressure ratio p02/p01 | — |
-| `p02_p1` | out | pitot ratio p02/p1 | — |
+| `M1` | in | upstream Mach number (> 1) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `M2` | out | downstream Mach number | - |
+| `p2_p1` | out | static pressure ratio p2/p1 | - |
+| `T2_T1` | out | temperature ratio T2/T1 | - |
+| `rho2_rho1` | out | density ratio rho2/rho1 | - |
+| `p02_p01` | out | stagnation pressure ratio p02/p01 | - |
+| `p02_p1` | out | pitot ratio p02/p1 | - |
 
 **Applies when:** 1 < M1 <= 20; 1.05 <= gamma <= 1.7.
 
@@ -1835,7 +1771,7 @@ p02_p1 = 5.640440813
 
 <a id="aero_oblique_shock"></a>
 
-#### Oblique shock from the deflection angle — `aero_oblique_shock`
+#### Oblique shock from the deflection angle: `aero_oblique_shock`
 
 The wave angle, downstream Mach number and the pressure, temperature, density and stagnation-pressure ratios of an attached oblique shock turning a supersonic flow by a deflection angle (weak or strong solution).
 
@@ -1845,17 +1781,17 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M1` | in | upstream Mach number (> 1) | — |
+| `M1` | in | upstream Mach number (> 1) | - |
 | `theta` | in | flow deflection (wedge half-) angle (deg, rad) | rad |
-| `branch` | in | weak (default) or strong shock solution (optional) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `beta_deg` | out | shock wave angle in degrees | — |
-| `M2` | out | downstream Mach number | — |
-| `p2_p1` | out | pressure ratio p2/p1 | — |
-| `T2_T1` | out | temperature ratio T2/T1 | — |
-| `rho2_rho1` | out | density ratio rho2/rho1 | — |
-| `p02_p01` | out | stagnation pressure ratio | — |
-| `Mn1` | out | upstream Mach number normal to the shock | — |
+| `branch` | in | weak (default) or strong shock solution (optional) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `beta_deg` | out | shock wave angle in degrees | - |
+| `M2` | out | downstream Mach number | - |
+| `p2_p1` | out | pressure ratio p2/p1 | - |
+| `T2_T1` | out | temperature ratio T2/T1 | - |
+| `rho2_rho1` | out | density ratio rho2/rho1 | - |
+| `p02_p01` | out | stagnation pressure ratio | - |
+| `Mn1` | out | upstream Mach number normal to the shock | - |
 
 **Applies when:** 1 < M1 <= 20; 0 < theta < theta_max(M1) (attached shock); 1.05 <= gamma <= 1.7.
 
@@ -1878,7 +1814,7 @@ Mn1 = 1.285575219
 
 <a id="aero_oblique_shock_from_wave_angle"></a>
 
-#### Oblique shock from the wave angle — `aero_oblique_shock_from_wave_angle`
+#### Oblique shock from the wave angle: `aero_oblique_shock_from_wave_angle`
 
 The flow deflection, downstream Mach number and the property ratios of an oblique shock of known wave angle (for example measured on a schlieren photograph).
 
@@ -1888,16 +1824,16 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M1` | in | upstream Mach number (> 1) | — |
+| `M1` | in | upstream Mach number (> 1) | - |
 | `beta` | in | shock wave angle (deg, rad) | rad |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `theta_deg` | out | flow deflection angle in degrees | — |
-| `M2` | out | downstream Mach number | — |
-| `p2_p1` | out | pressure ratio | — |
-| `T2_T1` | out | temperature ratio | — |
-| `rho2_rho1` | out | density ratio | — |
-| `p02_p01` | out | stagnation pressure ratio | — |
-| `Mn1` | out | upstream normal Mach number | — |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `theta_deg` | out | flow deflection angle in degrees | - |
+| `M2` | out | downstream Mach number | - |
+| `p2_p1` | out | pressure ratio | - |
+| `T2_T1` | out | temperature ratio | - |
+| `rho2_rho1` | out | density ratio | - |
+| `p02_p01` | out | stagnation pressure ratio | - |
+| `Mn1` | out | upstream normal Mach number | - |
 
 **Applies when:** 1 < M1 <= 20; asin(1/M1) < beta <= 90 deg; 1.05 <= gamma <= 1.7.
 
@@ -1920,7 +1856,7 @@ Mn1 = 2
 
 <a id="aero_prandtl_meyer"></a>
 
-#### Prandtl-Meyer angle of a Mach number — `aero_prandtl_meyer`
+#### Prandtl-Meyer angle of a Mach number: `aero_prandtl_meyer`
 
 The Prandtl-Meyer function nu(M): the angle through which a sonic flow must turn isentropically to reach Mach M.
 
@@ -1930,9 +1866,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M` | in | Mach number (>= 1) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `nu_deg` | out | Prandtl-Meyer angle in degrees | — |
+| `M` | in | Mach number (>= 1) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `nu_deg` | out | Prandtl-Meyer angle in degrees | - |
 
 **Applies when:** 1 <= M <= 50; 1.05 <= gamma <= 1.7.
 
@@ -1948,7 +1884,7 @@ In the worked example, M = 2 go through the equation above and give nu_deg = 26.
 
 <a id="aero_expansion_fan"></a>
 
-#### Prandtl-Meyer expansion fan — `aero_expansion_fan`
+#### Prandtl-Meyer expansion fan: `aero_expansion_fan`
 
 The downstream Mach number and the pressure, temperature and density ratios when a supersonic flow turns away from itself by an angle through a centred expansion fan.
 
@@ -1958,15 +1894,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M1` | in | upstream Mach number (>= 1) | — |
+| `M1` | in | upstream Mach number (>= 1) | - |
 | `theta` | in | turning angle of the flow (deg, rad) | rad |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `M2` | out | downstream Mach number | — |
-| `nu1_deg` | out | upstream Prandtl-Meyer angle (deg) | — |
-| `nu2_deg` | out | downstream Prandtl-Meyer angle (deg) | — |
-| `p2_p1` | out | pressure ratio p2/p1 | — |
-| `T2_T1` | out | temperature ratio T2/T1 | — |
-| `rho2_rho1` | out | density ratio rho2/rho1 | — |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `M2` | out | downstream Mach number | - |
+| `nu1_deg` | out | upstream Prandtl-Meyer angle (deg) | - |
+| `nu2_deg` | out | downstream Prandtl-Meyer angle (deg) | - |
+| `p2_p1` | out | pressure ratio p2/p1 | - |
+| `T2_T1` | out | temperature ratio T2/T1 | - |
+| `rho2_rho1` | out | density ratio rho2/rho1 | - |
 
 **Applies when:** 1 <= M1 <= 20; 0 < theta < 90 deg; downstream Mach below 50; 1.05 <= gamma <= 1.7.
 
@@ -1988,7 +1924,7 @@ rho2_rho1 = 0.3628873694
 
 <a id="aero_rayleigh_flow"></a>
 
-#### Rayleigh flow (duct flow with heat addition) — `aero_rayleigh_flow`
+#### Rayleigh flow (duct flow with heat addition), `aero_rayleigh_flow`
 
 For frictionless constant-area flow with heat addition: the stagnation temperature, temperature, pressure, density and stagnation-pressure ratios to the sonic (thermally choked) state at a Mach number.
 
@@ -1998,13 +1934,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `M` | in | Mach number (0.05 to 10) | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `T0_T0star` | out | T0/T0* | — |
-| `T_Tstar` | out | T/T* | — |
-| `p_pstar` | out | p/p* | — |
-| `rho_rhostar` | out | rho/rho* | — |
-| `p0_p0star` | out | p0/p0* | — |
+| `M` | in | Mach number (0.05 to 10) | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `T0_T0star` | out | T0/T0* | - |
+| `T_Tstar` | out | T/T* | - |
+| `p_pstar` | out | p/p* | - |
+| `rho_rhostar` | out | rho/rho* | - |
+| `p0_p0star` | out | p0/p0* | - |
 
 **Applies when:** 0.05 <= M <= 10; frictionless, constant area; 1.05 <= gamma <= 1.7.
 
@@ -2026,7 +1962,7 @@ p0_p0star = 1.503095979
 
 <a id="aero_choked_mass_flow"></a>
 
-#### Choked mass flow through a nozzle throat — `aero_choked_mass_flow`
+#### Choked mass flow through a nozzle throat: `aero_choked_mass_flow`
 
 The maximum (choked) mass flow of a perfect gas through a sonic throat from the stagnation pressure and temperature, with the throat (critical) pressure, temperature and speed.
 
@@ -2039,7 +1975,7 @@ $$
 | `p0` | in | stagnation (reservoir) pressure | Pa |
 | `T0` | in | stagnation temperature | K |
 | `A` | in | throat area (m^2, cm^2, mm^2) | m^2 |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
 | `R` | in | specific gas constant (default air, 287.053 J/(kg*K)) (optional) | J/(kg*K) |
 | `mdot` | out | choked mass flow rate | kg/s |
 | `p_star` | out | throat pressure | Pa |
@@ -2065,7 +2001,7 @@ V_star = 316.9677826 m/s
 
 <a id="aero_nozzle_normal_shock"></a>
 
-#### Normal shock position in a converging-diverging nozzle — `aero_nozzle_normal_shock`
+#### Normal shock position in a converging-diverging nozzle, `aero_nozzle_normal_shock`
 
 Where a normal shock stands in the diverging part of a converging-diverging nozzle for a given back pressure: the area ratio at the shock, the Mach numbers before and after it, the exit Mach number and the stagnation-pressure loss.
 
@@ -2077,13 +2013,13 @@ $$
 |---|---|---|---|
 | `pc` | in | reservoir (stagnation) pressure | Pa |
 | `pb` | in | back pressure at the exit | Pa |
-| `eps` | in | exit-to-throat area ratio Ae/At | — |
-| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | — |
-| `As_At` | out | area ratio at the shock As/At | — |
-| `M1` | out | Mach number just before the shock | — |
-| `M2` | out | Mach number just after the shock | — |
-| `Me` | out | exit Mach number (subsonic) | — |
-| `p02_p01` | out | stagnation pressure ratio across the shock | — |
+| `eps` | in | exit-to-throat area ratio Ae/At | - |
+| `gamma` | in | ratio of specific heats (default 1.4, air) (optional) | - |
+| `As_At` | out | area ratio at the shock As/At | - |
+| `M1` | out | Mach number just before the shock | - |
+| `M2` | out | Mach number just after the shock | - |
+| `Me` | out | exit Mach number (subsonic) | - |
+| `p02_p01` | out | stagnation pressure ratio across the shock | - |
 
 **Applies when:** 1.05 <= eps <= 100; back pressure between the exit-shock and the critical subsonic exit pressures; 1.05 <= gamma <= 1.7.
 
@@ -2107,7 +2043,7 @@ p02_p01 = 0.7208738614
 
 <a id="aero_bielliptic_transfer"></a>
 
-#### Bi-elliptic transfer between circular orbits — `aero_bielliptic_transfer`
+#### Bi-elliptic transfer between circular orbits, `aero_bielliptic_transfer`
 
 The three burns, total delta-v and transfer time of a bi-elliptic transfer from a lower to a higher circular orbit around the Earth through an intermediate apoapsis, with the Hohmann delta-v for comparison.
 
@@ -2125,7 +2061,7 @@ $$
 | `dv3` | out | third burn (circularization) | m/s |
 | `dv` | out | total delta-v | m/s |
 | `t` | out | total transfer time | s |
-| `t_days` | out | transfer time in days | — |
+| `t_days` | out | transfer time in days | - |
 | `dv_hohmann` | out | total delta-v of the Hohmann transfer between the same orbits | m/s |
 
 **Applies when:** 100 km <= h1 < h2 <= hb; coplanar circular orbits, impulsive burns, two-body Earth.
@@ -2150,7 +2086,7 @@ dv_hohmann = 1590.097242 m/s
 
 <a id="aero_circular_orbit"></a>
 
-#### Circular orbit at an altitude above the Earth — `aero_circular_orbit`
+#### Circular orbit at an altitude above the Earth, `aero_circular_orbit`
 
 Orbital speed, period and revolutions per day of a circular orbit at an altitude above the Earth's equatorial radius.
 
@@ -2163,8 +2099,8 @@ $$
 | `h` | in | orbit altitude above the Earth (km) | m |
 | `v` | out | circular orbital speed | m/s |
 | `T` | out | orbital period | s |
-| `T_min` | out | period in minutes | — |
-| `revs_per_day` | out | revolutions per day (86400 s) | — |
+| `T_min` | out | period in minutes | - |
+| `revs_per_day` | out | revolutions per day (86400 s) | - |
 
 **Applies when:** 100 km <= h <= 1e6 km; two-body Earth, mu = 3.986004418e14 m^3/s^2, R = 6378.1366 km.
 
@@ -2183,7 +2119,7 @@ revs_per_day = 2.130453456
 
 <a id="aero_altitude_for_period"></a>
 
-#### Circular-orbit altitude for an orbital period — `aero_altitude_for_period`
+#### Circular-orbit altitude for an orbital period, `aero_altitude_for_period`
 
 The altitude above the Earth of the circular orbit with a given period (for example a geostationary orbit, one sidereal day), and its orbital speed.
 
@@ -2195,7 +2131,7 @@ $$
 |---|---|---|---|
 | `T` | in | orbital period (s, min, h, day) | s |
 | `h` | out | orbit altitude | m |
-| `h_km` | out | altitude in km | — |
+| `h_km` | out | altitude in km | - |
 | `v` | out | orbital speed | m/s |
 
 **Applies when:** the altitude between 100 km and 1e6 km; two-body Earth.
@@ -2214,7 +2150,7 @@ v = 3952.682983 m/s
 
 <a id="aero_satellite_coverage"></a>
 
-#### Coverage of a satellite at an altitude — `aero_satellite_coverage`
+#### Coverage of a satellite at an altitude: `aero_satellite_coverage`
 
 The Earth central angle out to the edge of a satellite's coverage, the off-nadir angle and slant range to that edge, and the fraction of the Earth's surface in view, for a minimum elevation angle at the ground (0 = the geometric horizon).
 
@@ -2226,10 +2162,10 @@ $$
 |---|---|---|---|
 | `h` | in | satellite altitude | m |
 | `eps_min` | in | minimum elevation angle at the ground station (default 0 deg) (optional) | rad |
-| `lambda_deg` | out | Earth central angle to the coverage edge, degrees | — |
-| `nadir_deg` | out | off-nadir angle to the edge, degrees | — |
+| `lambda_deg` | out | Earth central angle to the coverage edge, degrees | - |
+| `nadir_deg` | out | off-nadir angle to the edge, degrees | - |
 | `slant_range` | out | slant range to the coverage edge | m |
-| `coverage` | out | fraction of the Earth's surface covered | — |
+| `coverage` | out | fraction of the Earth's surface covered | - |
 
 **Applies when:** 100 km <= h <= 1e6 km; 0 <= eps_min <= 80 deg; spherical Earth of radius 6378.1366 km.
 
@@ -2248,7 +2184,7 @@ coverage = 0.25
 
 <a id="aero_escape_speed"></a>
 
-#### Escape speed at an altitude above the Earth — `aero_escape_speed`
+#### Escape speed at an altitude above the Earth, `aero_escape_speed`
 
 The speed needed to escape the Earth's gravity from an altitude, the circular orbital speed there and the burn needed to escape from that circular orbit.
 
@@ -2279,7 +2215,7 @@ dv = 3274.509799 m/s
 
 <a id="aero_sun_synchronous_inclination"></a>
 
-#### Inclination of a sun-synchronous orbit — `aero_sun_synchronous_inclination`
+#### Inclination of a sun-synchronous orbit: `aero_sun_synchronous_inclination`
 
 The inclination at which J2 makes a circular orbit's plane turn eastward at one revolution per year (sun-synchronous), at an altitude, with the orbital period.
 
@@ -2290,8 +2226,8 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `h` | in | altitude of the circular orbit (km) | m |
-| `i_deg` | out | sun-synchronous inclination in degrees (retrograde, > 90) | — |
-| `period_min` | out | orbital period in minutes | — |
+| `i_deg` | out | sun-synchronous inclination in degrees (retrograde, > 90) | - |
+| `period_min` | out | orbital period in minutes | - |
 
 **Applies when:** 100 km <= h <= 6000 km (none exists above about 5970 km); circular orbit, first-order J2, node rate 360 deg per 365.2421897 days.
 
@@ -2308,7 +2244,7 @@ period_min = 98.77297615
 
 <a id="aero_lambert_problem"></a>
 
-#### Lambert's problem (orbit through two positions in a given time) — `aero_lambert_problem`
+#### Lambert's problem (orbit through two positions in a given time), `aero_lambert_problem`
 
 The velocities at departure and arrival of the zero-revolution Earth orbit that goes from one position to another in a given time of flight (prograde or retrograde), with the transfer angle.
 
@@ -2318,13 +2254,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `r1` | in | departure position vector in km, e.g. '[7000, 0, 0]' | — |
-| `r2` | in | arrival position vector in km | — |
+| `r1` | in | departure position vector in km, e.g. '[7000, 0, 0]' | - |
+| `r2` | in | arrival position vector in km | - |
 | `tof` | in | time of flight | s |
-| `direction` | in | prograde (default) or retrograde transfer (optional) | — |
-| `v1` | out | departure velocity vector in km/s | — |
-| `v2` | out | arrival velocity vector in km/s | — |
-| `dtheta_deg` | out | transfer angle in degrees | — |
+| `direction` | in | prograde (default) or retrograde transfer (optional) | - |
+| `v1` | out | departure velocity vector in km/s | - |
+| `v2` | out | arrival velocity vector in km/s | - |
+| `dtheta_deg` | out | transfer angle in degrees | - |
 
 **Applies when:** 2 deg <= transfer angle <= 358 deg, not within 2 deg of 180; tof > 0; zero revolutions, two-body Earth (mu = 398600.4418 km^3/s^2).
 
@@ -2342,7 +2278,7 @@ dtheta_deg = 90
 
 <a id="aero_j2_nodal_regression"></a>
 
-#### Nodal regression from the Earth's oblateness (J2) — `aero_j2_nodal_regression`
+#### Nodal regression from the Earth's oblateness (J2), `aero_j2_nodal_regression`
 
 The secular drift of the right ascension of the ascending node caused by the Earth's equatorial bulge (J2), from the perigee and apogee altitudes and the inclination.
 
@@ -2355,7 +2291,7 @@ $$
 | `hp` | in | perigee altitude (or the altitude of a circular orbit) | m |
 | `i` | in | inclination (deg) | rad |
 | `ha` | in | apogee altitude (default: circular orbit) (optional) | m |
-| `raan_rate_deg_day` | out | node drift rate in degrees per day (negative = westward regression) | — |
+| `raan_rate_deg_day` | out | node drift rate in degrees per day (negative = westward regression) | - |
 | `raan_rate` | out | node drift rate | rad/s |
 
 **Applies when:** 100 km <= hp <= ha <= 1e5 km; 1 deg <= i <= 179 deg; first-order secular J2 theory, J2 = 1.08263e-3.
@@ -2374,7 +2310,7 @@ raan_rate = -7.862479291e-09 rad/s
 
 <a id="aero_j2_apsidal_rotation"></a>
 
-#### Rotation of the line of apsides from J2 — `aero_j2_apsidal_rotation`
+#### Rotation of the line of apsides from J2: `aero_j2_apsidal_rotation`
 
 The secular rotation of the argument of perigee of an eccentric Earth orbit caused by J2 (zero at the critical inclination 63.4 degrees, as used by Molniya orbits).
 
@@ -2387,7 +2323,7 @@ $$
 | `hp` | in | perigee altitude | m |
 | `ha` | in | apogee altitude | m |
 | `i` | in | inclination (deg) | rad |
-| `argp_rate_deg_day` | out | perigee rotation rate in degrees per day | — |
+| `argp_rate_deg_day` | out | perigee rotation rate in degrees per day | - |
 | `argp_rate` | out | perigee rotation rate | rad/s |
 
 **Applies when:** 100 km <= hp < ha <= 1e5 km; eccentricity >= 1e-4; 1 deg <= i <= 179 deg; first-order secular J2 theory.
@@ -2409,7 +2345,7 @@ argp_rate = -8.945754216e-09 rad/s
 
 <a id="aero_actuator_disk_hover"></a>
 
-#### Ideal hover power of a rotor (momentum theory) — `aero_actuator_disk_hover`
+#### Ideal hover power of a rotor (momentum theory), `aero_actuator_disk_hover`
 
 The induced velocity at the disk, the ideal (induced) power and the far-wake velocity of a hovering rotor or static propeller from its thrust, diameter and the air density (actuator-disk momentum theory).
 
@@ -2444,7 +2380,7 @@ w = 2 m/s
 
 <a id="aero_actuator_disk_forward"></a>
 
-#### Ideal propeller in axial flight (momentum theory) — `aero_actuator_disk_forward`
+#### Ideal propeller in axial flight (momentum theory), `aero_actuator_disk_forward`
 
 The induced velocity, ideal power, ideal (Froude) propulsive efficiency and far-wake velocity increment of a propeller producing a thrust at a flight speed (actuator-disk momentum theory).
 
@@ -2460,7 +2396,7 @@ $$
 | `rho` | in | air density | kg/m^3 |
 | `v_i` | out | induced velocity at the disk | m/s |
 | `P_ideal` | out | ideal power absorbed | W |
-| `eta_ideal` | out | ideal propulsive efficiency T V/P | — |
+| `eta_ideal` | out | ideal propulsive efficiency T V/P | - |
 | `w` | out | far-wake velocity increment | m/s |
 
 **Applies when:** T, V, D, rho > 0; ideal actuator disk.
@@ -2485,7 +2421,7 @@ In the worked example, T = 25.13274123 N, V = 3 m/s, D = 2 m, rho = 1 kg/m^3 go 
 
 <a id="aero_ballistic_coefficient"></a>
 
-#### Ballistic coefficient — `aero_ballistic_coefficient`
+#### Ballistic coefficient: `aero_ballistic_coefficient`
 
 The ballistic coefficient beta = m/(CD A) of a body (mass per unit drag area), in kg/m^2 and as a weight per area in lbf/ft^2.
 
@@ -2496,10 +2432,10 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `m` | in | mass | kg |
-| `CD` | in | drag coefficient | — |
+| `CD` | in | drag coefficient | - |
 | `A` | in | reference area | m^2 |
 | `beta` | out | ballistic coefficient m/(CD A) | kg/m^2 |
-| `beta_psf` | out | ballistic coefficient as weight per drag area, lbf/ft^2 | — |
+| `beta_psf` | out | ballistic coefficient as weight per drag area, lbf/ft^2 | - |
 
 **Applies when:** m, CD, A > 0; CD <= 5.
 
@@ -2518,7 +2454,7 @@ beta_psf = 113.7867465
 
 <a id="aero_ballistic_entry_peak_deceleration"></a>
 
-#### Peak deceleration of a ballistic re-entry (Allen-Eggers) — `aero_ballistic_entry_peak_deceleration`
+#### Peak deceleration of a ballistic re-entry (Allen-Eggers), `aero_ballistic_entry_peak_deceleration`
 
 The peak deceleration (in g), the altitude where it occurs and the speed there for a body entering an exponential atmosphere on a straight ballistic path, from its mass, drag coefficient and reference area (ballistic coefficient m/(CD A)), entry speed and flight-path angle.
 
@@ -2529,13 +2465,13 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `m` | in | mass | kg |
-| `CD` | in | drag coefficient | — |
+| `CD` | in | drag coefficient | - |
 | `A` | in | drag reference area | m^2 |
 | `VE` | in | entry speed | m/s |
 | `gamma_e` | in | entry flight-path angle below the horizontal (deg) | rad |
 | `H` | in | atmospheric scale height (default 7.2 km) (optional) | m |
 | `rho0` | in | surface density of the exponential atmosphere (default 1.225 kg/m^3) (optional) | kg/m^3 |
-| `n_max` | out | peak deceleration in g (9.80665 m/s^2) | — |
+| `n_max` | out | peak deceleration in g (9.80665 m/s^2) | - |
 | `a_max` | out | peak deceleration | m/s^2 |
 | `h_peak` | out | altitude of peak deceleration | m |
 | `V_peak` | out | speed at peak deceleration | m/s |
@@ -2561,7 +2497,7 @@ V_peak = 4245.714618 m/s
 
 <a id="aero_ballistic_entry_velocity"></a>
 
-#### Speed and deceleration of a ballistic re-entry at an altitude — `aero_ballistic_entry_velocity`
+#### Speed and deceleration of a ballistic re-entry at an altitude, `aero_ballistic_entry_velocity`
 
 The speed and the deceleration of a body on a straight ballistic entry into an exponential atmosphere when it reaches a given altitude (Allen-Eggers).
 
@@ -2572,7 +2508,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `m` | in | mass | kg |
-| `CD` | in | drag coefficient | — |
+| `CD` | in | drag coefficient | - |
 | `A` | in | drag reference area | m^2 |
 | `VE` | in | entry speed | m/s |
 | `gamma_e` | in | entry flight-path angle below the horizontal (deg) | rad |
@@ -2580,7 +2516,7 @@ $$
 | `H` | in | atmospheric scale height (default 7.2 km) (optional) | m |
 | `rho0` | in | surface density (default 1.225 kg/m^3) (optional) | kg/m^3 |
 | `V` | out | speed at the altitude | m/s |
-| `n` | out | deceleration in g | — |
+| `n` | out | deceleration in g | - |
 | `a` | out | deceleration | m/s^2 |
 
 **Applies when:** 2 deg <= gamma_e <= 90 deg; 0 <= h <= 40 H; straight-line path, gravity and lift neglected, exponential atmosphere.
@@ -2606,7 +2542,7 @@ a = 1251.811987 m/s^2
 
 <a id="aero_vertical_rocket_trajectory"></a>
 
-#### Burnout height and apogee of a vertical rocket — `aero_vertical_rocket_trajectory`
+#### Burnout height and apogee of a vertical rocket, `aero_vertical_rocket_trajectory`
 
 Burnout speed and height, apogee height and time to apogee of a rocket launched vertically under constant thrust and mass flow and constant gravity, neglecting drag.
 
@@ -2646,7 +2582,7 @@ t_apex = 299.9999999 s
 
 <a id="aero_multistage_delta_v"></a>
 
-#### Delta-v of a multistage rocket — `aero_multistage_delta_v`
+#### Delta-v of a multistage rocket: `aero_multistage_delta_v`
 
 The total ideal velocity change of a multistage rocket and the contribution of each stage, from each stage's specific impulse and the vehicle mass at its ignition and at its burnout.
 
@@ -2656,11 +2592,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Isp` | in | specific impulse of each stage in seconds, e.g. '[290, 340]' | — |
-| `m0` | in | vehicle mass at each stage's ignition in kilograms | — |
-| `mf` | in | vehicle mass at each stage's burnout in kilograms | — |
+| `Isp` | in | specific impulse of each stage in seconds, e.g. '[290, 340]' | - |
+| `m0` | in | vehicle mass at each stage's ignition in kilograms | - |
+| `mf` | in | vehicle mass at each stage's burnout in kilograms | - |
 | `dv` | out | total delta-v | m/s |
-| `dv_stages` | out | delta-v of each stage in m/s | — |
+| `dv_stages` | out | delta-v of each stage in m/s | - |
 
 **Applies when:** equal numbers of stages; 0 < mf < m0 for each stage; each ignition mass below the previous burnout mass; no gravity or drag.
 
@@ -2676,7 +2612,7 @@ dv_stages = [2941.99302106,2941.99053096]
 
 <a id="aero_delta_v_gravity_loss"></a>
 
-#### Gravity loss of a vertical rocket burn — `aero_delta_v_gravity_loss`
+#### Gravity loss of a vertical rocket burn: `aero_delta_v_gravity_loss`
 
 The burnout speed of a rocket climbing vertically under constant thrust and constant gravity (no drag), its ideal delta-v and the gravity loss g tb.
 
@@ -2714,7 +2650,7 @@ loss = 980.665 m/s
 
 <a id="aero_optimal_staging"></a>
 
-#### Optimal staging of a multistage rocket — `aero_optimal_staging`
+#### Optimal staging of a multistage rocket: `aero_optimal_staging`
 
 The lightest rocket that gives a payload a required delta-v with stages of given specific impulses and structural coefficients: the optimal mass ratio and mass of each stage, the lift-off mass and the payload fraction (Lagrange-multiplier solution).
 
@@ -2724,14 +2660,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Isp` | in | specific impulse of each stage in seconds, bottom stage first, e.g. '[300, 350, 450]' | — |
-| `eps` | in | structural coefficient ms/(ms + mp) of each stage | — |
+| `Isp` | in | specific impulse of each stage in seconds, bottom stage first, e.g. '[300, 350, 450]' | - |
+| `eps` | in | structural coefficient ms/(ms + mp) of each stage | - |
 | `dv` | in | required total delta-v | m/s |
 | `m_pl` | in | payload mass | kg |
 | `m0` | out | minimum lift-off mass | kg |
-| `payload_fraction` | out | payload fraction m_pl/m0 | — |
-| `R` | out | optimal mass ratio of each stage (list) | — |
-| `stage_mass` | out | mass of each stage, structure plus propellant, in kg (list) | — |
+| `payload_fraction` | out | payload fraction m_pl/m0 | - |
+| `R` | out | optimal mass ratio of each stage (list) | - |
+| `stage_mass` | out | mass of each stage, structure plus propellant, in kg (list) | - |
 
 **Applies when:** 2 to 5 stages; 0.01 <= eps <= 0.5; delta-v below what the stages could reach with zero payload; impulsive staging, no gravity or drag losses.
 
@@ -2751,7 +2687,7 @@ stage_mass = [30000.0000021,5000.00000019]
 
 <a id="aero_identical_stages_payload"></a>
 
-#### Payload fraction of a rocket with identical stages — `aero_identical_stages_payload`
+#### Payload fraction of a rocket with identical stages, `aero_identical_stages_payload`
 
 For a rocket of n identical stages (same specific impulse and structural coefficient, equal delta-v split): the payload ratio of each stage, the overall payload fraction, the stage mass ratio and the gross lift-off mass per kilogram of payload.
 
@@ -2761,14 +2697,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n` | in | number of stages (1 to 6) | — |
+| `n` | in | number of stages (1 to 6) | - |
 | `dv` | in | total delta-v | m/s |
 | `Isp` | in | specific impulse of every stage | s |
-| `eps` | in | structural coefficient ms/(ms + mp) of every stage | — |
-| `lam` | out | payload ratio of each stage (payload above / stage mass) | — |
-| `payload_fraction` | out | overall payload fraction m_payload/m0 | — |
-| `R` | out | mass ratio of each stage | — |
-| `gross_per_payload` | out | lift-off mass per unit payload mass | — |
+| `eps` | in | structural coefficient ms/(ms + mp) of every stage | - |
+| `lam` | out | payload ratio of each stage (payload above / stage mass) | - |
+| `payload_fraction` | out | overall payload fraction m_payload/m0 | - |
+| `R` | out | mass ratio of each stage | - |
+| `gross_per_payload` | out | lift-off mass per unit payload mass | - |
 
 **Applies when:** 1 <= n <= 6; 0.01 <= eps <= 0.5; eps R < 1; identical stages, equal delta-v split.
 
@@ -2789,7 +2725,7 @@ gross_per_payload = 6
 
 <a id="aero_propellant_for_delta_v"></a>
 
-#### Propellant mass for a required delta-v — `aero_propellant_for_delta_v`
+#### Propellant mass for a required delta-v: `aero_propellant_for_delta_v`
 
 The propellant mass, initial mass and mass ratio a rocket stage needs to give a velocity change, from its specific impulse and burnout mass (structure plus payload).
 
@@ -2804,7 +2740,7 @@ $$
 | `mf` | in | burnout mass (dry mass plus payload) | kg |
 | `m0` | out | initial mass | kg |
 | `mp` | out | propellant mass | kg |
-| `R` | out | mass ratio m0/mf | — |
+| `R` | out | mass ratio m0/mf | - |
 
 **Applies when:** dv > 0; 1 s <= Isp <= 10000 s; mf > 0; mass ratio <= 10000.
 
@@ -2824,7 +2760,7 @@ R = 2.718281828
 
 <a id="aero_rocket_delta_v"></a>
 
-#### Rocket delta-v from specific impulse (Tsiolkovsky) — `aero_rocket_delta_v`
+#### Rocket delta-v from specific impulse (Tsiolkovsky), `aero_rocket_delta_v`
 
 The ideal velocity change of a rocket (no gravity or drag) from its specific impulse and its initial and burnout masses.
 
@@ -2857,7 +2793,7 @@ dv = 6117.706618 m/s
 
 <a id="aero_characteristic_velocity"></a>
 
-#### Characteristic velocity c* of a rocket propellant — `aero_characteristic_velocity`
+#### Characteristic velocity c* of a rocket propellant, `aero_characteristic_velocity`
 
 The characteristic exhaust velocity c* = pc At / mdot of ideal rocket combustion products from the chamber temperature, molar mass and ratio of specific heats, with the Vandenkerckhove function.
 
@@ -2869,9 +2805,9 @@ $$
 |---|---|---|---|
 | `Tc` | in | chamber (combustion) temperature | K |
 | `Mw` | in | molar mass of the combustion products (g/mol, kg/kmol) | kg/mol |
-| `gamma` | in | ratio of specific heats of the products | — |
+| `gamma` | in | ratio of specific heats of the products | - |
 | `c_star` | out | characteristic velocity c* | m/s |
-| `Gamma` | out | Vandenkerckhove function Gamma(gamma) | — |
+| `Gamma` | out | Vandenkerckhove function Gamma(gamma) | - |
 
 **Applies when:** Tc > 0; 1 <= Mw <= 300 g/mol; 1.05 <= gamma <= 1.7; ideal, frozen, isentropic flow.
 
@@ -2890,7 +2826,7 @@ Gamma = 0.6485311707
 
 <a id="aero_rocket_engine_performance"></a>
 
-#### Ideal rocket engine performance — `aero_rocket_engine_performance`
+#### Ideal rocket engine performance: `aero_rocket_engine_performance`
 
 Thrust, mass flow, specific impulse, thrust coefficient, characteristic velocity and the exit pressure, velocity and Mach number of an ideal rocket engine from its chamber conditions, propellant products, throat area, expansion ratio and the ambient pressure.
 
@@ -2903,18 +2839,18 @@ $$
 | `pc` | in | chamber pressure | Pa |
 | `Tc` | in | chamber temperature | K |
 | `Mw` | in | molar mass of the products (g/mol) | kg/mol |
-| `gamma` | in | ratio of specific heats | — |
+| `gamma` | in | ratio of specific heats | - |
 | `At` | in | throat area | m^2 |
-| `eps` | in | expansion area ratio Ae/At | — |
+| `eps` | in | expansion area ratio Ae/At | - |
 | `pa` | in | ambient pressure (0 for vacuum) | Pa |
 | `F` | out | thrust | N |
 | `mdot` | out | propellant mass flow | kg/s |
 | `Isp` | out | specific impulse | s |
-| `CF` | out | thrust coefficient | — |
+| `CF` | out | thrust coefficient | - |
 | `c_star` | out | characteristic velocity | m/s |
 | `pe` | out | exit pressure | Pa |
 | `ve` | out | exit (exhaust) velocity | m/s |
-| `Me` | out | exit Mach number | — |
+| `Me` | out | exit Mach number | - |
 
 **Applies when:** 1 < eps <= 500; 0 <= pa < pc; pe >= 0.4 pa (no flow separation); 1 <= Mw <= 300 g/mol; 1.05 <= gamma <= 1.7; ideal, frozen, isentropic, one-dimensional nozzle flow.
 
@@ -2943,7 +2879,7 @@ Me = 2
 
 <a id="aero_ideal_exhaust_velocity"></a>
 
-#### Ideal rocket exhaust velocity — `aero_ideal_exhaust_velocity`
+#### Ideal rocket exhaust velocity: `aero_ideal_exhaust_velocity`
 
 The exhaust velocity of an ideal rocket nozzle expanding combustion products from the chamber to the exit pressure, with the specific impulse at that exit pressure (optimum expansion) and the exit Mach number.
 
@@ -2955,12 +2891,12 @@ $$
 |---|---|---|---|
 | `Tc` | in | chamber temperature | K |
 | `Mw` | in | molar mass of the products (g/mol) | kg/mol |
-| `gamma` | in | ratio of specific heats | — |
+| `gamma` | in | ratio of specific heats | - |
 | `pc` | in | chamber pressure | Pa |
 | `pe` | in | nozzle exit pressure (> 0) | Pa |
 | `ve` | out | exhaust velocity | m/s |
 | `Isp` | out | specific impulse ve/g0 (exit pressure = ambient) | s |
-| `Me` | out | exit Mach number | — |
+| `Me` | out | exit Mach number | - |
 
 **Applies when:** 0 < pe < pc; 1 <= Mw <= 300 g/mol; 1.05 <= gamma <= 1.7; ideal, frozen, isentropic expansion.
 
@@ -2982,7 +2918,7 @@ Me = 2
 
 <a id="aero_thrust_coefficient"></a>
 
-#### Nozzle thrust coefficient — `aero_thrust_coefficient`
+#### Nozzle thrust coefficient: `aero_thrust_coefficient`
 
 The thrust coefficient CF = F/(pc At) of an ideal rocket nozzle of given expansion area ratio at an ambient pressure, with the exit pressure ratio and Mach number and the vacuum thrust coefficient.
 
@@ -2992,14 +2928,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `gamma` | in | ratio of specific heats of the exhaust | — |
-| `eps` | in | nozzle expansion area ratio Ae/At (> 1) | — |
+| `gamma` | in | ratio of specific heats of the exhaust | - |
+| `eps` | in | nozzle expansion area ratio Ae/At (> 1) | - |
 | `pc` | in | chamber pressure | Pa |
 | `pa` | in | ambient pressure (0 for vacuum) | Pa |
-| `CF` | out | thrust coefficient | — |
-| `pe_pc` | out | exit-to-chamber pressure ratio | — |
-| `Me` | out | exit Mach number | — |
-| `CF_vac` | out | vacuum thrust coefficient | — |
+| `CF` | out | thrust coefficient | - |
+| `pe_pc` | out | exit-to-chamber pressure ratio | - |
+| `Me` | out | exit Mach number | - |
+| `CF_vac` | out | vacuum thrust coefficient | - |
 
 **Applies when:** 1 < eps <= 500; 0 <= pa < pc; pe >= 0.4 pa (no flow separation); 1.05 <= gamma <= 1.7.
 
@@ -3021,7 +2957,7 @@ CF_vac = 1.423422902
 
 <a id="aero_optimum_area_ratio"></a>
 
-#### Optimum nozzle area ratio — `aero_optimum_area_ratio`
+#### Optimum nozzle area ratio: `aero_optimum_area_ratio`
 
 The nozzle expansion area ratio that expands the exhaust exactly to the ambient pressure (optimum expansion, maximum thrust at that pressure), with the exit Mach number and the thrust coefficient.
 
@@ -3031,12 +2967,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `gamma` | in | ratio of specific heats | — |
+| `gamma` | in | ratio of specific heats | - |
 | `pc` | in | chamber pressure | Pa |
 | `pa` | in | ambient pressure | Pa |
-| `eps` | out | optimum area ratio Ae/At | — |
-| `Me` | out | exit Mach number | — |
-| `CF` | out | thrust coefficient at optimum expansion | — |
+| `eps` | out | optimum area ratio Ae/At | - |
+| `Me` | out | exit Mach number | - |
+| `CF` | out | thrust coefficient at optimum expansion | - |
 
 **Applies when:** 2 <= pc/pa <= 1e6; 1.05 <= gamma <= 1.7.
 
@@ -3056,7 +2992,7 @@ CF = 1.207752766
 
 <a id="aero_throat_area_for_thrust"></a>
 
-#### Throat area of a rocket engine for a required thrust — `aero_throat_area_for_thrust`
+#### Throat area of a rocket engine for a required thrust, `aero_throat_area_for_thrust`
 
 The throat and exit areas, mass flow and specific impulse of an ideal rocket engine sized to give a required thrust at an ambient pressure.
 
@@ -3070,8 +3006,8 @@ $$
 | `pc` | in | chamber pressure | Pa |
 | `Tc` | in | chamber temperature | K |
 | `Mw` | in | molar mass of the products | kg/mol |
-| `gamma` | in | ratio of specific heats | — |
-| `eps` | in | expansion area ratio Ae/At | — |
+| `gamma` | in | ratio of specific heats | - |
+| `eps` | in | expansion area ratio Ae/At | - |
 | `pa` | in | ambient pressure (0 for vacuum) | Pa |
 | `At` | out | throat area | m^2 |
 | `Ae` | out | exit area | m^2 |
@@ -3103,7 +3039,7 @@ Isp = 200.8629364 s
 
 <a id="aero_rocket_thrust"></a>
 
-#### Rocket thrust and specific impulse from mass flow and exhaust velocity — `aero_rocket_thrust`
+#### Rocket thrust and specific impulse from mass flow and exhaust velocity, `aero_rocket_thrust`
 
 The thrust F = mdot ve + (pe - pa) Ae of a rocket engine, its specific impulse F/(mdot g0) and effective exhaust velocity, from the propellant mass flow and the exhaust velocity (with the pressure thrust when the exit conditions are given).
 
@@ -3119,7 +3055,7 @@ $$
 | `pa` | in | ambient pressure (optional) (optional) | Pa |
 | `Ae` | in | nozzle exit area (optional) (optional) | m^2 |
 | `F` | out | thrust | N |
-| `F_kN` | out | thrust, kN | — |
+| `F_kN` | out | thrust, kN | - |
 | `Isp` | out | specific impulse F/(mdot g0) | s |
 | `c_eff` | out | effective exhaust velocity F/mdot | m/s |
 | `F_pressure` | out | pressure thrust (pe - pa) Ae | N |
@@ -3145,7 +3081,7 @@ F_pressure = 0 N
 
 <a id="aero_neutral_point"></a>
 
-#### Neutral point and static margin (wing and tail) — `aero_neutral_point`
+#### Neutral point and static margin (wing and tail), `aero_neutral_point`
 
 The stick-fixed neutral point, the static margin, the airplane lift-curve slope and the pitching-moment slope Cm_alpha of a wing-tail aircraft (positions as fractions of the mean aerodynamic chord, aft of its leading edge).
 
@@ -3155,18 +3091,18 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `h_ac` | in | wing-body aerodynamic centre / mean chord | — |
-| `a_w` | in | wing lift-curve slope (per rad) | — |
-| `a_t` | in | tail lift-curve slope (per rad) | — |
-| `St_S` | in | tail area / wing area | — |
-| `lt_c` | in | distance from the wing aerodynamic centre to the tail aerodynamic centre / mean chord | — |
-| `deps` | in | downwash gradient d(epsilon)/d(alpha) | — |
-| `h_cg` | in | centre of gravity / mean chord | — |
-| `eta_t` | in | tail efficiency (dynamic-pressure ratio, default 1) (optional) | — |
-| `h_n` | out | neutral point / mean chord | — |
-| `SM` | out | static margin h_n - h_cg (positive = stable) | — |
-| `CL_alpha` | out | airplane lift-curve slope (per rad) | — |
-| `Cm_alpha` | out | pitching-moment slope about the cg (per rad) | — |
+| `h_ac` | in | wing-body aerodynamic centre / mean chord | - |
+| `a_w` | in | wing lift-curve slope (per rad) | - |
+| `a_t` | in | tail lift-curve slope (per rad) | - |
+| `St_S` | in | tail area / wing area | - |
+| `lt_c` | in | distance from the wing aerodynamic centre to the tail aerodynamic centre / mean chord | - |
+| `deps` | in | downwash gradient d(epsilon)/d(alpha) | - |
+| `h_cg` | in | centre of gravity / mean chord | - |
+| `eta_t` | in | tail efficiency (dynamic-pressure ratio, default 1) (optional) | - |
+| `h_n` | out | neutral point / mean chord | - |
+| `SM` | out | static margin h_n - h_cg (positive = stable) | - |
+| `CL_alpha` | out | airplane lift-curve slope (per rad) | - |
+| `Cm_alpha` | out | pitching-moment slope about the cg (per rad) | - |
 
 **Applies when:** linear aerodynamics (small angles); thrust and fuselage moment effects neglected beyond h_ac; stated ranges of each input.
 
@@ -3193,7 +3129,7 @@ Cm_alpha = -1.725
 
 <a id="aero_density_altitude"></a>
 
-#### Density altitude from pressure altitude and temperature — `aero_density_altitude`
+#### Density altitude from pressure altitude and temperature, `aero_density_altitude`
 
 Air density and density altitude (the standard-atmosphere height with the same density) from the pressure altitude and the outside air temperature.
 
@@ -3206,9 +3142,9 @@ $$
 | `hp` | in | pressure altitude (m, ft) | m |
 | `T` | in | outside air temperature (K, °C, °F) | K |
 | `rho` | out | air density | kg/m^3 |
-| `sigma` | out | density ratio rho/rho0 | — |
+| `sigma` | out | density ratio rho/rho0 | - |
 | `h_rho` | out | density altitude (geometric) | m |
-| `h_rho_ft` | out | density altitude in feet | — |
+| `h_rho_ft` | out | density altitude in feet | - |
 | `p` | out | static pressure at the pressure altitude | Pa |
 
 **Applies when:** 150 K <= T <= 350 K; -1 km <= hp <= 47 km; the density within the standard atmosphere.
@@ -3230,7 +3166,7 @@ p = 101325 Pa
 
 <a id="aero_geopotential_altitude"></a>
 
-#### Geopotential height from geometric altitude — `aero_geopotential_altitude`
+#### Geopotential height from geometric altitude, `aero_geopotential_altitude`
 
 The geopotential height (the height in a uniform gravity field g0 with the same potential energy) and the local gravity at a geometric altitude.
 
@@ -3261,7 +3197,7 @@ dH = 0 m
 
 <a id="aero_flight_condition"></a>
 
-#### Mach number, dynamic pressure, equivalent airspeed and Reynolds number at an altitude — `aero_flight_condition`
+#### Mach number, dynamic pressure, equivalent airspeed and Reynolds number at an altitude, `aero_flight_condition`
 
 For a true airspeed at an altitude of the standard atmosphere: the Mach number, dynamic pressure, equivalent airspeed and (with a reference length) the Reynolds number.
 
@@ -3274,13 +3210,13 @@ $$
 | `V` | in | true airspeed (m/s, kt, km/h) | m/s |
 | `h` | in | geometric altitude (standard atmosphere) | m |
 | `L` | in | reference length for the Reynolds number, e.g. the chord (optional) (optional) | m |
-| `M` | out | Mach number | — |
+| `M` | out | Mach number | - |
 | `q` | out | dynamic pressure | Pa |
 | `EAS` | out | equivalent airspeed | m/s |
-| `EAS_kt` | out | equivalent airspeed, knots | — |
+| `EAS_kt` | out | equivalent airspeed, knots | - |
 | `a` | out | speed of sound | m/s |
 | `rho` | out | air density | kg/m^3 |
-| `Re` | out | Reynolds number rho V L/mu (with L) | — |
+| `Re` | out | Reynolds number rho V L/mu (with L) | - |
 
 **Applies when:** V > 0; -1 km <= h <= 47 km.
 
@@ -3302,7 +3238,7 @@ rho = 1.224999156 kg/m^3
 
 <a id="aero_pressure_altitude"></a>
 
-#### Pressure altitude from static pressure — `aero_pressure_altitude`
+#### Pressure altitude from static pressure: `aero_pressure_altitude`
 
 The pressure altitude: the height in the standard atmosphere at which the standard pressure equals the measured static pressure (what an altimeter set to 1013.25 hPa reads).
 
@@ -3314,7 +3250,7 @@ $$
 |---|---|---|---|
 | `p` | in | static pressure (Pa, hPa, inHg, psi) | Pa |
 | `h` | out | pressure altitude (geometric) | m |
-| `h_ft` | out | pressure altitude in feet | — |
+| `h_ft` | out | pressure altitude in feet | - |
 | `H` | out | geopotential pressure altitude | m |
 | `T_std` | out | standard temperature at that altitude | K |
 
@@ -3335,7 +3271,7 @@ T_std = 288.15 K
 
 <a id="aero_isa_properties"></a>
 
-#### Standard atmosphere at an altitude — `aero_isa_properties`
+#### Standard atmosphere at an altitude: `aero_isa_properties`
 
 Temperature, pressure, density, speed of sound and viscosity of the International Standard Atmosphere (US 1976) at a geometric altitude, with the density, pressure and temperature ratios and the geopotential height.
 
@@ -3351,9 +3287,9 @@ $$
 | `rho` | out | density | kg/m^3 |
 | `a` | out | speed of sound | m/s |
 | `mu` | out | dynamic viscosity (Sutherland) | Pa*s |
-| `sigma` | out | density ratio rho/rho0 | — |
-| `delta` | out | pressure ratio p/p0 | — |
-| `theta` | out | temperature ratio T/T0 | — |
+| `sigma` | out | density ratio rho/rho0 | - |
+| `delta` | out | pressure ratio p/p0 | - |
+| `theta` | out | temperature ratio T/T0 | - |
 | `H` | out | geopotential height | m |
 
 **Applies when:** -1000 m <= h <= 47000 m.
@@ -3376,4 +3312,4 @@ H = 0 m
 
 **What the worked example means:** This calculation determines the properties of the International Standard Atmosphere at a specific geometric altitude. Using the input altitude of 0 m, it first computes the geopotential height 0 m to account for Earth's curvature. The method then applies layer-specific lapse rates to find the temperature 288.15 K, which drives the calculation of pressure 101325 Pa via hydrostatic equilibrium. From these, density 1.225 kg/m^3 and speed of sound 340.294 m/s are derived using ideal gas laws. The results include ratios like delta 1, sigma 1, and theta 1 relative to sea level values, providing a complete snapshot of atmospheric conditions for aerospace analysis.
 
-Questions and reports: support@ai999x.com. AI999X — The Future Is Self-Improving.
+Questions and reports: support@ai999x.com. AI999X, The Future Is Self-Improving.
