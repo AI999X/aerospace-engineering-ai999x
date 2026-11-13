@@ -23,7 +23,7 @@ result.show()
 | Aerodynamics / thin-airfoil theory | [Thin-airfoil theory for a NACA 4-digit airfoil](#aero_naca4_thin_airfoil) |
 | Aircraft performance / ceilings | [Absolute ceiling of a jet aircraft](#aero_absolute_ceiling_jet), [Service ceiling of a jet aircraft](#aero_service_ceiling_jet) |
 | Aircraft performance / climb | [Time to climb with a linearly decreasing rate of climb](#aero_time_to_climb), [Maximum rate of climb of a jet](#aero_max_rate_of_climb_jet), [Steepest climb angle of a jet](#aero_max_climb_angle_jet), [Maximum rate of climb of a propeller aircraft](#aero_max_rate_of_climb_prop) |
-| Aircraft performance / drag polar | [Best lift coefficients and lift-to-drag ratios of a drag polar](#aero_drag_polar_optimum), [Induced drag in level flight](#aero_induced_drag) |
+| Aircraft performance / drag polar | [Best lift coefficients and lift-to-drag ratios of a drag polar](#aero_drag_polar_optimum), [Induced drag in level flight](#aero_induced_drag), [Lift, drag and lift-to-drag ratio from a drag polar](#aero_lift_drag_forces) |
 | Aircraft performance / gliding flight | [Glide ratio, angle and range](#aero_glide_range) |
 | Aircraft performance / level flight | [Speeds for minimum drag, minimum power and best jet range](#aero_min_drag_power_speeds), [Stall speed in level flight](#aero_stall_speed), [Lift coefficient in level flight](#aero_level_flight_lift_coefficient), [Wing loading](#aero_wing_loading) |
 | Aircraft performance / navigation | [Wind triangle: heading and ground speed](#aero_wind_triangle) |
@@ -188,6 +188,7 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 | aero_rocket_thrust | Rocket thrust and specific impulse from mass flow and exhaust velocity | mdot, ve, pe, pa, Ae | F, F_kN, Isp, c_eff, F_pressure |
 | aero_ballistic_coefficient | Ballistic coefficient | m, CD, A | beta, beta_psf |
 | aero_flight_condition | Mach number, dynamic pressure, equivalent airspeed and Reynolds number at an altitude | V, h, L | M, q, EAS, EAS_kt, a, rho, Re |
+| aero_lift_drag_forces | Lift, drag and lift-to-drag ratio from a drag polar | V, S, CL, CD0, AR, e, rho, h | q, CD, L, D, D0, Di, LD |
 
 <a id="aero_isa_properties"></a>
 
@@ -4140,3 +4141,61 @@ aerospace_engineering_ai999x.solve('aero_flight_condition', V=230.0, h=11000.0, 
 | Mach number at altitude: V = 230 m/s, h = 11 km | SOLVED | M = 0.779255, q = 9649 Pa, EAS = 125.513 m/s, EAS_kt = 243.978, a = 295.154 m/s, rho = 0.364802 kg/m^3 |
 | Flight condition: V = 230 m/s, h = 90 km | INVALID_INPUT | Mach number, dynamic pressure, equivalent airspeed and Reynolds number at an altitude: the altitude must lie between -1  |
 | Flight condition: V = 230 m/s | NEEDS_INPUT | aero_flight_condition needs h (geometric altitude (standard atmosphere)). Example: solve('aero_flight_condition', V='100 |
+
+<a id="aero_lift_drag_forces"></a>
+
+### Lift, drag and lift-to-drag ratio from a drag polar, `aero_lift_drag_forces`
+
+The dynamic pressure, lift q S CL, the drag coefficient CD0 + CL^2/(pi e AR) of the parabolic drag polar, the parasite, induced and total drag and the lift-to-drag ratio of a wing at a lift coefficient, airspeed and air density (or altitude of the standard atmosphere).
+
+$$
+L = \tfrac12\rho V^2 S C_L,\quad D = \tfrac12\rho V^2 S\left(C_{D_0} + \frac{C_L^2}{\pi e A\!R}\right),\quad \frac{L}{D} = \frac{C_L}{C_D}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `V` | true airspeed |  |
+| `S` | wing area |  |
+| `CL` | lift coefficient |  |
+| `CD0` | zero-lift (parasite) drag coefficient |  |
+| `AR` | wing aspect ratio $b^{2}/S$ |  |
+| `e` | Oswald span efficiency factor |  |
+| `rho` | air density (give the density or the altitude) |  |
+| `h` | altitude of the standard atmosphere (give the density or the altitude) |  |
+
+| output | meaning |
+|---|---|
+| `q` | dynamic pressure |
+| `CD` | drag coefficient $CD0 + K$ $CL^{2}$ |
+| `L` | lift |
+| `D` | total drag |
+| `D0` | parasite (zero-lift) drag |
+| `Di` | induced drag |
+| `LD` | lift-to-drag ratio |
+
+- **Method:** $q = \rho$ $V^{2}/2$; $L = q$ S CL; CD = CD0 + CL^2/(pi e AR); $D_{0} = q$ S CD0; $Di = q$ S CL^2/(pi e AR); $L/D = CL/CD$
+- **Assumes:** V, $S > 0$; $0 < CL  \leq  3$; $0.002  \leq  CD0  \leq  0.2$; $1  \leq  AR  \leq  50$; $0.3  \leq  e  \leq  1$; the air density (at most 2 kg/m^3) or an altitude from -1 km to 47 km, one of them
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![D (total drag) against AR (wing aspect ratio b^2/S) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-lift-drag-forces-curve)
+
+*D (total drag) against AR (wing aspect ratio b^2/S) from 0.8 to 80 on a logarithmic axis. One curve for each value of V (true airspeed): 60 m/s, 30 m/s, 120 m/s. Other inputs as in the worked example: S = 16.0 m^2, CL = 0.5, CD0 = 0.025, e = 0.8, rho = 1.225 kg/m^3. 34 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, AR = 8, D = 1320.67 N.*
+
+```python
+aerospace_engineering_ai999x.solve('aero_lift_drag_forces', rho=1.225, V=60.0, S=16.0, CL=0.5, CD0=0.025, AR=8.0, e=0.8)
+# -> q = 2205 Pa, CD = 0.037434, L = 17640 N, D = 1320.67 N, D0 = 882 N, Di = 438.671 N, LD = 13.3568   (SOLVED)
+```
+
+```python
+aerospace_engineering_ai999x.solve('aero_lift_drag_forces', rho=0.8, V=200.0, S=100.0, CL=0.4, CD0=0.02, AR=10.0, e=0.9)
+# -> q = 16000 Pa, CD = 0.0256588, L = 640000 N, D = 41054.1 N, D0 = 32000 N, Di = 9054.15 N, LD = 15.5892   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Lift and drag: rho = 1.225 kg/m^3, V = 60 m/s, S = 16 m^2, CL = 0.5, CD0 = 0.025, AR = 8, e = 0.8 | SOLVED | q = 2205 Pa, CD = 0.037434, L = 17640 N, D = 1320.67 N, D0 = 882 N, Di = 438.671 N, LD = 13.3568 |
+| Lift and drag: rho = 0.8 kg/m^3, V = 200 m/s, S = 100 m^2, CL = 0.4, CD0 = 0.02, AR = 10, e = 0.9 | SOLVED | q = 16000 Pa, CD = 0.0256588, L = 640000 N, D = 41054.1 N, D0 = 32000 N, Di = 9054.15 N, LD = 15.5892 |
+| Lift and drag: rho = 1.225 kg/m^3, V = 60 m/s, S = 16 m^2, CL = 0.5, CD0 = 0.025, AR = 8, e = 1.4 | INVALID_INPUT | Lift, drag and lift-to-drag ratio from a drag polar: the Oswald efficiency factor must lie between 0.3 and 1. |
+| Lift and drag: rho = 1.225 kg/m^3, V = 60 m/s, S = 16 m^2, CL = 0.5, AR = 8, e = 0.8 | NEEDS_INPUT | aero_lift_drag_forces needs CD0 (zero-lift (parasite) drag coefficient). Example: solve('aero_lift_drag_forces', rho='1. |

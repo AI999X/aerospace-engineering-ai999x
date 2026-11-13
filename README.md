@@ -4,11 +4,11 @@
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/aerospace-engineering-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/aerospace-engineering-ai999x/)** · **[Guides](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/aerospace-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.5.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.6.0
 
 Field: **Engineering** · Tasks: Question Answering
 
-aerospace-engineering-ai999x is an offline, deterministic aerospace engineering solver written in Rust: a desktop app, a command-line program, a browser module and a Python package. It answers aerospace engineering questions with verified results from 80 certified capabilities, gives 369 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
+aerospace-engineering-ai999x is an offline, deterministic aerospace engineering solver written in Rust: a desktop app, a command-line program, a browser module and a Python package. It answers aerospace engineering questions with verified results from 81 certified capabilities, gives 375 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
 
 **aerospace-engineering-ai999x** reads a question in plain English (or a typed call), picks a certified aerospace engineering capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions, or a refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
@@ -20,13 +20,13 @@ aerospace-engineering-ai999x is an offline, deterministic aerospace engineering 
 
 | Way to run it | For | Get it |
 |---|---|---|
-| **AI999X Aerospace Engineering desktop app** 1.5.0 | Windows, Linux. This model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz) |
-| **AI999X desktop app** 1.5.0 | Windows, Linux. Every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz) |
-| **Command line** (`aerospace-engineering`) | Windows, Linux. One program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz) |
+| **AI999X Aerospace Engineering desktop app** 1.6.0 | Windows, Linux. This model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-aerospace-engineering-1.6.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-aerospace-engineering-1.6.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.6.0 | Windows, Linux. Every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz) |
+| **Command line** (`aerospace-engineering`) | Windows, Linux. One program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz) |
 | **In your browser** | any device. Nothing to install | [Compute on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#try) |
 | **Python** | Python 3.10+ | `pip install aerospace-engineering-ai999x` |
 
-Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
 
 ## Quick start
 
@@ -37,11 +37,11 @@ Download **AI999X Aerospace Engineering** for your system (above), unpack it and
 Linux, from a terminal:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-aerospace-engineering-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz
-./ai999x-aerospace-engineering-1.5.0-linux-x86_64/ai999x-aerospace-engineering
+tar xzf ai999x-aerospace-engineering-1.6.0-linux-x86_64.tar.gz
+./ai999x-aerospace-engineering-1.6.0-linux-x86_64/ai999x-aerospace-engineering
 ```
 
 ### Command line
@@ -49,23 +49,23 @@ tar xzf ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz
 Linux:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.6.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.6.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 aerospace-engineering --version
 ```
 
 Windows (PowerShell):
 
 ```powershell
-$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.6.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.6.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 aerospace-engineering --version
 ```
@@ -275,7 +275,7 @@ _What this means:_ This calculation determines the highest altitude where level 
 ## Highlights
 
 - **Verified, not generated.** Every answer is computed by a certified aerospace engineering capability and checked (substituted back, dimension-checked or compared with an independent computation) before it is returned.
-- **Zero wrong answers by design.** Seven explicit outcomes (SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR), never a silent guess. Every one of its 369 documented answers is reproduced exactly on every tested platform.
+- **Zero wrong answers by design.** Seven explicit outcomes (SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR), never a silent guess. Every one of its 375 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
 - **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `aerospace-engineering` command line for Windows and Linux, and WebAssembly on the model page, no Python, no network.
@@ -286,11 +286,11 @@ _What this means:_ This calculation determines the highest altitude where level 
 
 | Property | Value |
 |---|---|
-| Package | `aerospace-engineering-ai999x` 1.5.0 (import `aerospace_engineering_ai999x`) |
+| Package | `aerospace-engineering-ai999x` 1.6.0 (import `aerospace_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic aerospace engineering engine (rule-based reading + certified symbolic capabilities) |
-| Capabilities | 80 certified procedures |
+| Capabilities | 81 certified procedures |
 | Knowledge pack | version 1.0.1 |
-| Golden answers | 369 documented answers, identical on every tested platform |
+| Golden answers | 375 documented answers, identical on every tested platform |
 | Platforms tested | Windows (Python 3.13), Linux x86-64 (Python 3.10, 3.11, 3.12, 3.13, 3.14) |
 | Runtime | CPU only, offline; no GPU, no network, no API key |
 | License | Apache-2.0 |
@@ -320,7 +320,7 @@ aerospace_engineering.ask("Who created you?").message
 # -> aerospace-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `aerospace-engineering-ai999x "<question>"`; for the native program use `aerospace-engineering` (above). The outputs above were produced by running this exact code on aerospace-engineering-ai999x 1.5.0.
+The Python package also installs a Python command, `aerospace-engineering-ai999x "<question>"`; for the native program use `aerospace-engineering` (above). The outputs above were produced by running this exact code on aerospace-engineering-ai999x 1.6.0.
 
 ## How every answer is verified
 
@@ -449,7 +449,7 @@ _Speed against altitude of a ballistic entry (m = 1000 kg, C_D = 1, A = 1 m², e
 
 ## Capabilities
 
-80 certified procedures. A few of them:
+81 certified procedures. A few of them:
 
 - **Procedures:** Absolute ceiling of a jet aircraft; Ballistic coefficient; Best lift coefficients and lift-to-drag ratios of a drag polar; Bi-elliptic transfer between circular orbits; Breguet range of a jet aircraft; Breguet range of a propeller aircraft; Burnout height and apogee of a vertical rocket; Calibrated airspeed from true airspeed; Characteristic velocity c* of a rocket propellant; Choked mass flow through a nozzle throat; Circular orbit at an altitude above the Earth; Circular-orbit altitude for an orbital period; Coverage of a satellite at an altitude; Critical Mach number of an airfoil; Delta-v of a multistage rocket; Density altitude from pressure altitude and temperature; Elliptic wing by lifting-line theory; Endurance of a jet aircraft; Endurance of a propeller aircraft at constant altitude; Escape speed at an altitude above the Earth; Fanno flow (adiabatic duct flow with friction); Fuel a jet needs for a cruise range; Geopotential height from geometric altitude; Glide ratio, angle and range …
 
@@ -470,10 +470,10 @@ _Speed against altitude of a ballistic entry (m = 1000 kg, C_D = 1, A = 1 m², e
 ## Citation
 
 ```bibtex
-@software{aerospace_engineering_ai999x_1_5_0,
+@software{aerospace_engineering_ai999x_1_6_0,
   title  = {aerospace-engineering-ai999x: an offline, verified aerospace engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.5.0},
+  year   = {2026}, version = {1.6.0},
   url    = {https://huggingface.co/AI999X/aerospace-engineering-ai999x}
 }
 ```
@@ -490,7 +490,7 @@ Created and engineered by **Ibnul Jaif Farabi** · **[AI999X](https://huggingfac
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/aerospace-engineering-ai999x/) (`pip install .` builds it). Releases are tagged `v1.5.0`; the [GitHub release](https://github.com/AI999X/aerospace-engineering-ai999x/releases/tag/v1.5.0) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/aerospace-engineering-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.0`; the [GitHub release](https://github.com/AI999X/aerospace-engineering-ai999x/releases/tag/v1.6.0) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
 
 ## Build the program from source
 

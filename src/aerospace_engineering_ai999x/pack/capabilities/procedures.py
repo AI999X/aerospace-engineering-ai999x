@@ -4873,4 +4873,100 @@ _add("aero_flight_condition",
                 {"q": "Flight condition: V = 230 m/s", "outcome": "NEEDS_INPUT"}])
 
 
+# ================================================================================================ core curriculum gaps
+# (2026-11-12) Lift, drag and L/D of a wing from a parabolic drag polar. The plain force formulas F = q S C (lift or
+# drag from a given coefficient) are thermofluids' relations lift_force and drag_force and are not repeated here; this
+# capability adds the drag polar (parasite + induced split) and the lift-to-drag ratio. The Hohmann transfer is
+# astronomy's hohmann_transfer and is not repeated either.
+
+_LDF_NAMES = {"rho": "rho", "density": "rho", "v": "V", "tas": "V", "s": "S", "wing_area": "S", "cl": "CL", "cd0": "CD0",
+              "ar": "AR", "aspect_ratio": "AR", "e": "e", "oswald": "e", "h": "h", "altitude": "h"}
+
+
+def lift_drag_forces(V, S, CL, CD0, AR, e, rho=None, h=None):
+    _pos("the airspeed and the wing area", V, S)
+    _need(isinstance(CL, (int, float)) and 0 < CL <= 3.0, "the lift coefficient must lie in (0, 3]")
+    _cd0(CD0)
+    K = _K(AR, e)
+    _need((rho is None) != (h is None), "give the air density or the altitude (one of them)")
+    if rho is not None:
+        _pos("the air density", rho)
+        _need(rho <= 2.0, "the air density must be at most 2 kg/m^3")
+        dens = rho
+    else:
+        dens = _isa(h)[2]
+    q = 0.5 * dens * V * V
+    CDi = K * CL * CL
+    D0 = q * S * CD0
+    Di = q * S * CDi
+    return _out(q=q, CD=CD0 + CDi, L=q * S * CL, D=D0 + Di, D0=D0, Di=Di, LD=CL / (CD0 + CDi))
+
+
+def ref_lift_drag_forces(V, S, CL, CD0, AR, e, rho=None, h=None):
+    """The induced drag as the Trefftz-plane drag of the elliptic lift distribution carrying the lift (scipy quadrature
+    of rho Gamma(y) w(y) over the span, divided by the span efficiency e), the parasite drag q S CD0; density from
+    fluids' US 1976 atmosphere when an altitude is given."""
+    from scipy.integrate import quad
+    rh = rho if rho is not None else _ref_rho(h)
+    q = 0.5 * rh * V * V
+    L = q * S * CL
+    b = math.sqrt(AR * S)
+    g0c = 4 * L / (rh * V * math.pi * b)
+    w = g0c / (2 * b)
+    Di = quad(lambda y: rh * g0c * math.sqrt(max(0.0, 1 - (2 * y / b) ** 2)) * w, -b / 2, b / 2, epsabs=0, epsrel=1e-13, limit=200)[0] / e
+    D0 = q * S * CD0
+    D = D0 + Di
+    return {"q": q, "CD": D / (q * S), "L": L, "D": D, "D0": D0, "Di": Di, "LD": L / D}
+
+
+def _ldf_random(rng):
+    x = {"V": rng.uniform(30, 250), "S": _lu(rng, 10.0, 500.0), "CL": rng.uniform(0.2, 1.5), "CD0": rng.uniform(0.012, 0.05),
+         "AR": rng.uniform(4.0, 14.0), "e": rng.uniform(0.6, 1.0)}
+    if rng.random() < 0.5:
+        x["rho"] = rng.uniform(0.3, 1.25)
+    else:
+        x["h"] = rng.uniform(0.0, 13000.0)
+    return x
+
+
+_add("aero_lift_drag_forces",
+     name="Lift, drag and lift-to-drag ratio from a drag polar", topic="aircraft performance / drag polar",
+     purpose="The dynamic pressure, lift q S CL, the drag coefficient CD0 + CL^2/(pi e AR) of the parabolic drag polar, the parasite, induced and total drag and the lift-to-drag ratio of a wing at a lift coefficient, airspeed and air density (or altitude of the standard atmosphere).",
+     inputs=[_phys("V", "speed", "true airspeed"), _phys("S", "area", "wing area"), _numin("CL", "lift coefficient"),
+             _numin("CD0", "zero-lift (parasite) drag coefficient"), _numin("AR", "wing aspect ratio b^2/S"), _numin("e", "Oswald span efficiency factor"),
+             _phys("rho", "density", "air density (give the density or the altitude)", required=False),
+             _phys("h", "length", "altitude of the standard atmosphere (give the density or the altitude)", required=False)],
+     outputs=[_o("q", "pressure", "dynamic pressure"), _o("CD", "number", "drag coefficient CD0 + K CL^2"), _o("L", "force", "lift"),
+              _o("D", "force", "total drag"), _o("D0", "force", "parasite (zero-lift) drag"), _o("Di", "force", "induced drag"),
+              _o("LD", "number", "lift-to-drag ratio")],
+     primary="D", conditions=["V, S > 0", "0 < CL <= 3", "0.002 <= CD0 <= 0.2", "1 <= AR <= 50", "0.3 <= e <= 1",
+                              "the air density (at most 2 kg/m^3) or an altitude from -1 km to 47 km, one of them"],
+     method="q = rho V^2/2; L = q S CL; CD = CD0 + CL^2/(pi e AR); D0 = q S CD0; Di = q S CL^2/(pi e AR); L/D = CL/CD",
+     latex=r"L = \tfrac12\rho V^2 S C_L,\quad D = \tfrac12\rho V^2 S\left(C_{D_0} + \frac{C_L^2}{\pi e A\!R}\right),\quad \frac{L}{D} = \frac{C_L}{C_D}",
+     run=lift_drag_forces,
+     parse=lambda q: _pairs(q, r"lift and drag(?: forces)?(?: of a wing)?(?: from a drag polar)?|aerodynamic forces(?: of a wing)?",
+                            _LDF_NAMES, phys={"V", "S", "rho", "h"}),
+     reference=ref_lift_drag_forces,
+     wrong=_safe(lambda V, S, CL, CD0, AR, e, rho=None, h=None: (lambda o: {**o, "q": _r(2 * o["q"]), "L": _r(2 * o["L"]), "D": _r(2 * o["D"]),
+                                                                         "D0": _r(2 * o["D0"]), "Di": _r(2 * o["Di"])})(
+         lift_drag_forces(V, S, CL, CD0, AR, e, rho, h))),
+     random_inputs=_ldf_random,
+     templates=["Lift and drag: rho = 1.225 kg/m^3, V = 60 m/s, S = 16 m^2, CL = 0.5, CD0 = 0.025, AR = 8, e = 0.8",
+                "Lift and drag forces of a wing: h = 3000 m, V = 120 m/s, S = 30 m^2, CL = 0.6, CD0 = 0.03, AR = 9, e = 0.85"],
+     # worked by hand: q = 2205 Pa, L = 17640 N, D0 = 882 N, Di = 1378.125/pi N; q = 16000 Pa, L = 640 kN, D0 = 32 kN,
+     # Di = 1.6e6 x 0.16/(9 pi) N
+     examples=[{"inputs": {"rho": 1.225, "V": 60.0, "S": 16.0, "CL": 0.5, "CD0": 0.025, "AR": 8.0, "e": 0.8},
+                "outputs": {"q": 2205.0, "L": 17640.0, "D0": 882.0, "Di": 438.670811897037, "D": 1320.67081189704,
+                            "CD": 0.0374339799290543, "LD": 13.3568485357}},
+               {"inputs": {"rho": 0.8, "V": 200.0, "S": 100.0, "CL": 0.4, "CD0": 0.02, "AR": 10.0, "e": 0.9},
+                "outputs": {"q": 16000.0, "L": 640000.0, "D0": 32000.0, "Di": 9054.14787367227, "D": 41054.1478736723,
+                            "CD": 0.0256588424210452, "LD": 15.5891677978}}],
+     questions=[{"q": "Lift and drag: rho = 1.225 kg/m^3, V = 60 m/s, S = 16 m^2, CL = 0.5, CD0 = 0.025, AR = 8, e = 0.8",
+                 "outputs": {"L": 17640.0, "D": 1320.67081189704}},
+                {"q": "Lift and drag: rho = 0.8 kg/m^3, V = 200 m/s, S = 100 m^2, CL = 0.4, CD0 = 0.02, AR = 10, e = 0.9",
+                 "outputs": {"LD": 15.5891677978}},
+                {"q": "Lift and drag: rho = 1.225 kg/m^3, V = 60 m/s, S = 16 m^2, CL = 0.5, CD0 = 0.025, AR = 8, e = 1.4", "outcome": "INVALID_INPUT"},
+                {"q": "Lift and drag: rho = 1.225 kg/m^3, V = 60 m/s, S = 16 m^2, CL = 0.5, AR = 8, e = 0.8", "outcome": "NEEDS_INPUT"}])
+
+
 # === END ===

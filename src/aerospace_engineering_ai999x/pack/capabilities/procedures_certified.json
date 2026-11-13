@@ -79,9 +79,10 @@
   "aero_glide_range",
   "aero_rocket_thrust",
   "aero_ballistic_coefficient",
-  "aero_flight_condition"
+  "aero_flight_condition",
+  "aero_lift_drag_forces"
  ],
- "generated": "2026-10-24",
+ "generated": "2026-11-13",
  "tool": "tools/certify_procedures.py",
  "report": "release/procedure_certification.json",
  "weak_references": {

@@ -21,42 +21,42 @@ figcaption{font-size:9pt;color:#555}
 .pb{page-break-after:always}
 </style></head><body>
 <h1>aerospace-engineering: the Aerospace Engineering program, user guide</h1>
-<p><strong>aerospace-engineering-ai999x 1.1.0</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
-<p>Aerospace Engineering covers the standard atmosphere, lift and drag, aircraft performance, stability, propulsion and rocket performance, nozzles and orbital transfers. This guide is about <code>aerospace-engineering</code>, the model as a self-contained program for Windows and Linux: 80 capabilities in 13 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model&#x27;s page (https://www.ai999x.com/models/aerospace-engineering-ai999x/); the Python package (<code>pip install aerospace-engineering-ai999x</code>) has its own guide. Every command output printed here is what the program printed.</p>
+<p><strong>aerospace-engineering-ai999x 1.6.0</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
+<p>Aerospace Engineering covers the standard atmosphere, lift and drag, aircraft performance, stability, propulsion and rocket performance, nozzles and orbital transfers. This guide is about <code>aerospace-engineering</code>, the model as a self-contained program for Windows and Linux: 81 capabilities in 13 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model&#x27;s page (https://www.ai999x.com/models/aerospace-engineering-ai999x/); the Python package (<code>pip install aerospace-engineering-ai999x</code>) has its own guide. Every command output printed here is what the program printed.</p>
 <h2>Contents</h2>
 <ul><li>1. Get it: desktop app, command line, browser, Python</li><li>2. Quick start</li><li>3. Writing inputs</li><li>4. Outcomes and exit codes</li><li>5. Scripts and agents: batch and JSON</li><li>6. Figures</li><li>7. In a web page or Node.js: WebAssembly</li><li>8. Every capability</li></ul>
 <h2>1. Get it</h2>
-<p>Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/</p>
-<table><thead><tr><th>what</th><th>system</th><th>download</th></tr></thead><tbody><tr><td>Desktop app: Aerospace Engineering</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: Aerospace Engineering</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz</td></tr><tr><td>Desktop app: all models</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: all models</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz</td></tr><tr><td>Command line</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip</td></tr><tr><td>Command line</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz</td></tr></tbody></table>
+<p>Version 1.6.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/</p>
+<table><thead><tr><th>what</th><th>system</th><th>download</th></tr></thead><tbody><tr><td>Desktop app: Aerospace Engineering</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-aerospace-engineering-1.6.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: Aerospace Engineering</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-aerospace-engineering-1.6.0-linux-x86_64.tar.gz</td></tr><tr><td>Desktop app: all models</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: all models</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz</td></tr><tr><td>Command line</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-windows-x86_64.zip</td></tr><tr><td>Command line</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz</td></tr></tbody></table>
 <h3>Desktop app</h3>
-<p>Aerospace Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-aerospace-engineering-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-aerospace-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
-<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+<p>Aerospace Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-aerospace-engineering-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-aerospace-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-aerospace-engineering-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-aerospace-engineering-1.5.0-linux-x86_64.tar.gz
-./ai999x-aerospace-engineering-1.5.0-linux-x86_64/ai999x-aerospace-engineering</code></pre>
-<p>It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
-<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+tar xzf ai999x-aerospace-engineering-1.6.0-linux-x86_64.tar.gz
+./ai999x-aerospace-engineering-1.6.0-linux-x86_64/ai999x-aerospace-engineering</code></pre>
+<p>It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
-./ai999x-1.5.0-linux-x86_64/ai999x</code></pre>
+tar xzf ai999x-1.6.0-linux-x86_64.tar.gz
+./ai999x-1.6.0-linux-x86_64/ai999x</code></pre>
 <h3>Command line, Linux</h3>
 <p>The bundle holds one program per model; <code>aerospace-engineering</code> is this one. The checksum line should print OK.</p>
-<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share &amp;&amp; tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
-echo &#x27;export PATH=&quot;$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH&quot;&#x27; &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc
+mkdir -p ~/.local/share &amp;&amp; tar xzf ai999x-cli-1.6.0-linux-x86_64.tar.gz -C ~/.local/share
+echo &#x27;export PATH=&quot;$HOME/.local/share/ai999x-cli-1.6.0-linux-x86_64:$PATH&quot;&#x27; &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc
 aerospace-engineering --version</code></pre>
 <h3>Command line, Windows (PowerShell)</h3>
 <p>The fourth line should print True.</p>
-<pre><code class="powershell">$F = &quot;ai999x-cli-1.5.0-windows-x86_64.zip&quot;
-Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.5.0/$F&quot; -OutFile $F
-Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS&quot; -OutFile SHA256SUMS
+<pre><code class="powershell">$F = &quot;ai999x-cli-1.6.0-windows-x86_64.zip&quot;
+Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.6.0/$F&quot; -OutFile $F
+Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS&quot; -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split &#x27; &#x27;)[0]
 Expand-Archive $F -DestinationPath &quot;$env:LOCALAPPDATA\AI999X&quot; -Force
-$D = &quot;$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64&quot;; $env:Path += &quot;;$D&quot;
+$D = &quot;$env:LOCALAPPDATA\AI999X\ai999x-cli-1.6.0-windows-x86_64&quot;; $env:Path += &quot;;$D&quot;
 [Environment]::SetEnvironmentVariable(&quot;Path&quot;, [Environment]::GetEnvironmentVariable(&quot;Path&quot;, &quot;User&quot;) + &quot;;$D&quot;, &quot;User&quot;)
 aerospace-engineering --version</code></pre>
 <h3>In your browser</h3>
@@ -67,7 +67,7 @@ aerospace-engineering --version</code></pre>
 <h3>2.1 Check the install</h3>
 <p>Prints the model, its version and that this is the Rust build.</p>
 <pre><code class="shell">$ aerospace-engineering --version
-aerospace-engineering-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)</code></pre>
+aerospace-engineering-ai999x 1.6.0 (Rust build, ax-engine 1.6.0)</code></pre>
 <h3>2.2 Find a capability</h3>
 <p>Search the capabilities by what you want to know; the first column is the id to pass to info and solve.</p>
 <pre><code class="shell">$ aerospace-engineering search &quot;oblique shock from the deflection angle&quot;
@@ -91,7 +91,7 @@ aero_ballistic_coefficient               Ballistic coefficient
 aero_ballistic_entry_peak_deceleration   Peak deceleration of a ballistic re-entry (Allen-Eggers)
 aero_ballistic_entry_velocity            Speed and deceleration of a ballistic re-entry at an altitude
 aero_bielliptic_transfer                 Bi-elliptic transfer between circular orbits
-… 72 more</code></pre>
+… 73 more</code></pre>
 <h3>2.4 What a capability needs</h3>
 <p>The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.</p>
 <pre><code class="shell">$ aerospace-engineering info aero_oblique_shock
@@ -213,7 +213,7 @@ Cm_le = -0.1570796327
   alpha = 0.1 rad
   assumes: 0 &lt;= m &lt;= 0.095; 0.05 &lt;= p &lt;= 0.95 when m &gt; 0; |alpha| &lt;= 15 deg; thin airfoil, inviscid, incompressible, unstalled</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the aerodynamic characteristics of a NACA four-digit airfoil using thin-airfoil theory. Given the maximum camber fraction 0, the position of maximum camber 0, and the angle of attack 0.1 rad, it computes the section lift coefficient 0.628319, the zero-lift angle of attack 0, and the pitching moment coefficients about the quarter chord 0 and leading edge -0.15708. These values indicate how much lift the airfoil generates and where its aerodynamic center lies relative to the geometric chord.</p>
-<h3>Aircraft performance (24)</h3>
+<h3>Aircraft performance (25)</h3>
 <h4 id="aero_absolute_ceiling_jet">Absolute ceiling of a jet aircraft, <code>aero_absolute_ceiling_jet</code></h4>
 <p>The absolute ceiling of a jet aircraft (where the available thrust just equals the minimum drag) when the thrust falls in proportion to the air density, T = T0 rho/rho0.</p>
 <div class="math">\[\sigma_{abs} = \frac{2W\sqrt{K C_{D0}}}{T_0} = \frac{W}{T_0 (L/D)_{max}}\]</div>
@@ -456,6 +456,29 @@ wing_loading = 625 N/m^2
   h = 0 m
   assumes: W, S, V &gt; 0; -1 km &lt;= h &lt;= 47 km; level flight, L = W</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the lift coefficient necessary to maintain steady level flight, given an aircraft weight of 10 kN, wing area of 16 m^2, true airspeed of 50 m/s, and altitude of 0 m. The result, 0.408164, represents the aerodynamic efficiency required from the wings. The associated dynamic pressure is 1531.25 Pa, and the wing loading is 625 N/m^2. These values help assess whether the current flight conditions are within the operational envelope of the aircraft.</p>
+<h4 id="aero_lift_drag_forces">Lift, drag and lift-to-drag ratio from a drag polar, <code>aero_lift_drag_forces</code></h4>
+<p>The dynamic pressure, lift q S CL, the drag coefficient CD0 + CL^2/(pi e AR) of the parabolic drag polar, the parasite, induced and total drag and the lift-to-drag ratio of a wing at a lift coefficient, airspeed and air density (or altitude of the standard atmosphere).</p>
+<div class="math">\[L = \tfrac12\rho V^2 S C_L,\quad D = \tfrac12\rho V^2 S\left(C_{D_0} + \frac{C_L^2}{\pi e A\!R}\right),\quad \frac{L}{D} = \frac{C_L}{C_D}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>V</code></td><td>in</td><td>true airspeed</td><td>m/s</td></tr><tr><td><code>S</code></td><td>in</td><td>wing area</td><td>m^2</td></tr><tr><td><code>CL</code></td><td>in</td><td>lift coefficient</td><td>, </td></tr><tr><td><code>CD0</code></td><td>in</td><td>zero-lift (parasite) drag coefficient</td><td>, </td></tr><tr><td><code>AR</code></td><td>in</td><td>wing aspect ratio b^2/S</td><td>, </td></tr><tr><td><code>e</code></td><td>in</td><td>Oswald span efficiency factor</td><td>, </td></tr><tr><td><code>rho</code></td><td>in</td><td>air density (give the density or the altitude) (optional)</td><td>kg/m^3</td></tr><tr><td><code>h</code></td><td>in</td><td>altitude of the standard atmosphere (give the density or the altitude) (optional)</td><td>m</td></tr><tr><td><code>q</code></td><td>out</td><td>dynamic pressure</td><td>Pa</td></tr><tr><td><code>CD</code></td><td>out</td><td>drag coefficient CD0 + K CL^2</td><td>, </td></tr><tr><td><code>L</code></td><td>out</td><td>lift</td><td>N</td></tr><tr><td><code>D</code></td><td>out</td><td>total drag</td><td>N</td></tr><tr><td><code>D0</code></td><td>out</td><td>parasite (zero-lift) drag</td><td>N</td></tr><tr><td><code>Di</code></td><td>out</td><td>induced drag</td><td>N</td></tr><tr><td><code>LD</code></td><td>out</td><td>lift-to-drag ratio</td><td>, </td></tr></tbody></table>
+<p><strong>Applies when:</strong> V, S &gt; 0; 0 &lt; CL &lt;= 3; 0.002 &lt;= CD0 &lt;= 0.2; 1 &lt;= AR &lt;= 50; 0.3 &lt;= e &lt;= 1; the air density (at most 2 kg/m^3) or an altitude from -1 km to 47 km, one of them.</p>
+<pre><code class="shell">$ aerospace-engineering solve aero_lift_drag_forces &quot;rho=1.225 kg/m^3&quot; &quot;V=60 m/s&quot; &quot;S=16 m^2&quot; CL=0.5 CD0=0.025 AR=8 e=0.8
+q = 2205 Pa
+CD = 0.03743397993
+L = 17640 N
+D = 1320.670812 N
+D0 = 882 N
+Di = 438.6708119 N
+LD = 13.35684854
+  by: Lift, drag and lift-to-drag ratio from a drag polar  (q = rho V^2/2; L = q S CL; CD = CD0 + CL^2/(pi e AR); D0 = q S CD0; Di = q S CL^2/(pi e AR); L/D = CL/CD)
+  rho = 1.225 kg/m^3
+  V = 60 m/s
+  S = 16 m^2
+  CL = 0.5
+  CD0 = 0.025
+  AR = 8
+  e = 0.8
+  assumes: V, S &gt; 0; 0 &lt; CL &lt;= 3; 0.002 &lt;= CD0 &lt;= 0.2; 1 &lt;= AR &lt;= 50; 0.3 &lt;= e &lt;= 1; the air density (at most 2 kg/m^3) or an altitude from -1 km to 47 km, one of them</code></pre>
+<p>In the worked example, rho = 1.225 kg/m^3, V = 60 m/s, S = 16 m^2, CL = 0.5, CD0 = 0.025, AR = 8, e = 0.8 go through the equation above and give q = 2205 Pa, CD = 0.03743397993, L = 17640 N, D = 1320.670812 N. It applies only when V, S &gt; 0; 0 &lt; CL &lt;= 3; 0.002 &lt;= CD0 &lt;= 0.2; 1 &lt;= AR &lt;= 50; 0.3 &lt;= e &lt;= 1; the air density (at most 2 kg/m^3) or an altitude from -1 km to 47 km, one of them: outside that it says what is wrong instead of returning a number.</p>
 <h4 id="aero_max_rate_of_climb_jet">Maximum rate of climb of a jet, <code>aero_max_rate_of_climb_jet</code></h4>
 <p>The maximum rate of climb of a jet aircraft (constant thrust) at an altitude, the speed at which it occurs and the climb angle there, for a parabolic drag polar.</p>
 <div class="math">\[V^2 = \frac{T + \sqrt{T^2 + 12ab}}{6a},\quad RC_{max} = \frac{V(T - aV^2 - b/V^2)}{W}\]</div>
