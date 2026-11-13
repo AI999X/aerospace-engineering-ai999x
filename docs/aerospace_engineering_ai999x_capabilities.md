@@ -448,13 +448,13 @@ $$
 - **Assumes:** $V > 0$; flight Mach number below 1; -1 $km  \leq  hp  \leq  47$ km; 150 $K  \leq  T  \leq  350$ K
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![CAS (calibrated airspeed) against V (true airspeed (m/s, km/h, kt)) from 50 m/s to 150 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-calibrated-airspeed-curve)
+![CAS (calibrated airspeed) against V (true airspeed (m/s, km/h, kt)) from 38](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-calibrated-airspeed-curve)
 
-*CAS (calibrated airspeed) against V (true airspeed (m/s, km/h, kt)) from 50 m/s to 150 m/s. Other inputs as in the worked example: hp = 0.0 m. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, V = 100 m/s, CAS = 100 m/s.*
+*CAS (calibrated airspeed) against V (true airspeed (m/s, km/h, kt)) from 38.5833 m/s to 115.75 m/s. Other inputs as in the worked example: hp = 0.0 m. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, V = 77.1667 m/s, CAS = 77.1667 m/s.*
 
-![CAS (calibrated airspeed) over V (true airspeed (m/s, km/h, kt)) from 50 m/s to 150 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 49](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-calibrated-airspeed-field)
+![CAS (calibrated airspeed) over V (true airspeed (m/s, km/h, kt)) from 38](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-calibrated-airspeed-field)
 
-*CAS (calibrated airspeed) over V (true airspeed (m/s, km/h, kt)) from 50 m/s to 150 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 49.9976 m/s to dark 150.007 m/s); iso-lines at CAS = 60, 80, 100, 120, 140 m/s. Marked: the worked example, V = 100 m/s, hp = 0 m, CAS = 100 m/s.*
+*CAS (calibrated airspeed) over V (true airspeed (m/s, km/h, kt)) from 38.5833 m/s to 115.75 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 38.5815 m/s to dark 115.755 m/s); iso-lines at CAS = 40, 60, 80, 100 m/s. Marked: the worked example, V = 77.1667 m/s, hp = 0 m, CAS = 77.1667 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_calibrated_airspeed', V=100.0, hp=0.0)
@@ -502,13 +502,13 @@ $$
 - **Assumes:** 0 < CAS < a0; subsonic flight; -1 $km  \leq  hp  \leq  47$ km; 150 $K  \leq  T  \leq  350$ K
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![TAS (true airspeed) against CAS (calibrated airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-true-airspeed-from-calibrated-curve)
+![TAS (true airspeed) against CAS (calibrated airspeed (m/s, kt, km/h)) from 30](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-true-airspeed-from-calibrated-curve)
 
-*TAS (true airspeed) against CAS (calibrated airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s. Other inputs as in the worked example: hp = 0.0 m. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, CAS = 100 m/s, TAS = 100 m/s.*
+*TAS (true airspeed) against CAS (calibrated airspeed (m/s, kt, km/h)) from 30.8667 m/s to 92.6 m/s. Other inputs as in the worked example: hp = 0.0 m. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, CAS = 61.7333 m/s, TAS = 61.7333 m/s.*
 
-![TAS (true airspeed) over CAS (calibrated airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 49](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-true-airspeed-from-calibrated-field)
+![TAS (true airspeed) over CAS (calibrated airspeed (m/s, kt, km/h)) from 30](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-true-airspeed-from-calibrated-field)
 
-*TAS (true airspeed) over CAS (calibrated airspeed (m/s, kt, km/h)) from 50 m/s to 150 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 49.9976 m/s to dark 150.007 m/s); iso-lines at TAS = 60, 80, 100, 120, 140 m/s. Marked: the worked example, CAS = 100 m/s, hp = 0 m, TAS = 100 m/s.*
+*TAS (true airspeed) over CAS (calibrated airspeed (m/s, kt, km/h)) from 30.8667 m/s to 92.6 m/s and hp (pressure altitude (m, ft)) from -1 m to 1 m: each of the 21 × 15 cells is one run of aerospace-engineering-ai999x, shaded by its value (light 30.8652 m/s to dark 92.6043 m/s); iso-lines at TAS = 40, 60, 80 m/s. Marked: the worked example, CAS = 61.7333 m/s, hp = 0 m, TAS = 61.7333 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_true_airspeed_from_calibrated', CAS=100.0, hp=0.0)
@@ -879,9 +879,9 @@ $$
 - **Assumes:** $1  \leq  M  \leq  50$; $1.05  \leq  \gamma  \leq  1.7$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![nu_deg (Prandtl-Meyer angle in degrees) against M (Mach number (>= 1)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-prandtl-meyer-curve)
+![nu_deg (Prandtl-Meyer angle in degrees) against M (Mach number (>= 1)) from 1 to 3](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-prandtl-meyer-curve)
 
-*nu_deg (Prandtl-Meyer angle in degrees) against M (Mach number (>= 1)) from 0.5 to 1.5. 16 points computed by aerospace-engineering-ai999x; marked: the worked example, M = 1, nu_deg = 0.*
+*nu_deg (Prandtl-Meyer angle in degrees) against M (Mach number (>= 1)) from 1 to 3. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, M = 2, nu_deg = 26.3798.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_prandtl_meyer', M=1.0)
@@ -1238,7 +1238,7 @@ $$
 
 ![T0_T0star (T0/T0*) against M (Mach number (0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rayleigh-flow-curve)
 
-*T0_T0star (T0/T0*) against M (Mach number (0.05 to 10)) from 0.1 to 10 on a logarithmic axis. 41 points computed by aerospace-engineering-ai999x; marked: the worked example, M = 1, T0_T0star = 1.*
+*T0_T0star (T0/T0*) against M (Mach number (0.05 to 10)) from 0.2 to 20 on a logarithmic axis. 34 points computed by aerospace-engineering-ai999x; marked: the worked example, M = 2, T0_T0star = 0.793388.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_rayleigh_flow', M=1.0)
@@ -1523,9 +1523,9 @@ $$
 
 *A rocket engine (the worked example: chamber 1e+06 Pa and 3000 K, molar mass 0.02 kg/mol, γ = 1.4, throat 0.01 m², expansion ratio 1.6875, ambient 127805 Pa) with a stated inlet area ratio of 4 for the drawing. Marked, from the package: thrust F = 12077.5 N, mass flow 6.13137 kg/s, Isp = 200.863 s, CF = 1.20775, c* = 1630.96 m/s, exit pressure 127805 Pa, exit speed 1969.79 m/s, Me = 2; the Mach number along the nozzle from its area–Mach capability (γ = 1.4).*
 
-![F (thrust) against eps (expansion area ratio Ae/At) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-engine-performance-curve)
+![F (thrust) against pc (chamber pressure) from 500000 Pa to 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-engine-performance-curve)
 
-*F (thrust) against eps (expansion area ratio Ae/At) from 0.84375 to 2.53125. One curve for each value of pc (chamber pressure): 1e+06 Pa, 500000 Pa, 2e+06 Pa. Other inputs as in the worked example: Tc = 3000.0 K, Mw = 0.02 kg/mol, gamma = 1.4, At = 0.01 m^2, pa = 127804.52546295093 Pa. 28 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, eps = 1.6875, F = 12077.5 N.*
+*F (thrust) against pc (chamber pressure) from 500000 Pa to 1.5e+06 Pa. One curve for each value of At (throat area): 0.01 m^2, 0.005 m^2, 0.02 m^2. Other inputs as in the worked example: Tc = 3000.0 K, Mw = 0.02 kg/mol, gamma = 1.4, eps = 1.6875, pa = 0.0 Pa. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, pc = 1e+06 Pa, F = 14234.2 N.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_rocket_engine_performance', pc=1000000.0, Tc=3000.0, Mw=0.02, gamma=1.4, At=0.01, eps=1.6875, pa=127804.52546295093)
@@ -1712,9 +1712,9 @@ $$
 
 *A single stage with specific impulse 300.0 s (the worked example): mass at ignition and at burnout, the propellant burned stacked on the final mass. Inputs: Isp = 300.0, m0 = 2718.2818284590453, mf = 1000.0. Marked: the package's Δv = 2941.99 m/s.*
 
-![dv (ideal velocity change delta-v) against m0 (initial (lift-off or ignition) mass) from 1359](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-delta-v-curve)
+![dv (ideal velocity change delta-v) against Isp (specific impulse (s)) from 225 s to 675 s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-delta-v-curve)
 
-*dv (ideal velocity change delta-v) against m0 (initial (lift-off or ignition) mass) from 1359.14 kg to 4077.42 kg. One curve for each value of Isp (specific impulse (s)): 300 s, 150 s, 600 s. Other inputs as in the worked example: mf = 1000.0 kg. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, m0 = 2718.28 kg, dv = 2941.99 m/s.*
+*dv (ideal velocity change delta-v) against Isp (specific impulse (s)) from 225 s to 675 s. One curve for each value of mf (final (burnout) mass): 1000 kg, 500 kg, 2000 kg. Other inputs as in the worked example: m0 = 4000.0 kg. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, Isp = 450 s, dv = 6117.71 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_rocket_delta_v', Isp=300.0, m0=2718.2818284590453, mf=1000.0)
@@ -1809,9 +1809,9 @@ $$
 - **Assumes:** $0 < mf < m_{0}$; thrust-to-weight above 1 at lift-off; constant thrust and mass flow, constant g, no drag, vertical flight
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![v_b (vertical speed at burnout) against mf (burnout mass) from 500 kg to 1500 kg](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-delta-v-gravity-loss-curve)
+![v_b (vertical speed at burnout) against m0 (initial mass) from 2000 kg to 6000 kg](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-delta-v-gravity-loss-curve)
 
-*v_b (vertical speed at burnout) against mf (burnout mass) from 500 kg to 1500 kg. One curve for each value of Isp (specific impulse): 300 s, 150 s, 600 s. Other inputs as in the worked example: m0 = 2718.2818284590453 kg, tb = 100.0 s. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, mf = 1000 kg, v_b = 1961.33 m/s.*
+*v_b (vertical speed at burnout) against m0 (initial mass) from 2000 kg to 6000 kg. One curve for each value of Isp (specific impulse): 300 s, 150 s, 600 s. Other inputs as in the worked example: mf = 1000.0 kg, tb = 100.0 s. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, m0 = 4000 kg, v_b = 3097.81 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_delta_v_gravity_loss', Isp=300.0, m0=2718.2818284590453, mf=1000.0, tb=100.0)
@@ -2742,7 +2742,7 @@ $$
 
 ![R (range) against c (power-specific fuel consumption (kg/J, g/(kW*h), lb/(hp*h))) from 5](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-breguet-range-prop-curve)
 
-*R (range) against c (power-specific fuel consumption (kg/J, g/(kW*h), lb/(hp*h))) from 5.0000e-08 kg/J to 1.5000e-07 kg/J. One curve for each value of LD (lift-to-drag ratio): 15, 7.5, 30. Other inputs as in the worked example: eta = 0.8, W0 = 27182.818284590452 N, W1 = 10000.0 N. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, c = 1.0000e-07 kg/J, R = 1.2237e+07 m.*
+*R (range) against c (power-specific fuel consumption (kg/J, g/(kW*h), lb/(hp*h))) from 5.0000e-08 kg/J to 1.5000e-07 kg/J. One curve for each value of LD (lift-to-drag ratio): 15, 7.5, 30. Other inputs as in the worked example: eta = 0.8, W0 = 27182.81828459045 N, W1 = 10000.0 N. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, c = 1.0000e-07 kg/J, R = 1.2237e+07 m.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_breguet_range_prop', eta=0.8, c=1e-07, LD=15.0, W0=27182.818284590452, W1=10000.0)
@@ -3462,7 +3462,7 @@ $$
 
 ![CL (section lift coefficient) against alpha (angle of attack (deg)) from 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-naca4-thin-airfoil-curve)
 
-*CL (section lift coefficient) against alpha (angle of attack (deg)) from 0.05 rad to 0.15 rad. Other inputs as in the worked example: m = 0.0, p = 0.4. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, alpha = 0.1 rad, CL = 0.628319.*
+*CL (section lift coefficient) against alpha (angle of attack (deg)) from 0.05 rad to 0.15 rad. Other inputs as in the worked example: m = 0.0, p = 0.0. 31 points computed by aerospace-engineering-ai999x; marked: the worked example, alpha = 0.1 rad, CL = 0.628319.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_naca4_thin_airfoil', m=0.0, p=0.4, alpha=0.1)
@@ -3557,9 +3557,9 @@ $$
 
 *Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens, the example's head wind is collinear). Air vector + wind vector = ground vector. Marked, from the package: heading 81.8699°, wind correction angle -8.1301°, ground speed 84.8528 m/s (164.941 kt).*
 
-![GS (ground speed) against TAS (true airspeed (kt, km/h, m/s)) from 50 m/s to 150 m/s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-curve)
+![GS (ground speed) against TAS (true airspeed (kt, km/h, m/s)) from 25](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-curve)
 
-*GS (ground speed) against TAS (true airspeed (kt, km/h, m/s)) from 50 m/s to 150 m/s. One curve for each value of wind_speed (wind speed): 20 m/s, 10 m/s, 40 m/s. Other inputs as in the worked example: course = 1.5707963267948966 rad, wind_from = 1.5707963267948966 rad. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, TAS = 100 m/s, GS = 80 m/s.*
+*GS (ground speed) against TAS (true airspeed (kt, km/h, m/s)) from 25.7222 m/s to 77.1667 m/s. One curve for each value of wind_speed (wind speed): 10.2889 m/s, 5.14444 m/s, 20.5778 m/s. Other inputs as in the worked example: course = 1.5707963267948966 rad, wind_from = 1.5707963267948966 rad. 31 points per curve computed by aerospace-engineering-ai999x; marked: the worked example, TAS = 51.4444 m/s, GS = 41.1556 m/s.*
 
 ```python
 aerospace_engineering_ai999x.solve('aero_wind_triangle', TAS=100.0, course=1.5707963267948966, wind_from=1.5707963267948966, wind_speed=20.0)
