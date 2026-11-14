@@ -21,7 +21,7 @@ figcaption{font-size:9pt;color:#555}
 .pb{page-break-after:always}
 </style></head><body>
 <h1>aerospace-engineering: the Aerospace Engineering program, user guide</h1>
-<p><strong>aerospace-engineering-ai999x 1.6.0</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
+<p><strong>aerospace-engineering-ai999x 1.6.1</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
 <p>Aerospace Engineering covers the standard atmosphere, lift and drag, aircraft performance, stability, propulsion and rocket performance, nozzles and orbital transfers. This guide is about <code>aerospace-engineering</code>, the model as a self-contained program for Windows and Linux: 81 capabilities in 13 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model&#x27;s page (https://www.ai999x.com/models/aerospace-engineering-ai999x/); the Python package (<code>pip install aerospace-engineering-ai999x</code>) has its own guide. Every command output printed here is what the program printed.</p>
 <h2>Contents</h2>
 <ul><li>1. Get it: desktop app, command line, browser, Python</li><li>2. Quick start</li><li>3. Writing inputs</li><li>4. Outcomes and exit codes</li><li>5. Scripts and agents: batch and JSON</li><li>6. Figures</li><li>7. In a web page or Node.js: WebAssembly</li><li>8. Every capability</li></ul>
@@ -1450,7 +1450,7 @@ rho = 1.224999156 kg/m^3
 <h4 id="aero_pressure_altitude">Pressure altitude from static pressure, <code>aero_pressure_altitude</code></h4>
 <p>The pressure altitude: the height in the standard atmosphere at which the standard pressure equals the measured static pressure (what an altimeter set to 1013.25 hPa reads).</p>
 <div class="math">\[H = H_b + \frac{T_b}{L}\left[\left(\frac{p}{p_b}\right)^{-RL/g_0} - 1\right],\quad h = \frac{r_0 H}{r_0 - H}\]</div>
-<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>static pressure (Pa, hPa, inHg, psi)</td><td>Pa</td></tr><tr><td><code>h</code></td><td>out</td><td>pressure altitude (geometric)</td><td>m</td></tr><tr><td><code>h_ft</code></td><td>out</td><td>pressure altitude in feet</td><td>, </td></tr><tr><td><code>H</code></td><td>out</td><td>geopotential pressure altitude</td><td>m</td></tr><tr><td><code>T_std</code></td><td>out</td><td>standard temperature at that altitude</td><td>K</td></tr></tbody></table>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>static pressure (Pa, hPa, inHg, psi)</td><td>Pa</td></tr><tr><td><code>h</code></td><td>out</td><td>pressure altitude (geometric)</td><td>m</td></tr><tr><td><code>h_ft</code></td><td>out</td><td>pressure altitude in feet (the altimeter reading: geopotential height)</td><td>, </td></tr><tr><td><code>H</code></td><td>out</td><td>geopotential pressure altitude</td><td>m</td></tr><tr><td><code>T_std</code></td><td>out</td><td>standard temperature at that altitude</td><td>K</td></tr></tbody></table>
 <p><strong>Applies when:</strong> p within the standard atmosphere between -1 km and 47 km.</p>
 <pre><code class="shell">$ aerospace-engineering solve aero_pressure_altitude &quot;p=101325 Pa&quot;
 h = 0 m

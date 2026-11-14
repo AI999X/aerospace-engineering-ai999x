@@ -1,6 +1,6 @@
 # aerospace-engineering: the Aerospace Engineering program, user guide
 
-**aerospace-engineering-ai999x 1.6.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**aerospace-engineering-ai999x 1.6.1**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
 Aerospace Engineering covers the standard atmosphere, lift and drag, aircraft performance, stability, propulsion and rocket performance, nozzles and orbital transfers. This guide is about `aerospace-engineering`, the model as a self-contained program for Windows and Linux: 81 capabilities in 13 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/aerospace-engineering-ai999x/); the Python package (`pip install aerospace-engineering-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
@@ -3302,7 +3302,7 @@ $$
 |---|---|---|---|
 | `p` | in | static pressure (Pa, hPa, inHg, psi) | Pa |
 | `h` | out | pressure altitude (geometric) | m |
-| `h_ft` | out | pressure altitude in feet | - |
+| `h_ft` | out | pressure altitude in feet (the altimeter reading: geopotential height) | - |
 | `H` | out | geopotential pressure altitude | m |
 | `T_std` | out | standard temperature at that altitude | K |
 
