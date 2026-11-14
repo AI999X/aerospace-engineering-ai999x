@@ -878,7 +878,7 @@ def aero_pressure_altitude(p=None):
     Formula: H = H_b + \\frac{T_b}{L}\\left[\\left(\\frac{p}{p_b}\\right)^{-RL/g_0} - 1\\right],\\quad h = \\frac{r_0 H}{r_0 - H}
     Inputs:
         p: static pressure (Pa, hPa, inHg, psi)
-    Outputs: h (pressure altitude (geometric)), h_ft (pressure altitude in feet), H (geopotential pressure altitude), T_std (standard temperature at that altitude)
+    Outputs: h (pressure altitude (geometric)), h_ft (pressure altitude in feet (the altimeter reading: geopotential height)), H (geopotential pressure altitude), T_std (standard temperature at that altitude)
     See also: help("aero_pressure_altitude")
     """
     given = {k: v for k, v in dict(p=p).items() if v is not None}

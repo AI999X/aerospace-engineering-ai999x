@@ -2811,7 +2811,7 @@ fn f_pressure_altitude(mut v_p: Py) -> R {
     let _ = f__need({ let t3269 = c_P_MIN()?; Py::Bool({ let t3270 = v_p.clone(); if py::le(&t3269, &t3270)? { { let t3271 = c_P_MAX()?; if py::le(&t3270, &t3271)? { true } else { false } } } else { false } }) }, Py::str("the pressure must lie within the standard atmosphere from -1 km to 47 km"))?;
     v_H = f__H_from_p(v_p.clone())?;
     v_h = f__geom(v_H.clone())?;
-    return Ok(f__out(Py::dict(vec![(Py::str("h"), v_h.clone()), (Py::str("h_ft"), py::truediv(&v_h.clone(), &c_FT()?)?), (Py::str("H"), v_H.clone()), (Py::str("T_std"), py::getitem(&f__isa_H(v_H.clone())?, &Py::Int(0i64))?)]))?);
+    return Ok(f__out(Py::dict(vec![(Py::str("h"), v_h.clone()), (Py::str("h_ft"), py::truediv(&v_H.clone(), &c_FT()?)?), (Py::str("H"), v_H.clone()), (Py::str("T_std"), py::getitem(&f__isa_H(v_H.clone())?, &Py::Int(0i64))?)]))?);
     #[allow(unreachable_code)]
     Ok(Py::None)
 }

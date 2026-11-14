@@ -492,27 +492,29 @@ def pressure_altitude(p):
     _need(P_MIN <= p <= P_MAX, "the pressure must lie within the standard atmosphere from -1 km to 47 km")
     H = _H_from_p(p)
     h = _geom(H)
-    return _out(h=h, h_ft=h / FT, H=H, T_std=_isa_H(H)[0])
+    # the altimeter reading in feet is the GEOPOTENTIAL height (FL350 = 35,000 ft at 238.4 hPa); it was the geometric
+    # height in feet (35,061 ft), contradicting the purpose (aerospace review, 2026-11-13)
+    return _out(h=h, h_ft=H / FT, H=H, T_std=_isa_H(H)[0])
 
 
 def ref_pressure_altitude(p):
     h = _ref_altitude_where(lambda a: a.P, p)
     a = _fluids_atm(h)
-    return {"h": h, "h_ft": h / FT, "H": a.H, "T_std": a.T}
+    return {"h": h, "h_ft": a.H / FT, "H": a.H, "T_std": a.T}
 
 
 def _pa_wrong(p):
     T = T_SL * (p / P_SL) ** (R_AIR * 0.0065 / G0)    # the tropospheric lapse rate used at every height
     H = (T_SL - T) / 0.0065
     h = _geom(H)
-    return _out(h=h, h_ft=h / FT, H=H, T_std=T)
+    return _out(h=h, h_ft=H / FT, H=H, T_std=T)
 
 
 _add("aero_pressure_altitude",
      name="Pressure altitude from static pressure", topic="standard atmosphere / pressure altitude",
      purpose="The pressure altitude: the height in the standard atmosphere at which the standard pressure equals the measured static pressure (what an altimeter set to 1013.25 hPa reads).",
      inputs=[_phys("p", "pressure", "static pressure (Pa, hPa, inHg, psi)")],
-     outputs=[_o("h", "length", "pressure altitude (geometric)"), _o("h_ft", "number", "pressure altitude in feet"),
+     outputs=[_o("h", "length", "pressure altitude (geometric)"), _o("h_ft", "number", "pressure altitude in feet (the altimeter reading: geopotential height)"),
               _o("H", "length", "geopotential pressure altitude"), _o("T_std", "temperature", "standard temperature at that altitude")],
      primary="h", conditions=["p within the standard atmosphere between -1 km and 47 km"],
      method="invert p(H) layer by layer: H = Hb + (T - Tb)/L with T = Tb (p/pb)^(-R L/g0), or H = Hb + (R Tb/g0) ln(pb/p) in an isothermal layer; h = r0 H/(r0 - H)",

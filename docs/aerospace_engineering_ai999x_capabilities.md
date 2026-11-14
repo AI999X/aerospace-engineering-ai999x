@@ -274,7 +274,7 @@ $$
 | output | meaning |
 |---|---|
 | `h` | pressure altitude (geometric) |
-| `h_ft` | pressure altitude in feet |
+| `h_ft` | pressure altitude in feet (the altimeter reading: geopotential height) |
 | `H` | geopotential pressure altitude |
 | `T_std` | standard temperature at that altitude |
 
@@ -297,12 +297,12 @@ aerospace_engineering_ai999x.solve('aero_pressure_altitude', p=101325.0)
 
 ```python
 aerospace_engineering_ai999x.solve('aero_pressure_altitude', p=22632.06397346291)
-# -> h = 11019.1 m, h_ft = 36151.8, H = 11000 m, T_std = 216.65 K   (SOLVED)
+# -> h = 11019.1 m, h_ft = 36089.2, H = 11000 m, T_std = 216.65 K   (SOLVED)
 ```
 
 ```python
 aerospace_engineering_ai999x.solve('aero_pressure_altitude', p=5474.8886696777745)
-# -> h = 20063.1 m, h_ft = 65823.9, H = 20000 m, T_std = 216.65 K   (SOLVED)
+# -> h = 20063.1 m, h_ft = 65616.8, H = 20000 m, T_std = 216.65 K   (SOLVED)
 ```
 
 **Questions in words (documented forms), as executed:**
