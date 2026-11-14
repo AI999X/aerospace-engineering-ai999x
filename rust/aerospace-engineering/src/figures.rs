@@ -494,8 +494,15 @@ fn wind_polar(s: &Solved) -> Option<Figure> {
     m_ring_class(&mut cv, (cx, cy), tas * sc, "axp-c4");
     let tip = (cx + ws * sc * (wf + std::f64::consts::PI).sin(), cy - ws * sc * (wf + std::f64::consts::PI).cos());
     crate::figs_common::varrow(&mut cv, (cx, cy), tip, "axp-c3");
+    // the fastest course is a ring; the filled dot is the visitor's own course and ground speed (the review read the
+    // fastest point as the worked example; aerospace review, 2026-11-14)
     let (bx, by) = at(best.0, best.1);
-    cv.raw(&format!("<circle class=\"axp-m\" cx=\"{bx:.1}\" cy=\"{by:.1}\" r=\"5.5\"/>"));
+    m_ring_class(&mut cv, (bx, by), 5.5, "axp-c3");
+    let mine = c::inp(s, "course").and_then(|crs| c::at(s, &[("course", crs)], "GS").map(|g| (crs, g)));
+    if let Some((crs, g)) = mine {
+        let (mx, my) = at(crs, g);
+        cv.raw(&format!("<circle class=\"axp-m\" cx=\"{mx:.1}\" cy=\"{my:.1}\" r=\"5.5\"/>"));
+    }
     let x0 = 352.0;
     cv.bold(x0, 40.0, "start", "ground speed");
     cv.raw(&format!("<path class=\"axp-c\" d=\"M{x0},60 L{},60\"/>", x0 + 20.0));
@@ -509,9 +516,13 @@ fn wind_polar(s: &Solved) -> Option<Figure> {
     cv.value(x0, 182.0, "start", &format!("slowest {}", qv(worst.1, "m/s")));
     cv.value(x0, 200.0, "start", &format!("  course {}", a::dg(worst.0.to_degrees())));
     cv.name(x0, 236.0, "start", &format!("wind from {}", a::dg(wf.to_degrees())));
+    if let Some((crs, g)) = mine {
+        cv.value(x0, 260.0, "start", &format!("yours (dot) {}", qv(g, "m/s")));
+        cv.value(x0, 278.0, "start", &format!("  course {}", a::dg(crs.to_degrees())));
+    }
     cv.name(x0, 330.0, "start", "north up");
     let cap = format!("Ground speed for every course (5° steps, {} solves of the model's wind triangle) of an aircraft flying {} \
-                       through a {} wind from {}: slowest {} on course {}, fastest {} on course {} (marked).", pts.len(),
+                       through a {} wind from {}: slowest {} on course {}, fastest {} on course {} (ring); the dot is the course asked.", pts.len(),
                       qv(tas, "m/s"), qv(ws, "m/s"), a::dg(wf.to_degrees()), qv(worst.1, "m/s"), a::dg(worst.0.to_degrees()),
                       qv(best.1, "m/s"), a::dg(best.0.to_degrees()));
     Some(s.figure("polar", "Ground speed around the compass in a wind", &cap, cv.body(), cv.h))
