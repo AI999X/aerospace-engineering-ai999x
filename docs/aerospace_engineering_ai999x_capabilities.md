@@ -1521,7 +1521,7 @@ $$
 
 ![A rocket engine (the worked example: chamber 1e+06 Pa and 3000 K, molar mass 0](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-engine-performance-nozzle)
 
-*A rocket engine (the worked example: chamber 1e+06 Pa and 3000 K, molar mass 0.02 kg/mol, γ = 1.4, throat 0.01 m², expansion ratio 1.6875, ambient 127805 Pa) with a stated inlet area ratio of 4 for the drawing. Marked, from the package: thrust F = 12077.5 N, mass flow 6.13137 kg/s, Isp = 200.863 s, CF = 1.20775, c* = 1630.96 m/s, exit pressure 127805 Pa, exit speed 1969.79 m/s, Me = 2; the Mach number along the nozzle from its area–Mach capability (γ = 1.4).*
+*A rocket engine (the worked example: chamber 1e+06 Pa and 3000 K, molar mass 0.02 kg/mol, γ = 1.4, throat 0.01 m², expansion ratio 1.6875, ambient 0 Pa) with a stated inlet area ratio of 4 for the drawing. Marked, from the package: thrust F = 14234.2 N, mass flow 6.13137 kg/s, Isp = 236.731 s, CF = 1.42342, c* = 1630.96 m/s, exit pressure 127805 Pa, exit speed 1969.79 m/s, Me = 2; the Mach number along the nozzle from its area–Mach capability (γ = 1.4).*
 
 ![F (thrust) against pc (chamber pressure) from 500000 Pa to 1](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-engine-performance-curve)
 
@@ -1708,9 +1708,9 @@ $$
 - **Assumes:** 1 s <= Isp <= 10000 s; $0 < mf < m_{0}$; no gravity, no drag
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A single stage with specific impulse 300](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-delta-v-staging)
+![A single stage with specific impulse 450](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-delta-v-staging)
 
-*A single stage with specific impulse 300.0 s (the worked example): mass at ignition and at burnout, the propellant burned stacked on the final mass. Inputs: Isp = 300.0, m0 = 2718.2818284590453, mf = 1000.0. Marked: the package's Δv = 2941.99 m/s.*
+*A single stage with specific impulse 450.0 s (the worked example): mass at ignition and at burnout, the propellant burned stacked on the final mass. Inputs: Isp = 450.0, m0 = 4000.0, mf = 1000.0. Marked: the package's Δv = 6117.71 m/s.*
 
 ![dv (ideal velocity change delta-v) against Isp (specific impulse (s)) from 225 s to 675 s](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-rocket-delta-v-curve)
 
@@ -3553,9 +3553,9 @@ $$
 
 *Ground speed for every course (5° steps) of an aircraft flying 100 m/s through a 20 m/s wind from 300°, each solved by the package's wind triangle: slowest 80 m/s heading into the wind (course 300°), fastest 120 m/s with it (course 120°, marked); largest wind correction 11.537°.*
 
-![Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens, the example's head wind is collinear)](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-triangle)
+![Wind triangle for a true airspeed of 51](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-triangle)
 
-*Wind triangle for a true airspeed of 100 m/s on a course of 90° with a 20 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens, the example's head wind is collinear). Air vector + wind vector = ground vector. Marked, from the package: heading 81.8699°, wind correction angle -8.1301°, ground speed 84.8528 m/s (164.941 kt).*
+*Wind triangle for a true airspeed of 51.4444 m/s on a course of 90° with a 10.2889 m/s wind (the worked example's speeds and course; the wind direction, from 45°, is chosen here so that the triangle opens, the example's head wind is collinear). Air vector + wind vector = ground vector. Marked, from the package: heading 81.8699°, wind correction angle -8.1301°, ground speed 43.6521 m/s (84.8528 kt).*
 
 ![GS (ground speed) against TAS (true airspeed (kt, km/h, m/s)) from 25](https://www.ai999x.com/?ax_fig=aerospace-engineering-ai999x/aero-wind-triangle-curve)
 

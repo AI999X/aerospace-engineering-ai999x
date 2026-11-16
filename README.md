@@ -10,34 +10,118 @@ Aerospace Engineering covers the standard atmosphere, lift and drag, aircraft pe
 
 | | |
 |---|---|
-| **Desktop app** (Windows, Linux) | [Windows](https://downloads.ai999x.com/desktop/latest/ai999x-windows-x86_64.zip) · [Linux](https://downloads.ai999x.com/desktop/latest/ai999x-linux-x86_64.tar.gz) |
-| **Command line** `aerospace-engineering` (Windows, Linux) | [Windows](https://downloads.ai999x.com/desktop/latest/ai999x-cli-windows-x86_64.zip) · [Linux](https://downloads.ai999x.com/desktop/latest/ai999x-cli-linux-x86_64.tar.gz) |
+| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-1.6.4-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-1.6.4-linux-x86_64.tar.gz) |
+| **Command line** `aerospace-engineering` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-linux-x86_64.tar.gz) |
 | **Browser** (any device) | [Try it on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#try) |
 | **Python** 3.10+ | `pip install aerospace-engineering-ai999x`: on Windows and Linux (x86-64) `pip` installs the same compiled engine; on other systems (macOS, ARM) it installs a pure-Python build that gives the same answers |
 
-## Example
+## Ask in words: 13 examples
+
+Each question below was asked on this release; the comment under it is the line it printed.
 
 ```python
 import aerospace_engineering_ai999x as aerospace_engineering
-a = aerospace_engineering.ask("ISA properties: h = 35000 ft")
-print(a.outcome, a.value, a.unit)
+
+a = aerospace_engineering.ask(
+    "Critical Mach: Cp0 = -0.43, rule = prandtl-glauert"
+)
+print(a.outcome, a.values)
+# SOLVED {'M_cr': 0.737105914227, 'Cp_cr': -0.636304358584}
+
+a = aerospace_engineering.ask(
+    "Ballistic coefficient: m = 1000 kg, CD = 1.2, A = 1.5 m^2"
+)
+print(a.outcome, a.values)
+# SOLVED {'beta': 555.555555556, 'beta_psf': 113.786746457}
+
+a = aerospace_engineering.ask(
+    "Characteristic velocity: Tc = 3000 K, Mw = 20 g/mol, gamma = 1.2"
+)
+print(a.outcome, a.values)
+# SOLVED {'c_star': 1721.99492587, 'Gamma': 0.648531170706}
+
+a = aerospace_engineering.ask("Geopotential height: h = 0 km")
+print(a.outcome, a.values)
+# SOLVED {'H': 0.0, 'g': 9.80665, 'dH': 0.0}
+
+a = aerospace_engineering.ask(
+    "Mach from area ratio: ar = 1.6875, regime = supersonic"
+)
+print(a.outcome, a.values)
+# SOLVED {'M': 2.0, 'p_p0': 0.127804525463, 'T_T0': 0.555555555556}
+
+a = aerospace_engineering.ask("Pressure altitude: p = 1013.25 hPa")
+print(a.outcome, a.values)
+# SOLVED {'h': 0.0, 'h_ft': 0.0, 'H': 0.0, 'T_std': 288.15}
+
+a = aerospace_engineering.ask("Sun-synchronous orbit: h = 700 km")
+print(a.outcome, a.values)
+# SOLVED {'i_deg': 98.1879559879, 'period_min': 98.7729761461}
+
+a = aerospace_engineering.ask(
+    "Propellant for delta-v: dv = 2941.995 m/s, Isp = 300 s, mf = 1000 "
+    "kg"
+)
+print(a.outcome, a.values)
+# SOLVED {'m0': 2718.28182846, 'mp': 1718.28182846, 'R': 2.71828182846}
+
+a = aerospace_engineering.ask(
+    "Rocket delta-v: Isp = 450 s, m0 = 4000 kg, mf = 1000 kg"
+)
+print(a.outcome, a.values)
+# SOLVED {'dv': 6117.70661841}
+
+a = aerospace_engineering.ask(
+    "Landing roll: W = 10 kN, S = 10 m^2, h = 0 m, VTD = 30 m/s, mu = "
+    "0.4, CL = 0.25, CD = 0.1"
+)
+print(a.outcome, a.values)
+# SOLVED {'s': 114.71807396, 't': 7.64787159733}
+
+a = aerospace_engineering.ask("Prandtl-Meyer angle: M = 2")
+print(a.outcome, a.values)
+# SOLVED {'nu_deg': 26.3797608134}
+
+a = aerospace_engineering.ask(
+    "Lift coefficient in level flight: W = 10 kN, S = 16 m^2, V = 50 "
+    "m/s, h = 0 m"
+)
+print(a.outcome, a.values)
+# SOLVED {'CL': 0.40816354656, 'q': 1531.24894486, 'wing_loading': 625.0}
+
+a = aerospace_engineering.ask(
+    "Takeoff roll: W = 10 kN, S = 10 m^2, h = 0 m, T = 3 kN, mu = "
+    "0.02, CL = 1, CD = 0.02, VLO = 40 m/s"
+)
+print(a.outcome, a.values)
+# SOLVED {'s': 291.347489422, 't': 14.5673744711}
 ```
 
-Output:
+## Screenshots
 
-```text
-SOLVED 0.380455436006 kg/m^3
-```
+[![The Aerospace Engineering desktop app: Best lift coefficients and lift-to-drag ratios of a drag polar, with its worked example and live scene](https://www.ai999x.com/?ax_shot=aerospace-engineering-ai999x/hero-dark.webp)](https://www.ai999x.com/models/aerospace-engineering-ai999x/)
+
+[![Maximum deflection angle of an attached oblique shock: the live scene in the Aerospace Engineering desktop app](https://www.ai999x.com/?ax_shot=aerospace-engineering-ai999x/see-1.webp)](https://www.ai999x.com/models/aerospace-engineering-ai999x/)
+
+*Maximum deflection angle of an attached oblique shock*
+
+[![Circular orbit at an altitude above the Earth: the live scene in the Aerospace Engineering desktop app](https://www.ai999x.com/?ax_shot=aerospace-engineering-ai999x/see-2.webp)](https://www.ai999x.com/models/aerospace-engineering-ai999x/)
+
+*Circular orbit at an altitude above the Earth*
+
+[![Propellant mass for a required delta-v: the live scene in the Aerospace Engineering desktop app](https://www.ai999x.com/?ax_shot=aerospace-engineering-ai999x/see-3.webp)](https://www.ai999x.com/models/aerospace-engineering-ai999x/)
+
+*Propellant mass for a required delta-v*
 
 Every calculation, with its formula, a worked example and its figures: **[Aerospace Engineering on ai999x.com](https://www.ai999x.com/models/aerospace-engineering-ai999x/)**. Install guides for the app and the command line: [https://www.ai999x.com/desktop-cli/](https://www.ai999x.com/desktop-cli/).
 
-Version 1.6.3 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
+Version 1.6.4 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
 
 *The Future Is Self-Improving.*
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/aerospace-engineering-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.3`; the [GitHub release](https://github.com/AI999X/aerospace-engineering-ai999x/releases/tag/v1.6.3) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/aerospace-engineering-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.4`; the [GitHub release](https://github.com/AI999X/aerospace-engineering-ai999x/releases/tag/v1.6.4) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
 
 ## Build the program from source
 
