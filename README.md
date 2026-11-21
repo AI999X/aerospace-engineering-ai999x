@@ -10,8 +10,8 @@ Aerospace Engineering covers the standard atmosphere, lift and drag, aircraft pe
 
 | | |
 |---|---|
-| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-aerospace-engineering-1.6.5-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-aerospace-engineering-1.6.5-linux-x86_64.tar.gz) |
-| **Command line** `aerospace-engineering` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-linux-x86_64.tar.gz) |
+| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-aerospace-engineering-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-aerospace-engineering-1.6.6-linux-x86_64.tar.gz) |
+| **Command line** `aerospace-engineering` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-linux-x86_64.tar.gz) |
 | **Browser** (any device) | [Try it on the model page](https://www.ai999x.com/models/aerospace-engineering-ai999x/#capabilities) |
 | **Python** 3.10+ | `pip install aerospace-engineering-ai999x`: on Windows and Linux (x86-64) `pip` installs the same compiled engine; on other systems (macOS, ARM) it installs a pure-Python build that gives the same answers |
 
@@ -213,128 +213,6 @@ CL_mr = 0.4093306832
 LD_mr = 15.34990062
 ```
 
-## Rust library: 15 examples
-
-The crate `aerospace-engineering-ai999x` (in `rust/` of the GitHub repository) answers a JSON request with `aerospace_engineering_ai999x::solve_json`. Each call below was compiled and run on this release; the comment under it is what it printed. The whole program is `rust/aerospace-engineering/examples/readme.rs`: `cd rust && cargo run --release --example readme -p aerospace-engineering-ai999x`.
-
-```rust
-use serde_json::{json, Value};
-
-fn show(request: Value) {
-    let answer: Value = serde_json::from_str(&aerospace_engineering_ai999x::solve_json(&request.to_string())).unwrap();
-    println!("{}", answer["outcome"].as_str().unwrap_or(""));
-    for v in answer["values"].as_array().into_iter().flatten() {
-        let unit = v[2].as_str().unwrap_or("");
-        let unit = if unit.is_empty() || unit == "1" { String::new() } else { format!(" {unit}") };
-        println!("{} = {}{}", v[0].as_str().unwrap_or(""), v[1], unit);
-    }
-}
-
-show(json!({"key": "aero_critical_mach", "inputs": {"Cp0": "-0.43", "rule": "prandtl-glauert"}}));
-// SOLVED
-// M_cr = 0.737105914227
-// Cp_cr = -0.636304358584
-
-show(json!({"key": "aero_absolute_ceiling_jet", "inputs": {"W": "100000.0", "S": "30.0", "T0": "13486.71062689471", "CD0": "0.02", "AR": "7.0", "e": "0.8"}}));
-// SOLVED
-// h_abs = 6669.76749044 m
-// h_abs_ft = 21882.4392731
-// sigma = 0.5
-
-show(json!({"key": "aero_calibrated_airspeed", "inputs": {"V": "77.16666667 m/s", "hp": "0 ft"}}));
-// SOLVED
-// CAS = 77.16666667 m/s
-// CAS_kt = 150.000000006
-// qc = 3694.37662273 Pa
-// pt = 105019.376623 Pa
-
-show(json!({"key": "aero_fanno_flow", "inputs": {"M": "2"}}));
-// SOLVED
-// fLD = 0.304996502581
-// p_pstar = 0.408248290464
-// T_Tstar = 0.666666666667
-// rho_rhostar = 0.612372435696
-// p0_p0star = 1.6875
-
-show(json!({"key": "aero_choked_mass_flow", "inputs": {"p0": "100 kPa", "T0": "300 K", "A": "10 cm^2"}}));
-// SOLVED
-// mdot = 0.233334282967 kg/s
-// p_star = 52828.1787717 Pa
-// T_star = 250.0 K
-// V_star = 316.967782616 m/s
-
-show(json!({"key": "aero_bielliptic_transfer", "inputs": {"h1": "6378136.6", "h2": "19134409.799999997", "hb": "19134409.799999997"}}));
-// SOLVED
-// dv1 = 864.7664 m/s
-// dv2 = 725.330841972 m/s
-// dv3 = 0.0 m/s
-// dv = 1590.09724197 m/s
-// t = 33447.9135801 s
-// t_days = 0.387128629399
-
-show(json!({"key": "aero_actuator_disk_hover", "inputs": {"T": "6.283185307 N", "D": "2 m", "rho": "1 kg/m^3"}}));
-// SOLVED
-// v_i = 0.999999999986 m/s
-// P_ideal = 6.28318530691 W
-// w = 1.99999999997 m/s
-
-show(json!({"key": "aero_ballistic_coefficient", "inputs": {"m": "1000 kg", "CD": "1.2", "A": "1.5 m^2"}}));
-// SOLVED
-// beta = 555.555555556 kg/m^2
-// beta_psf = 113.786746457
-
-show(json!({"key": "aero_vertical_rocket_trajectory", "inputs": {"Isp": "300 s", "m0": "2718.281828 kg", "mf": "1000 kg", "tb": "100 s"}}));
-// SOLVED
-// v_b = 1961.3299995 m/s
-// h_b = 73948.9938106 m
-// h_max = 270081.993711 m
-// t_apex = 299.999999949 s
-
-show(json!({"key": "aero_characteristic_velocity", "inputs": {"Tc": "3000 K", "Mw": "20 g/mol", "gamma": "1.2"}}));
-// SOLVED
-// c_star = 1721.99492587 m/s
-// Gamma = 0.648531170706
-
-show(json!({"key": "aero_rocket_thrust", "inputs": {"mdot": "250 kg/s", "ve": "3000 m/s"}}));
-// SOLVED
-// F = 750000.0 N
-// F_kN = 750.0
-// Isp = 305.914863893 s
-// c_eff = 3000.0 m/s
-// F_pressure = 0.0 N
-
-show(json!({"key": "aero_neutral_point", "inputs": {"h_ac": "0.25", "a_w": "5", "a_t": "5", "St_S": "0.2", "lt_c": "4", "deps": "0.5", "h_cg": "0.3"}}));
-// SOLVED
-// h_n = 0.613636363636
-// SM = 0.313636363636
-// CL_alpha = 5.5
-// Cm_alpha = -1.725
-
-show(json!({"key": "aero_density_altitude", "inputs": {"hp": "0 ft", "T": "15 °C"}}));
-// SOLVED
-// rho = 1.22499915589 kg/m^3
-// sigma = 1.0
-// h_rho = 0.0 m
-// h_rho_ft = 0.0
-// p = 101325.0 Pa
-
-show(json!({"key": "aero_elliptic_wing_lifting_line", "inputs": {"AR": "2", "alpha": "0.1 rad"}}));
-// SOLVED
-// CL_alpha = 3.14159265359
-// CL = 0.314159265359
-// CDi = 0.0157079632679
-// alpha_i_deg = 2.86478897565
-
-show(json!({"key": "aero_drag_polar_optimum", "inputs": {"CD0": "0.02", "AR": "10", "e": "0.8"}}));
-// SOLVED
-// CL_md = 0.708981540362
-// LD_max = 17.7245385091
-// CL_mp = 1.22799204954
-// LD_mp = 15.3499006192
-// CL_mr = 0.409330683179
-// LD_mr = 15.3499006192
-```
-
 ## Guides
 
 - Desktop app guide: the window, every calculation, scenes and charts: [PDF](https://huggingface.co/AI999X/aerospace-engineering-ai999x/blob/main/docs/aerospace_engineering_ai999x_desktop_guide.pdf) · [HTML](https://huggingface.co/AI999X/aerospace-engineering-ai999x/blob/main/docs/aerospace_engineering_ai999x_desktop_guide.html) · [Markdown](https://huggingface.co/AI999X/aerospace-engineering-ai999x/blob/main/docs/aerospace_engineering_ai999x_desktop_guide.md)
@@ -343,7 +221,7 @@ show(json!({"key": "aero_drag_polar_optimum", "inputs": {"CD0": "0.02", "AR": "1
 
 Every calculation, with its formula, a worked example and its figures: **[Aerospace Engineering on ai999x.com](https://www.ai999x.com/models/aerospace-engineering-ai999x/)**. Install guides for the app and the command line: [https://www.ai999x.com/desktop-cli/](https://www.ai999x.com/desktop-cli/).
 
-Version 1.6.4 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
+Version 1.6.6 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
 
 *The Future Is Self-Improving.*
 
